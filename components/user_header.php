@@ -69,6 +69,9 @@ $header_initial = htmlspecialchars($header_initial, ENT_QUOTES, 'UTF-8');
 $current_page = basename($_SERVER['PHP_SELF']);
 $is_home      = ($current_page === 'home.php');
 $gc_class     = $is_home ? 'gc-home' : 'gc-other';
+$script_dir   = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? ''));
+$base_url     = ($script_dir === '/' || $script_dir === '.' || $script_dir === '\\') ? '' : rtrim($script_dir, '/');
+$base_url     = htmlspecialchars($base_url, ENT_QUOTES, 'UTF-8');
 ?>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -700,10 +703,10 @@ body { padding-top: 72px !important; }
 
       <!-- ── LEFT: NAV ── -->
       <nav class="gc-nav" aria-label="Navigasi Utama">
-         <a href="/ecommerce/home.php"   class="<?= $current_page==='home.php'   ? 'gc-active':''; ?>">Beranda</a>
+         <a href="<?= $base_url; ?>/home.php"   class="<?= $current_page==='home.php'   ? 'gc-active':''; ?>">Beranda</a>
 
          <div class="gc-nav-item">
-            <a href="/ecommerce/shop.php" class="<?= $current_page==='shop.php' ? 'gc-active':''; ?>">
+            <a href="<?= $base_url; ?>/shop.php" class="<?= $current_page==='shop.php' ? 'gc-active':''; ?>">
                Produk <i class="fas fa-chevron-down" style="font-size:.85rem;margin-left:.2rem;"></i>
             </a>
             <div class="gc-dropdown">
@@ -721,7 +724,7 @@ body { padding-top: 72px !important; }
                ];
                foreach($CATS as $cat => [$icon, $color]):
                ?>
-               <a href="/ecommerce/shop.php?cat=<?= urlencode($cat); ?>" class="gc-drop-link">
+               <a href="<?= $base_url; ?>/shop.php?cat=<?= urlencode($cat); ?>" class="gc-drop-link">
                   <div class="gc-drop-icon" style="background:<?= $color; ?>22;color:<?= $color; ?>;">
                      <i class="fas <?= $icon; ?>"></i>
                   </div>
@@ -731,12 +734,12 @@ body { padding-top: 72px !important; }
             </div>
          </div>
 
-         <a href="/ecommerce/orders.php"  class="<?= in_array($current_page,['orders.php','order_detail.php']) ? 'gc-active':''; ?>">Pesanan</a>
-         <a href="/ecommerce/about.php"   class="<?= $current_page==='about.php'   ? 'gc-active':''; ?>">Tentang</a>
+         <a href="<?= $base_url; ?>/orders.php"  class="<?= in_array($current_page,['orders.php','order_detail.php']) ? 'gc-active':''; ?>">Pesanan</a>
+         <a href="<?= $base_url; ?>/about.php"   class="<?= $current_page==='about.php'   ? 'gc-active':''; ?>">Tentang</a>
       </nav>
 
       <!-- ── CENTER: LOGO ── -->
-      <a href="/ecommerce/home.php" class="gc-logo" aria-label="Gals Collection">
+      <a href="<?= $base_url; ?>/home.php" class="gc-logo" aria-label="Gals Collection">
          <img src="images/LogoGals/LogoGalsTerbaru.png" alt="Gals Collection" class="gc-logo__img">
          <span class="gc-logo__sub">Est. 2020 · Pekanbaru</span>
       </a>
@@ -745,12 +748,12 @@ body { padding-top: 72px !important; }
       <div class="gc-actions">
 
          <!-- Search -->
-         <a href="/ecommerce/search_page.php" class="gc-icon-btn" aria-label="Cari">
+         <a href="<?= $base_url; ?>/search_page.php" class="gc-icon-btn" aria-label="Cari">
             <i class="fas fa-search"></i>
          </a>
 
          <!-- Wishlist -->
-         <a href="/ecommerce/wishlist.php" class="gc-icon-btn" aria-label="Wishlist">
+         <a href="<?= $base_url; ?>/wishlist.php" class="gc-icon-btn" aria-label="Wishlist">
             <i class="fas fa-heart"></i>
             <?php if($total_wishlist > 0): ?>
                <span class="gc-badge"><?= $total_wishlist; ?></span>
@@ -758,7 +761,7 @@ body { padding-top: 72px !important; }
          </a>
 
          <!-- Cart -->
-         <a href="/ecommerce/cart.php" class="gc-icon-btn" aria-label="Keranjang">
+         <a href="<?= $base_url; ?>/cart.php" class="gc-icon-btn" aria-label="Keranjang">
             <i class="fas fa-shopping-bag"></i>
             <?php if($total_cart > 0): ?>
                <span class="gc-badge"><?= $total_cart; ?></span>
@@ -766,7 +769,7 @@ body { padding-top: 72px !important; }
          </a>
 
          <!-- Chat -->
-         <a href="/ecommerce/chat.php" class="gc-icon-btn" aria-label="Chat">
+         <a href="<?= $base_url; ?>/chat.php" class="gc-icon-btn" aria-label="Chat">
             <i class="fas fa-comment-dots"></i>
             <?php if($unread_chat > 0): ?>
                <span class="gc-badge"><?= $unread_chat; ?></span>
@@ -794,10 +797,10 @@ body { padding-top: 72px !important; }
                </div>
                <div class="gc-popup-hr"></div>
                <div class="gc-popup-actions">
-                  <a href="/ecommerce/update_user.php" class="gc-popup-btn gc-popup-btn--primary">
+                  <a href="<?= $base_url; ?>/update_user.php" class="gc-popup-btn gc-popup-btn--primary">
                      <i class="fas fa-user-edit"></i> Update Profil
                   </a>
-                  <a href="/ecommerce/components/user_logout.php" class="gc-popup-btn gc-popup-btn--ghost"
+                  <a href="<?= $base_url; ?>/components/user_logout.php" class="gc-popup-btn gc-popup-btn--ghost"
                      onclick="return confirm('Yakin mau keluar?');">
                      <i class="fas fa-right-from-bracket"></i> Logout
                   </a>
@@ -807,7 +810,7 @@ body { padding-top: 72px !important; }
 
          <!-- User: guest -->
          <?php else: ?>
-         <a href="/ecommerce/user_login.php" class="gc-user-chip">
+         <a href="<?= $base_url; ?>/user_login.php" class="gc-user-chip">
             <div class="gc-user-chip__av"><i class="fas fa-user" style="font-size:1rem"></i></div>
             Masuk
          </a>
@@ -827,29 +830,29 @@ body { padding-top: 72px !important; }
    <div class="gc-drawer__overlay" onclick="gcCloseDrawer()"></div>
    <div class="gc-drawer__panel">
 
-      <a href="/ecommerce/home.php" class="gc-drawer-logo">
+      <a href="<?= $base_url; ?>/home.php" class="gc-drawer-logo">
          <img src="images/LogoGals/LogoGalsTerbaru.png" alt="Gals Collection">
       </a>
 
       <nav class="gc-drawer-nav">
-         <a href="/ecommerce/home.php"   class="<?= $current_page==='home.php'   ? 'gc-active':''; ?>"><span>Beranda</span><i class="fas fa-chevron-right" style="font-size:1rem;opacity:.35"></i></a>
-         <a href="/ecommerce/shop.php"   class="<?= $current_page==='shop.php'   ? 'gc-active':''; ?>"><span>Toko</span><i class="fas fa-chevron-right" style="font-size:1rem;opacity:.35"></i></a>
-         <a href="/ecommerce/orders.php" class="<?= in_array($current_page,['orders.php','order_detail.php']) ? 'gc-active':''; ?>"><span>Pesanan Saya</span><i class="fas fa-chevron-right" style="font-size:1rem;opacity:.35"></i></a>
-         <a href="/ecommerce/about.php"  class="<?= $current_page==='about.php'  ? 'gc-active':''; ?>"><span>Tentang Kami</span><i class="fas fa-chevron-right" style="font-size:1rem;opacity:.35"></i></a>
+         <a href="<?= $base_url; ?>/home.php"   class="<?= $current_page==='home.php'   ? 'gc-active':''; ?>"><span>Beranda</span><i class="fas fa-chevron-right" style="font-size:1rem;opacity:.35"></i></a>
+         <a href="<?= $base_url; ?>/shop.php"   class="<?= $current_page==='shop.php'   ? 'gc-active':''; ?>"><span>Toko</span><i class="fas fa-chevron-right" style="font-size:1rem;opacity:.35"></i></a>
+         <a href="<?= $base_url; ?>/orders.php" class="<?= in_array($current_page,['orders.php','order_detail.php']) ? 'gc-active':''; ?>"><span>Pesanan Saya</span><i class="fas fa-chevron-right" style="font-size:1rem;opacity:.35"></i></a>
+         <a href="<?= $base_url; ?>/about.php"  class="<?= $current_page==='about.php'  ? 'gc-active':''; ?>"><span>Tentang Kami</span><i class="fas fa-chevron-right" style="font-size:1rem;opacity:.35"></i></a>
       </nav>
 
       <div class="gc-drawer-hr"></div>
 
       <div class="gc-drawer-extras">
-         <a href="/ecommerce/wishlist.php">
+         <a href="<?= $base_url; ?>/wishlist.php">
             <i class="fas fa-heart" style="width:1.6rem;color:#4f7cff"></i> Wishlist
             <?php if($total_wishlist > 0): ?><span class="gc-drawer-count"><?= $total_wishlist; ?></span><?php endif; ?>
          </a>
-         <a href="/ecommerce/cart.php">
+         <a href="<?= $base_url; ?>/cart.php">
             <i class="fas fa-shopping-bag" style="width:1.6rem;color:#4f7cff"></i> Keranjang
             <?php if($total_cart > 0): ?><span class="gc-drawer-count"><?= $total_cart; ?></span><?php endif; ?>
          </a>
-         <a href="/ecommerce/chat.php">
+         <a href="<?= $base_url; ?>/chat.php">
             <i class="fas fa-comment-dots" style="width:1.6rem;color:#4f7cff"></i> Chat Admin
             <?php if($unread_chat > 0): ?><span class="gc-drawer-count"><?= $unread_chat; ?></span><?php endif; ?>
          </a>
@@ -857,11 +860,11 @@ body { padding-top: 72px !important; }
          <div class="gc-drawer-hr"></div>
 
          <?php if(!empty($user_id)): ?>
-            <a href="/ecommerce/update_user.php"><i class="fas fa-user-circle" style="width:1.6rem;color:#94a3b8"></i><?= htmlspecialchars($header_first_name); ?> — Profil</a>
-            <a href="/ecommerce/components/user_logout.php" onclick="return confirm('Yakin mau keluar?');"><i class="fas fa-sign-out-alt" style="width:1.6rem;color:#94a3b8"></i>Logout</a>
+            <a href="<?= $base_url; ?>/update_user.php"><i class="fas fa-user-circle" style="width:1.6rem;color:#94a3b8"></i><?= htmlspecialchars($header_first_name); ?> — Profil</a>
+            <a href="<?= $base_url; ?>/components/user_logout.php" onclick="return confirm('Yakin mau keluar?');"><i class="fas fa-sign-out-alt" style="width:1.6rem;color:#94a3b8"></i>Logout</a>
          <?php else: ?>
-            <a href="/ecommerce/user_login.php"><i class="fas fa-sign-in-alt" style="width:1.6rem;color:#4f7cff"></i>Login</a>
-            <a href="/ecommerce/user_register.php"><i class="fas fa-user-plus" style="width:1.6rem;color:#4f7cff"></i>Register</a>
+            <a href="<?= $base_url; ?>/user_login.php"><i class="fas fa-sign-in-alt" style="width:1.6rem;color:#4f7cff"></i>Login</a>
+            <a href="<?= $base_url; ?>/user_register.php"><i class="fas fa-user-plus" style="width:1.6rem;color:#4f7cff"></i>Register</a>
          <?php endif; ?>
       </div>
 

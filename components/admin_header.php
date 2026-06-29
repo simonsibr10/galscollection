@@ -20,6 +20,10 @@ $select_profile->execute([$admin_id]);
 $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
 
 $admin_initial = $fetch_profile ? strtoupper(mb_substr($fetch_profile['name'], 0, 1)) : 'A';
+$script_dir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? ''));
+$app_dir = rtrim(dirname($script_dir), '/');
+$base_url = ($app_dir === '/' || $app_dir === '.' || $app_dir === '\\') ? '' : $app_dir;
+$base_url = htmlspecialchars($base_url, ENT_QUOTES, 'UTF-8');
 ?>
 
 <style>
@@ -359,7 +363,7 @@ $admin_initial = $fetch_profile ? strtoupper(mb_substr($fetch_profile['name'], 0
    <div class="admin-header-inner">
 
       <!-- LOGO -->
-      <a href="/ecommerce/admin/dashboard.php" class="admin-logo">
+      <a href="<?= $base_url; ?>/admin/dashboard.php" class="admin-logo">
          <div class="admin-logo-icon"><i class="fas fa-store"></i></div>
          <div class="admin-logo-text">
             Admin
@@ -369,18 +373,18 @@ $admin_initial = $fetch_profile ? strtoupper(mb_substr($fetch_profile['name'], 0
 
       <!-- DESKTOP NAV -->
       <nav class="admin-nav">
-         <a href="/ecommerce/admin/dashboard.php"><i class="fas fa-home"></i> Beranda</a>
-         <a href="/ecommerce/admin/products.php"><i class="fas fa-box-open"></i> Produk</a>
-         <a href="/ecommerce/admin/placed_orders.php"><i class="fas fa-clipboard-list"></i> Pesanan</a>
-         <a href="/ecommerce/admin/admin_accounts.php"><i class="fas fa-user-shield"></i> Admin</a>
-         <a href="/ecommerce/admin/users_accounts.php"><i class="fas fa-users"></i> Pengguna</a>
+         <a href="<?= $base_url; ?>/admin/dashboard.php"><i class="fas fa-home"></i> Beranda</a>
+         <a href="<?= $base_url; ?>/admin/products.php"><i class="fas fa-box-open"></i> Produk</a>
+         <a href="<?= $base_url; ?>/admin/placed_orders.php"><i class="fas fa-clipboard-list"></i> Pesanan</a>
+         <a href="<?= $base_url; ?>/admin/admin_accounts.php"><i class="fas fa-user-shield"></i> Admin</a>
+         <a href="<?= $base_url; ?>/admin/users_accounts.php"><i class="fas fa-users"></i> Pengguna</a>
       </nav>
 
       <!-- RIGHT SECTION -->
       <div class="admin-header-right">
 
          <!-- Chat -->
-         <a href="/ecommerce/admin/chat_list.php" class="chat-icon-wrap" title="Chat Pengguna">
+         <a href="<?= $base_url; ?>/admin/chat_list.php" class="chat-icon-wrap" title="Chat Pengguna">
             <i class="fas fa-comment-dots"></i>
             <?php if($total_unread > 0): ?>
                <span class="chat-badge"><?= $total_unread; ?></span>
@@ -407,19 +411,19 @@ $admin_initial = $fetch_profile ? strtoupper(mb_substr($fetch_profile['name'], 0
 
                <div class="dropdown-divider"></div>
 
-               <a href="/ecommerce/admin/dashboard.php" class="dropdown-item">
+               <a href="<?= $base_url; ?>/admin/dashboard.php" class="dropdown-item">
                   <i class="fas fa-home"></i> Dashboard
                </a>
-               <a href="/ecommerce/admin/update_profile.php" class="dropdown-item">
+               <a href="<?= $base_url; ?>/admin/update_profile.php" class="dropdown-item">
                   <i class="fas fa-user-edit"></i> Update Profil
                </a>
-               <a href="/ecommerce/admin/register_admin.php" class="dropdown-item">
+               <a href="<?= $base_url; ?>/admin/register_admin.php" class="dropdown-item">
                   <i class="fas fa-user-plus"></i> Register Admin Baru
                </a>
 
                <div class="dropdown-divider"></div>
 
-               <a href="/ecommerce/components/admin_logout.php"
+               <a href="<?= $base_url; ?>/components/admin_logout.php"
                   onclick="return confirm('Logout dari akun admin ini?');"
                   class="dropdown-item danger">
                   <i class="fas fa-sign-out-alt"></i> Logout
@@ -441,12 +445,12 @@ $admin_initial = $fetch_profile ? strtoupper(mb_substr($fetch_profile['name'], 0
 
 <!-- MOBILE NAV -->
 <nav class="admin-mobile-nav" id="mobile-nav">
-   <a href="/ecommerce/admin/dashboard.php"><i class="fas fa-home"></i> Beranda</a>
-   <a href="/ecommerce/admin/products.php"><i class="fas fa-box-open"></i> Produk</a>
-   <a href="/ecommerce/admin/placed_orders.php"><i class="fas fa-clipboard-list"></i> Pesanan</a>
-   <a href="/ecommerce/admin/admin_accounts.php"><i class="fas fa-user-shield"></i> Admin</a>
-   <a href="/ecommerce/admin/users_accounts.php"><i class="fas fa-users"></i> Pengguna</a>
-   <a href="/ecommerce/admin/chat_list.php"><i class="fas fa-comment-dots"></i> Chat Pengguna</a>
+   <a href="<?= $base_url; ?>/admin/dashboard.php"><i class="fas fa-home"></i> Beranda</a>
+   <a href="<?= $base_url; ?>/admin/products.php"><i class="fas fa-box-open"></i> Produk</a>
+   <a href="<?= $base_url; ?>/admin/placed_orders.php"><i class="fas fa-clipboard-list"></i> Pesanan</a>
+   <a href="<?= $base_url; ?>/admin/admin_accounts.php"><i class="fas fa-user-shield"></i> Admin</a>
+   <a href="<?= $base_url; ?>/admin/users_accounts.php"><i class="fas fa-users"></i> Pengguna</a>
+   <a href="<?= $base_url; ?>/admin/chat_list.php"><i class="fas fa-comment-dots"></i> Chat Pengguna</a>
 </nav>
 
 <script>
