@@ -67,7 +67,7 @@ $header_initial = strtoupper(mb_substr($header_profile_name, 0, 1, 'UTF-8'));
 $header_initial = htmlspecialchars($header_initial, ENT_QUOTES, 'UTF-8');
 
 $current_page = basename($_SERVER['PHP_SELF']);
-$is_home      = ($current_page === 'home.php');
+$is_home      = ($current_page === 'index.php');
 $gc_class     = $is_home ? 'gc-home' : 'gc-other';
 $script_dir   = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? ''));
 $base_url     = ($script_dir === '/' || $script_dir === '.' || $script_dir === '\\') ? '' : rtrim($script_dir, '/');
@@ -703,7 +703,7 @@ body { padding-top: 72px !important; }
 
       <!-- ── LEFT: NAV ── -->
       <nav class="gc-nav" aria-label="Navigasi Utama">
-         <a href="<?= $base_url; ?>/home.php"   class="<?= $current_page==='home.php'   ? 'gc-active':''; ?>">Beranda</a>
+         <a href="<?= $base_url; ?>/index.php"   class="<?= $current_page==='index.php'   ? 'gc-active':''; ?>">Beranda</a>
 
          <div class="gc-nav-item">
             <a href="<?= $base_url; ?>/shop.php" class="<?= $current_page==='shop.php' ? 'gc-active':''; ?>">
@@ -739,7 +739,7 @@ body { padding-top: 72px !important; }
       </nav>
 
       <!-- ── CENTER: LOGO ── -->
-      <a href="<?= $base_url; ?>/home.php" class="gc-logo" aria-label="Gals Collection">
+      <a href="<?= $base_url; ?>/index.php" class="gc-logo" aria-label="Gals Collection">
          <img src="images/LogoGals/LogoGalsTerbaru.png" alt="Gals Collection" class="gc-logo__img">
          <span class="gc-logo__sub">Est. 2020 · Pekanbaru</span>
       </a>
@@ -830,12 +830,12 @@ body { padding-top: 72px !important; }
    <div class="gc-drawer__overlay" onclick="gcCloseDrawer()"></div>
    <div class="gc-drawer__panel">
 
-      <a href="<?= $base_url; ?>/home.php" class="gc-drawer-logo">
+      <a href="<?= $base_url; ?>/index.php" class="gc-drawer-logo">
          <img src="images/LogoGals/LogoGalsTerbaru.png" alt="Gals Collection">
       </a>
 
       <nav class="gc-drawer-nav">
-         <a href="<?= $base_url; ?>/home.php"   class="<?= $current_page==='home.php'   ? 'gc-active':''; ?>"><span>Beranda</span><i class="fas fa-chevron-right" style="font-size:1rem;opacity:.35"></i></a>
+         <a href="<?= $base_url; ?>/index.php"   class="<?= $current_page==='index.php'   ? 'gc-active':''; ?>"><span>Beranda</span><i class="fas fa-chevron-right" style="font-size:1rem;opacity:.35"></i></a>
          <a href="<?= $base_url; ?>/shop.php"   class="<?= $current_page==='shop.php'   ? 'gc-active':''; ?>"><span>Toko</span><i class="fas fa-chevron-right" style="font-size:1rem;opacity:.35"></i></a>
          <a href="<?= $base_url; ?>/orders.php" class="<?= in_array($current_page,['orders.php','order_detail.php']) ? 'gc-active':''; ?>"><span>Pesanan Saya</span><i class="fas fa-chevron-right" style="font-size:1rem;opacity:.35"></i></a>
          <a href="<?= $base_url; ?>/about.php"  class="<?= $current_page==='about.php'  ? 'gc-active':''; ?>"><span>Tentang Kami</span><i class="fas fa-chevron-right" style="font-size:1rem;opacity:.35"></i></a>

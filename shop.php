@@ -198,7 +198,7 @@ $CAT_COLORS = [
 <div class="shop-page-wrap">
 
    <div class="shop-breadcrumb">
-      <a href="home.php">Beranda</a><span>/</span><span>Toko</span>
+      <a href="index.php">Beranda</a><span>/</span><span>Toko</span>
    </div>
 
    <h1 class="shop-title">Semua Produk</h1>

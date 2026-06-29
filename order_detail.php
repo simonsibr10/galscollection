@@ -180,7 +180,7 @@ if($current_step === false) $current_step = 0;
 
    <!-- Breadcrumb -->
    <nav class="detail-bc">
-      <a href="home.php">Beranda</a>
+      <a href="index.php">Beranda</a>
       <i class="fas fa-chevron-right"></i>
       <a href="orders.php">Pesanan Saya</a>
       <i class="fas fa-chevron-right"></i>

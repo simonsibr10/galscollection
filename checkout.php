@@ -484,7 +484,7 @@ foreach($cart_items as $ci) $grand_total += ($ci['price'] * $ci['quantity']);
 
    <!-- Breadcrumb -->
    <nav class="checkout-bc">
-      <a href="home.php">Beranda</a>
+      <a href="index.php">Beranda</a>
       <i class="fas fa-chevron-right"></i>
       <a href="cart.php">Keranjang</a>
       <i class="fas fa-chevron-right"></i>

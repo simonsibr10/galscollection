@@ -5,7 +5,7 @@ include 'components/crypto.php';
 session_start();
 
 if(isset($_SESSION['user_id'])){
-   header('location:home.php');
+   header('location:index.php');
    exit;
 }
 

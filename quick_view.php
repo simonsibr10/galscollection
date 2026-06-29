@@ -529,7 +529,7 @@ include 'components/wishlist_cart.php';
 
    <!-- Breadcrumb -->
    <nav class="qv-breadcrumb">
-      <a href="home.php">Beranda</a>
+      <a href="index.php">Beranda</a>
       <i class="fas fa-chevron-right"></i>
       <a href="shop.php">Toko</a>
       <?php if($cat): ?>
