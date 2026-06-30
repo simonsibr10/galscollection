@@ -6287,7 +6287,9 @@ body.php-admin-placed-orders .orders-summary-strip{grid-template-columns: repeat
 /* ===== moved from admin/products.php | scope: body.php-admin-products ===== */
 body.php-admin-products *,
 body.php-admin-products *::before,
-body.php-admin-products *::after{box-sizing:border-box;margin:0;padding:0}
+body.php-admin-products *::after{
+   box-sizing: border-box;
+}
 
 body.php-admin-products{background:#f0f2f8!important;font-family:'Segoe UI',sans-serif!important}
 
