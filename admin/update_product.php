@@ -154,154 +154,10 @@ $has_variations = count($variations) > 0;
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Update Produk</title>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+   <link rel="stylesheet" href="../css/style.css">
    <link rel="stylesheet" href="../css/admin_style.css">
-   <style>
-      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-      body{background:#f0f2f8!important;font-family:'Segoe UI',sans-serif!important}
-      section,.update-product,.dashboard{background:transparent!important}
-      .header{background:#fff!important}.footer{background:#fff!important}
-
-      .update-page{max-width:1200px;margin:0 auto;padding:2.4rem 2.8rem 5rem}
-
-      /* Page header */
-      .page-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2.4rem;animation:fadeSlideDown .45s ease both}
-      .page-header h1{font-size:2.6rem;font-weight:800;color:#0f172a;letter-spacing:-.5px}
-      .page-header h1 span{background:linear-gradient(135deg,#1a2a6c,#4f6ef7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-
-      .btn-back{display:inline-flex;align-items:center;gap:.7rem;padding:.9rem 1.8rem;background:#fff;border:1.5px solid #e2e8f0;border-radius:.8rem;font-size:1.35rem;font-weight:600;color:#475569;text-decoration:none;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.05)}
-      .btn-back:hover{background:#f8fafc;color:#1a2a6c;border-color:#c7d2fe;transform:translateY(-1px)}
-
-      /* Alert */
-      .alert-bar{padding:1.2rem 1.6rem;border-radius:.9rem;font-size:1.35rem;display:flex;align-items:center;gap:.8rem;margin-bottom:2rem;animation:fadeSlideDown .35s ease both}
-      .alert-bar.success{background:#ecfdf5;border-left:4px solid #059669;color:#065f46}
-      .alert-bar.warning{background:#fffbeb;border-left:4px solid #f59e0b;color:#78350f}
-      .alert-bar.error{background:#fff1f2;border-left:4px solid #e11d48;color:#be123c}
-
-      /* Main grid */
-      .update-grid{display:grid;grid-template-columns:34rem 1fr;gap:2rem;align-items:start}
-
-      /* Image panel */
-      .image-panel{background:#fff;border-radius:1.4rem;padding:2rem;box-shadow:0 2px 12px rgba(0,0,0,.05);animation:fadeSlideUp .5s ease both;position:sticky;top:8rem}
-      .panel-title{font-size:1.4rem;font-weight:700;color:#0f172a;margin-bottom:1.6rem;display:flex;align-items:center;gap:.7rem;padding-bottom:1.2rem;border-bottom:1px solid #f1f5f9}
-      .panel-title i{color:#4f6ef7}
-
-      .img-preview-main{width:100%;aspect-ratio:1/1;border-radius:1rem;overflow:hidden;background:#f8fafc;border:2px solid #f1f5f9;margin-bottom:1.2rem;position:relative;cursor:pointer;transition:border-color .2s}
-      .img-preview-main:hover{border-color:#c7d2fe}
-      .img-preview-main img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
-      .img-preview-main:hover img{transform:scale(1.04)}
-      .img-preview-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.5),transparent);color:#fff;font-size:1.2rem;font-weight:600;padding:1.2rem 1rem .8rem;text-align:center}
-
-      .img-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
-      .img-thumb{aspect-ratio:1/1;border-radius:.8rem;overflow:hidden;background:#f8fafc;border:2px solid #f1f5f9;cursor:pointer;transition:border-color .2s,transform .2s;position:relative}
-      .img-thumb.active{border-color:#4f6ef7}
-      .img-thumb:hover{border-color:#c7d2fe;transform:translateY(-2px)}
-      .img-thumb img{width:100%;height:100%;object-fit:cover;display:block}
-      .img-thumb-badge{position:absolute;bottom:.3rem;right:.3rem;background:rgba(0,0,0,.55);color:#fff;font-size:1rem;font-weight:700;padding:.15rem .5rem;border-radius:.4rem}
-
-      .product-quick-info{margin-top:1.6rem;padding-top:1.6rem;border-top:1px solid #f1f5f9}
-      .qi-row{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0;border-bottom:1px solid #f8fafc;font-size:1.3rem}
-      .qi-row:last-child{border-bottom:none}
-      .qi-key{color:#64748b;font-weight:500}
-      .qi-val{color:#0f172a;font-weight:700}
-      .qi-price{color:#e11d48;font-size:1.5rem}
-
-      /* Form panel */
-      .form-panel{background:#fff;border-radius:1.4rem;padding:2.4rem;box-shadow:0 2px 12px rgba(0,0,0,.05);animation:fadeSlideUp .5s .06s ease both}
-
-      .form-section{margin-bottom:2.8rem}
-      .form-section-title{font-size:1.35rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:1.6rem;display:flex;align-items:center;gap:.7rem}
-      .form-section-title::after{content:'';flex:1;height:1px;background:#f1f5f9}
-
-      .form-field{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.6rem}
-      .form-field:last-child{margin-bottom:0}
-      .form-field label{font-size:1.3rem;font-weight:700;color:#475569;display:flex;align-items:center;gap:.5rem}
-      .form-field label i{color:#94a3b8;font-size:1.2rem}
-
-      .input-wrap{position:relative}
-      .input-wrap i.fi{position:absolute;left:1.4rem;top:50%;transform:translateY(-50%);color:#94a3b8;font-size:1.4rem;pointer-events:none;transition:color .2s}
-      .input-wrap:focus-within i.fi{color:#4f6ef7}
-
-      .form-input{width:100%;padding:1.2rem 1.4rem 1.2rem 4rem;border:1.5px solid #e2e8f0;border-radius:.9rem;font-size:1.4rem;color:#0f172a;background:#f8fafc;outline:none;font-family:inherit;transition:border-color .2s,box-shadow .2s,background .2s}
-      .form-input:focus{border-color:#4f6ef7;background:#fff;box-shadow:0 0 0 3px rgba(79,110,247,.12)}
-      .form-input::placeholder{color:#94a3b8}
-      textarea.form-input{resize:vertical;min-height:14rem;padding-top:1.2rem;line-height:1.6}
-
-      /* Category select */
-      .cat-select-wrap{position:relative}
-      .cat-select-wrap::after{content:'\f078';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;right:1.4rem;top:50%;transform:translateY(-50%);color:#94a3b8;font-size:1.2rem;pointer-events:none}
-      .form-select{width:100%;padding:1.2rem 4rem 1.2rem 1.4rem;border:1.5px solid #e2e8f0;border-radius:.9rem;font-size:1.4rem;color:#0f172a;background:#f8fafc;outline:none;font-family:inherit;appearance:none;cursor:pointer;transition:border-color .2s,box-shadow .2s,background .2s}
-      .form-select:focus{border-color:#4f6ef7;background:#fff;box-shadow:0 0 0 3px rgba(79,110,247,.12)}
-
-      /* Category pill preview */
-      .cat-pill-preview{display:inline-flex;align-items:center;gap:.5rem;margin-top:.6rem;padding:.5rem 1.2rem;border-radius:2rem;font-size:1.25rem;font-weight:700;width:fit-content;transition:background .25s,color .25s}
-
-      /* Image upload grid */
-      .img-upload-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-      .img-upload-field{display:flex;flex-direction:column;gap:.6rem}
-      .img-upload-field label{font-size:1.25rem;font-weight:700;color:#475569;display:flex;align-items:center;gap:.4rem}
-
-      .img-drop-area{border:2px dashed #c7d2fe;border-radius:.9rem;padding:1.6rem 1rem;text-align:center;cursor:pointer;background:#f8fafc;position:relative;transition:border-color .2s,background .2s;aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;overflow:hidden}
-      .img-drop-area input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-      .img-drop-area:hover{border-color:#4f6ef7;background:#eff2ff}
-      .img-drop-area i{font-size:2.2rem;color:#94a3b8;pointer-events:none}
-      .img-drop-area span{font-size:1.2rem;color:#64748b;pointer-events:none;line-height:1.4}
-      .img-drop-area .fn{font-size:1.1rem;color:#4f6ef7;font-weight:600;margin-top:.2rem}
-      .drop-current-img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;border-radius:.7rem;pointer-events:none;z-index:0}
-      .drop-area-content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:.4rem}
-      .preview-overlay{position:absolute;inset:0;background:#000;opacity:0;transition:opacity .2s;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:#fff;font-weight:700;pointer-events:none}
-      .img-drop-area:hover .preview-overlay{opacity:.35}
-
-      /* ── VARIATION SECTION ── */
-      .variation-section{margin-bottom:2.8rem}
-
-      .variation-card{background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:1.2rem;padding:1.8rem;margin-bottom:1.4rem}
-      .variation-card-title{font-size:1.5rem;font-weight:700;color:#1a2a6c;margin-bottom:1.4rem;display:flex;align-items:center;gap:.7rem}
-      .variation-card-title i{color:#4f6ef7}
-
-      /* Options grid per variation */
-      .variation-options-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(16rem,1fr));gap:1.2rem}
-
-      .variation-opt-item{background:#fff;border:1.5px solid #e2e8f0;border-radius:1rem;padding:1.2rem;display:flex;flex-direction:column;gap:.8rem;transition:border-color .2s,box-shadow .2s}
-      .variation-opt-item:hover{border-color:#c7d2fe;box-shadow:0 4px 12px rgba(0,0,0,.06)}
-
-      .opt-name{font-size:1.3rem;font-weight:700;color:#0f172a;text-align:center;padding:.4rem .8rem;background:#eff2ff;border-radius:.6rem;color:#1a2a6c}
-
-      /* Current option image */
-      .opt-current-img{width:100%;aspect-ratio:1/1;border-radius:.8rem;overflow:hidden;background:#f1f5f9;margin-bottom:.4rem;position:relative}
-      .opt-current-img img{width:100%;height:100%;object-fit:cover;display:block}
-      .opt-no-img{width:100%;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;background:#f1f5f9;border-radius:.8rem;color:#cbd5e1;font-size:2rem;margin-bottom:.4rem}
-
-      /* Mini drop area for variation option image */
-      .mini-drop-area{border:2px dashed #c7d2fe;border-radius:.8rem;padding:1.1rem .8rem;text-align:center;cursor:pointer;background:#f8fafc;position:relative;transition:border-color .2s,background .2s;display:flex;flex-direction:column;align-items:center;gap:.4rem;overflow:hidden}
-      .mini-drop-area input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-      .mini-drop-area:hover{border-color:#4f6ef7;background:#eff2ff}
-      .mini-drop-area i{font-size:1.6rem;color:#94a3b8;pointer-events:none}
-      .mini-drop-area span{font-size:1.1rem;color:#64748b;pointer-events:none}
-      .mini-drop-area .mfn{font-size:1.1rem;color:#4f6ef7;font-weight:600}
-      .mini-preview-img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;pointer-events:none;z-index:0}
-      .mini-drop-content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:.3rem}
-
-      .no-var-note{padding:1.4rem 1.6rem;background:#fffbeb;border-left:3px solid #f59e0b;border-radius:.8rem;font-size:1.35rem;color:#78350f;display:flex;align-items:center;gap:.7rem}
-
-      /* Tips box */
-      .tips-box{background:#fffbeb;border:1px solid #fde68a;border-radius:.9rem;padding:1.2rem 1.4rem;font-size:1.3rem;color:#78350f;display:flex;align-items:flex-start;gap:.7rem;margin-top:1.2rem;line-height:1.6}
-
-      /* Submit row */
-      .form-submit-row{display:flex;gap:1.2rem;margin-top:2.8rem;padding-top:2rem;border-top:1px solid #f1f5f9;flex-wrap:wrap}
-      .btn-submit{flex:1;padding:1.4rem;background:linear-gradient(135deg,#1a2a6c,#4f6ef7);color:#fff;border:none;border-radius:.9rem;font-size:1.5rem;font-weight:700;cursor:pointer;transition:transform .15s,box-shadow .2s;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:.7rem}
-      .btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(79,110,247,.35)}
-      .btn-submit:active{transform:scale(.97)}
-      .btn-cancel{padding:1.4rem 2.4rem;background:#f8fafc;color:#475569;border:1.5px solid #e2e8f0;border-radius:.9rem;font-size:1.45rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.6rem;font-family:inherit;transition:background .15s,border-color .15s}
-      .btn-cancel:hover{background:#fff1f2;border-color:#fca5a5;color:#be123c}
-
-      @keyframes fadeSlideDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
-      @keyframes fadeSlideUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-
-      @media(max-width:1000px){.update-page{padding:1.6rem}.update-grid{grid-template-columns:1fr}.image-panel{position:static}.img-upload-grid{grid-template-columns:1fr 1fr 1fr}}
-      @media(max-width:600px){.img-upload-grid{grid-template-columns:1fr}.form-submit-row{flex-direction:column}.variation-options-grid{grid-template-columns:1fr 1fr}}
-   </style>
 </head>
-<body>
+<body class="php-admin-update-product">
 
 <?php include '../components/admin_header.php'; ?>
 
@@ -347,9 +203,9 @@ $has_variations = count($variations) > 0;
             <?php if(!empty($fetch_products['category'])): ?>
             <div class="qi-row"><span class="qi-key"><i class="fas fa-folder"></i> Kategori</span><span class="qi-val"><?= htmlspecialchars($fetch_products['category']); ?></span></div>
             <?php endif; ?>
-            <div class="qi-row" style="align-items:flex-start;padding-top:1rem;">
+            <div class="qi-row u-inline-style-043">
                <span class="qi-key"><i class="fas fa-box"></i> Nama</span>
-               <span class="qi-val" style="text-align:right;max-width:15rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><?= htmlspecialchars($fetch_products['name']); ?></span>
+               <span class="qi-val u-inline-style-044"><?= htmlspecialchars($fetch_products['name']); ?></span>
             </div>
          </div>
       </div>
@@ -364,10 +220,10 @@ $has_variations = count($variations) > 0;
 
             <!-- ─── INFO PRODUK ─── -->
             <div class="form-section">
-               <div class="form-section-title"><i class="fas fa-info-circle" style="color:#4f6ef7"></i> Informasi Produk</div>
+               <div class="form-section-title"><i class="fas fa-info-circle u-inline-style-012"></i> Informasi Produk</div>
 
                <div class="form-field">
-                  <label><i class="fas fa-pen"></i> Nama Produk <span style="color:#e11d48">*</span></label>
+                  <label><i class="fas fa-pen"></i> Nama Produk <span class="u-inline-style-042">*</span></label>
                   <div class="input-wrap">
                      <input type="text" name="name" class="form-input" required maxlength="100"
                         value="<?= htmlspecialchars($fetch_products['name']); ?>" placeholder="Nama produk">
@@ -376,19 +232,19 @@ $has_variations = count($variations) > 0;
                </div>
 
                <div class="form-field">
-                  <label><i class="fas fa-tag"></i> Harga Produk (Rp) <span style="color:#e11d48">*</span></label>
+                  <label><i class="fas fa-tag"></i> Harga Produk (Rp) <span class="u-inline-style-042">*</span></label>
                   <div class="input-wrap">
                      <input type="number" name="price" class="form-input" required min="0" max="9999999999"
                         value="<?= htmlspecialchars($fetch_products['price']); ?>"
                         oninput="updatePricePreview(this.value)">
                      <i class="fas fa-tag fi"></i>
                   </div>
-                  <div id="price-preview" style="font-size:1.3rem;color:#059669;font-weight:700;margin-top:.4rem;"></div>
+                  <div class="u-inline-style-045" id="price-preview"></div>
                </div>
 
                <!-- ─── KATEGORI ─── -->
                <div class="form-field">
-                  <label><i class="fas fa-folder"></i> Kategori Produk <span style="color:#e11d48">*</span></label>
+                  <label><i class="fas fa-folder"></i> Kategori Produk <span class="u-inline-style-042">*</span></label>
                   <div class="cat-select-wrap">
                      <select name="category" class="form-select" required id="cat-select" onchange="updateCatPill(this.value)">
                         <?php foreach($CATEGORIES as $cat): ?>
@@ -397,30 +253,27 @@ $has_variations = count($variations) > 0;
                      </select>
                   </div>
                   <?php
-                  $CAT_COLORS = ['Totebag'=>'#4f6ef7','Slingbag'=>'#059669','Dompet'=>'#f59e0b','Heels'=>'#e11d48','Flat Shoes'=>'#0891b2','Top Handle'=>'#7c3aed','Clutch'=>'#ea580c','Ransel'=>'#65a30d','Waistbag'=>'#db2777'];
                   $cur_cat = $fetch_products['category'] ?? $CATEGORIES[0];
-                  $cur_col = $CAT_COLORS[$cur_cat] ?? '#4f6ef7';
                   ?>
-                  <div class="cat-pill-preview" id="cat-pill" style="background:<?= $cur_col; ?>22;color:<?= $cur_col; ?>">
+                  <div class="cat-pill-preview <?= category_theme_class($cur_cat); ?>" id="cat-pill">
                      <i class="fas fa-tag"></i>
                      <span id="cat-pill-text"><?= htmlspecialchars($cur_cat); ?></span>
                   </div>
                </div>
 
                <div class="form-field">
-                  <label><i class="fas fa-align-left"></i> Detail Produk <span style="color:#e11d48">*</span></label>
+                  <label><i class="fas fa-align-left"></i> Detail Produk <span class="u-inline-style-042">*</span></label>
                   <div class="input-wrap">
-                     <textarea name="details" class="form-input" required maxlength="500"
-                        id="details-input" oninput="updateCharCount()"
-                        style="padding-left:1.4rem;"><?= htmlspecialchars($fetch_products['details']); ?></textarea>
+                     <textarea name="details" class="form-input textarea-padded-left" required maxlength="500"
+                        id="details-input" oninput="updateCharCount()"><?= htmlspecialchars($fetch_products['details']); ?></textarea>
                   </div>
-                  <div style="font-size:1.2rem;color:#94a3b8;text-align:right;"><span id="char-count">0</span>/500 karakter</div>
+                  <div class="u-inline-style-046"><span id="char-count">0</span>/500 karakter</div>
                </div>
             </div>
 
             <!-- ─── UPDATE GAMBAR PRODUK ─── -->
             <div class="form-section">
-               <div class="form-section-title"><i class="fas fa-images" style="color:#4f6ef7"></i> Update Gambar Produk</div>
+               <div class="form-section-title"><i class="fas fa-images u-inline-style-012"></i> Update Gambar Produk</div>
 
                <div class="img-upload-grid">
                   <?php
@@ -457,7 +310,7 @@ $has_variations = count($variations) > 0;
 
             <!-- ─── UPDATE GAMBAR VARIASI ─── -->
             <div class="form-section">
-               <div class="form-section-title"><i class="fas fa-tags" style="color:#4f6ef7"></i> Update Gambar Variasi</div>
+               <div class="form-section-title"><i class="fas fa-tags u-inline-style-012"></i> Update Gambar Variasi</div>
 
                <?php if($has_variations): ?>
                   <?php foreach($variations as $v): ?>
@@ -535,15 +388,19 @@ $has_variations = count($variations) > 0;
 <script src="../js/admin_script.js"></script>
 <script>
    /* Category pill */
-   const CAT_COLORS = <?= json_encode($CAT_COLORS); ?>;
-
    function updateCatPill(val){
       const pill = document.getElementById('cat-pill');
       const txt  = document.getElementById('cat-pill-text');
-      const col  = CAT_COLORS[val] || '#4f6ef7';
       txt.textContent = val;
-      pill.style.background = col+'22';
-      pill.style.color = col;
+      pill.className = `cat-pill-preview ${categoryClass(val)}`;
+   }
+
+   function categoryClass(cat){
+      const slug = String(cat || 'default')
+         .toLowerCase()
+         .replace(/[^a-z0-9]+/g, '-')
+         .replace(/^-|-$/g, '') || 'default';
+      return `category-theme category-theme-${slug}`;
    }
 
    /* Switch main preview */
@@ -594,14 +451,14 @@ $has_variations = count($variations) > 0;
          if(cur){
             cur.src = e.target.result;
          } else {
-            // Replace no-img div with img
             const wrap = document.getElementById('optimg-wrap-'+optId);
             if(wrap){
+               wrap.className = 'opt-current-img';
+               wrap.innerHTML = '';
                const img = document.createElement('img');
                img.src = e.target.result;
-               img.style.cssText='width:100%;height:100%;object-fit:cover;border-radius:.8rem;';
                img.id = 'optimg-'+optId;
-               wrap.replaceWith(img);
+               wrap.appendChild(img);
             }
          }
       };
@@ -628,15 +485,14 @@ $has_variations = count($variations) > 0;
       if(!ta||!cnt) return;
       const len = ta.value.length;
       cnt.textContent = len;
-      cnt.style.color = len>450?'#e11d48':'#94a3b8';
+      cnt.classList.toggle('status-danger', len>450);
    }
 
    /* Auto-dismiss alert */
    const alertBar = document.querySelector('.alert-bar');
    if(alertBar){
       setTimeout(()=>{
-         alertBar.style.transition='opacity .4s';
-         alertBar.style.opacity='0';
+         alertBar.classList.add('is-fading');
          setTimeout(()=>alertBar.remove(),450);
       },5000);
    }

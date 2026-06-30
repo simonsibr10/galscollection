@@ -47,258 +47,8 @@ if($search_query !== ''){
    <title><?= $search_query ? 'Hasil "'.htmlspecialchars($search_query).'"' : 'Pencarian'; ?> — Gals Collection</title>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
    <link rel="stylesheet" href="css/style.css">
-   <style>
-      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-      body { background: #f8f9fc; font-family: 'Segoe UI', sans-serif; }
-
-      /* ===== PAGE ===== */
-      .sp-page { max-width: 1200px; margin: 0 auto; padding: 3rem 2.4rem 6rem; }
-
-      /* Breadcrumb */
-      .sp-bc {
-         font-size: 1.4rem; color: #94a3b8;
-         margin-bottom: 2rem; display: flex; align-items: center; gap: .6rem; flex-wrap: wrap;
-         animation: fadeUp .4s ease both;
-      }
-      .sp-bc a { color: #94a3b8; text-decoration: none; transition: color .15s; }
-      .sp-bc a:hover { color: #1a2a6c; }
-      .sp-bc i { font-size: 1.1rem; color: #cbd5e1; }
-
-      /* ===== SEARCH BAR ===== */
-      .sp-search-section {
-         margin-bottom: 3.2rem;
-         animation: fadeUp .45s ease both;
-      }
-
-      .sp-search-title {
-         font-size: 2.6rem; font-weight: 800; color: #1e293b;
-         margin-bottom: .6rem; letter-spacing: -.4px;
-      }
-
-      .sp-search-title span {
-         background: linear-gradient(135deg,#1a2a6c,#4f6ef7);
-         -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      }
-
-      .sp-search-sub { font-size: 1.4rem; color: #64748b; margin-bottom: 2rem; }
-
-      .sp-search-form {
-         display: flex; align-items: center; gap: 0;
-         background: #fff; border-radius: 1rem;
-         box-shadow: 0 4px 20px rgba(0,0,0,.08);
-         overflow: hidden;
-         max-width: 68rem;
-      }
-
-      .sp-search-form i {
-         padding: 0 1.6rem; font-size: 1.6rem; color: #94a3b8;
-         flex-shrink: 0;
-      }
-
-      .sp-search-input {
-         flex: 1; padding: 1.6rem 0; border: none; outline: none;
-         font-size: 1.55rem; color: #0f172a; background: transparent;
-         font-family: inherit;
-      }
-      .sp-search-input::placeholder { color: #94a3b8; }
-
-      .sp-search-btn {
-         padding: 1.4rem 2.8rem;
-         background: linear-gradient(135deg, #1a2a6c, #4f6ef7);
-         color: #fff; border: none; font-size: 1.5rem; font-weight: 700;
-         cursor: pointer; font-family: inherit;
-         transition: opacity .18s, transform .15s;
-         display: flex; align-items: center; gap: .7rem; white-space: nowrap;
-         flex-shrink: 0;
-      }
-      .sp-search-btn:hover { opacity: .88; }
-
-      /* ===== RESULT INFO BAR ===== */
-      .sp-result-bar {
-         display: flex; align-items: center; justify-content: space-between;
-         flex-wrap: wrap; gap: 1rem;
-         margin-bottom: 2rem;
-         animation: fadeUp .5s ease both;
-      }
-
-      .sp-result-count { font-size: 1.4rem; color: #475569; }
-      .sp-result-count strong { color: #0f172a; }
-      .sp-result-count .qhighlight {
-         display: inline-flex; align-items: center;
-         background: linear-gradient(135deg,#1a2a6c,#4f6ef7);
-         color: #fff; padding: .3rem 1rem; border-radius: 2rem;
-         font-size: 1.3rem; font-weight: 700; margin-left: .4rem;
-      }
-
-      .sp-sort-select {
-         padding: .8rem 1.4rem; border: 1.5px solid #e2e8f0; border-radius: .8rem;
-         font-size: 1.3rem; color: #0f172a; background: #fff; outline: none;
-         font-family: inherit; cursor: pointer;
-      }
-
-      /* Fuzzy notice */
-      .sp-fuzzy-notice {
-         display: none;
-         padding: 1rem 1.4rem; background: #fffbeb; border-left: 3px solid #f59e0b;
-         border-radius: .8rem; font-size: 1.3rem; color: #78350f;
-         margin-bottom: 1.6rem; align-items: center; gap: .7rem;
-         animation: fadeUp .3s ease both;
-      }
-      .sp-fuzzy-notice.show { display: flex; }
-
-      /* ===== PRODUCT GRID ===== */
-      .sp-grid {
-         display: grid;
-         grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
-         gap: 2rem;
-      }
-
-      /* ─── Product card ─── */
-      .sp-card {
-         background: #fff; border-radius: 1.4rem;
-         overflow: hidden; position: relative;
-         box-shadow: 0 2px 12px rgba(0,0,0,.05);
-         transition: transform .25s, box-shadow .25s;
-         display: flex; flex-direction: column;
-         animation: fadeUp .5s ease both;
-      }
-      .sp-card:hover { transform: translateY(-6px); box-shadow: 0 14px 36px rgba(0,0,0,.11); }
-
-      .sp-card:nth-child(1){animation-delay:.05s} .sp-card:nth-child(2){animation-delay:.10s}
-      .sp-card:nth-child(3){animation-delay:.15s} .sp-card:nth-child(n+4){animation-delay:.20s}
-
-      .sp-card-img {
-         position: relative; aspect-ratio: 1/1;
-         overflow: hidden; background: #f2f1ed;
-      }
-      .sp-card-img img {
-         width: 100%; height: 100%; object-fit: cover; display: block;
-         transition: transform .5s cubic-bezier(.25,.46,.45,.94);
-      }
-      .sp-card:hover .sp-card-img img { transform: scale(1.07); }
-
-      /* Category ribbon */
-      .sp-cat-ribbon {
-         position: absolute; bottom: 1rem; left: 1rem;
-         padding: .35rem .9rem; border-radius: 2rem;
-         font-size: 1.15rem; font-weight: 700; color: #fff; z-index: 2;
-      }
-
-      /* Hover actions */
-      .sp-card-actions {
-         position: absolute; top: 1.2rem; right: 1.2rem;
-         display: flex; flex-direction: column; gap: .8rem;
-         opacity: 0; transform: translateX(1rem);
-         transition: opacity .22s, transform .22s; z-index: 3;
-      }
-      .sp-card:hover .sp-card-actions { opacity: 1; transform: translateX(0); }
-
-      .sp-act-btn {
-         width: 4rem; height: 4rem; border-radius: 50%;
-         background: #fff; border: none; color: #111; font-size: 1.5rem;
-         display: flex; align-items: center; justify-content: center;
-         box-shadow: 0 3px 10px rgba(0,0,0,.14);
-         cursor: pointer; transition: background .18s, color .18s;
-         text-decoration: none; font-family: inherit;
-      }
-      .sp-act-btn:hover { background: #111; color: #fff; }
-
-      /* Card body */
-      .sp-card-body {
-         padding: 1.6rem 1.8rem 1.8rem;
-         display: flex; flex-direction: column; gap: .8rem; flex: 1;
-      }
-
-      .sp-card-name {
-         font-size: 1.5rem; font-weight: 600; color: #111;
-         line-height: 1.4; text-decoration: none;
-         display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
-      }
-      .sp-card-name:hover { color: #1a2a6c; }
-
-      /* Highlight matched text */
-      .sp-card-name mark {
-         background: #fef08a; color: #0f172a; border-radius: .2rem; padding: 0 .1rem;
-      }
-
-      .sp-card-price { font-size: 1.8rem; font-weight: 800; color: #e11d48; }
-
-      .sp-card-footer {
-         display: flex; gap: .8rem; align-items: center; margin-top: auto;
-      }
-      .sp-qty {
-         width: 5.5rem; height: 4rem; border: 1.5px solid #e2e8f0; border-radius: .7rem;
-         text-align: center; font-size: 1.5rem; color: #111; font-family: inherit;
-         background: #f8fafc; flex-shrink: 0; outline: none;
-      }
-      .sp-qty:focus { border-color: #4f6ef7; }
-      .sp-cart-btn {
-         flex: 1; height: 4rem;
-         background: linear-gradient(135deg,#1a2a6c,#4f6ef7);
-         color: #fff; border: none; border-radius: .7rem;
-         font-size: 1.35rem; font-weight: 700; cursor: pointer;
-         font-family: inherit; text-transform: uppercase; letter-spacing: .04em;
-         transition: opacity .18s, transform .15s;
-      }
-      .sp-cart-btn:hover { opacity: .88; transform: scale(.98); }
-
-      /* ===== EMPTY STATE ===== */
-      .sp-empty {
-         grid-column: 1/-1; text-align: center;
-         padding: 6rem 2rem; background: #fff; border-radius: 1.4rem;
-         box-shadow: 0 2px 12px rgba(0,0,0,.04); color: #94a3b8;
-         animation: fadeUp .5s ease both;
-      }
-      .sp-empty i { font-size: 5.6rem; display: block; margin-bottom: 1.6rem; color: #cbd5e1; }
-      .sp-empty h3 { font-size: 2rem; font-weight: 700; color: #475569; margin-bottom: .8rem; }
-      .sp-empty p  { font-size: 1.4rem; margin-bottom: 2.4rem; line-height: 1.7; }
-      .sp-empty-tip {
-         font-size: 1.3rem; color: #94a3b8; display: flex; flex-wrap: wrap;
-         justify-content: center; gap: .6rem; margin-bottom: 2.4rem;
-      }
-      .sp-empty-tip-item {
-         background: #f1f5f9; border-radius: 2rem; padding: .4rem 1rem; cursor: pointer;
-         transition: background .15s, color .15s;
-      }
-      .sp-empty-tip-item:hover { background: #eff2ff; color: #1a2a6c; }
-
-      .btn-shop-all {
-         display: inline-flex; align-items: center; gap: .7rem;
-         padding: 1.2rem 2.8rem; background: linear-gradient(135deg,#1a2a6c,#4f6ef7);
-         color: #fff; border-radius: 1rem; font-size: 1.5rem; font-weight: 700;
-         text-decoration: none; transition: transform .15s, box-shadow .2s;
-      }
-      .btn-shop-all:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(79,110,247,.35); }
-
-      /* ===== INITIAL STATE (no query) ===== */
-      .sp-initial {
-         text-align: center; padding: 5rem 2rem;
-         animation: fadeUp .5s ease both;
-      }
-      .sp-initial i { font-size: 5rem; color: #cbd5e1; display: block; margin-bottom: 1.6rem; }
-      .sp-initial h3 { font-size: 2rem; font-weight: 700; color: #475569; margin-bottom: .8rem; }
-      .sp-initial p  { font-size: 1.4rem; color: #94a3b8; margin-bottom: 2.4rem; }
-
-      /* Category quick filter chips */
-      .sp-cat-chips {
-         display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center;
-         margin-bottom: .4rem;
-      }
-      .sp-cat-chip {
-         display: inline-flex; align-items: center; gap: .5rem;
-         padding: .6rem 1.4rem; border-radius: 3rem; font-size: 1.3rem; font-weight: 600;
-         cursor: pointer; text-decoration: none; transition: transform .15s, box-shadow .15s;
-         color: #fff;
-      }
-      .sp-cat-chip:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.15); }
-
-      @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
-
-      @media(max-width:900px){ .sp-grid{grid-template-columns:repeat(2,1fr)} }
-      @media(max-width:520px){ .sp-page{padding:2rem 1.4rem 4rem} .sp-grid{grid-template-columns:1fr} }
-   </style>
 </head>
-<body>
+<body class="php-search-page">
 
 <?php include 'components/user_header.php'; ?>
 
@@ -310,7 +60,7 @@ if($search_query !== ''){
       <i class="fas fa-chevron-right"></i>
       <a href="shop.php">Toko</a>
       <i class="fas fa-chevron-right"></i>
-      <span style="color:#475569;font-weight:600;">Pencarian</span>
+      <span class="u-inline-style-006">Pencarian</span>
    </nav>
 
    <!-- Search bar -->
@@ -351,18 +101,14 @@ if($search_query !== ''){
          <h3>Mau cari apa hari ini?</h3>
          <p>Ketik nama produk, kategori, atau kata kunci di kolom pencarian di atas.<br>Kami juga mengerti jika ada sedikit salah ketik 😉</p>
 
-         <p style="font-size:1.4rem;color:#475569;font-weight:600;margin-bottom:1.2rem;">Atau cari berdasarkan kategori:</p>
+         <p class="u-inline-style-026">Atau cari berdasarkan kategori:</p>
 
          <div class="sp-cat-chips">
             <?php
-            $CATS = [
-               'Totebag'=>'#4f6ef7','Slingbag'=>'#059669','Dompet'=>'#f59e0b',
-               'Heels'=>'#e11d48','Flat Shoes'=>'#0891b2','Top Handle'=>'#7c3aed',
-               'Clutch'=>'#ea580c','Ransel'=>'#65a30d','Waistbag'=>'#db2777',
-            ];
-            foreach($CATS as $cat => $col):
+            $CATS = ['Totebag','Slingbag','Dompet','Heels','Flat Shoes','Top Handle','Clutch','Ransel','Waistbag'];
+            foreach($CATS as $cat):
             ?>
-            <a href="search_page.php?search=<?= urlencode($cat); ?>" class="sp-cat-chip" style="background:<?= $col; ?>;">
+            <a href="search_page.php?search=<?= urlencode($cat); ?>" class="sp-cat-chip <?= category_theme_class($cat); ?>">
                <?= htmlspecialchars($cat); ?>
             </a>
             <?php endforeach; ?>
@@ -373,7 +119,7 @@ if($search_query !== ''){
 
    <!-- Fuzzy notice (shown by JS if needed) -->
    <div class="sp-fuzzy-notice" id="spFuzzyNotice">
-      <i class="fas fa-wand-magic-sparkles" style="color:#f59e0b;flex-shrink:0"></i>
+      <i class="fas fa-wand-magic-sparkles u-inline-style-027"></i>
       <span id="spFuzzyText">Menampilkan hasil terbaik yang cocok dengan pencarianmu.</span>
    </div>
 
@@ -426,11 +172,7 @@ const SP_EXACT = <?= json_encode(array_map(function($p){
 
 const SP_QUERY = <?= json_encode($search_query); ?>;
 
-const CAT_COLORS = {
-   'Totebag':'#4f6ef7','Slingbag':'#059669','Dompet':'#f59e0b',
-   'Heels':'#e11d48','Flat Shoes':'#0891b2','Top Handle':'#7c3aed',
-   'Clutch':'#ea580c','Ransel':'#65a30d','Waistbag':'#db2777',
-};
+const CAT_NAMES = ['Totebag','Slingbag','Dompet','Heels','Flat Shoes','Top Handle','Clutch','Ransel','Waistbag'];
 
 /* ════════════════════════════════════════════════
    JARO-WINKLER FUZZY MATCH
@@ -540,7 +282,7 @@ function spRender(){
             <h3>Produk tidak ditemukan</h3>
             <p>Kami tidak menemukan produk yang cocok dengan <strong>"${escHtml(SP_QUERY)}"</strong>.<br>Coba kata kunci lain atau pilih kategori berikut:</p>
             <div class="sp-empty-tip">
-               ${Object.keys(CAT_COLORS).map(c=>`<span class="sp-empty-tip-item" onclick="doSearch('${c}')">${escHtml(c)}</span>`).join('')}
+               ${CAT_NAMES.map(c=>`<span class="sp-empty-tip-item" onclick="doSearch('${c}')">${escHtml(c)}</span>`).join('')}
             </div>
             <a href="shop.php" class="btn-shop-all"><i class="fas fa-store"></i> Lihat Semua Produk</a>
          </div>`;
@@ -548,7 +290,6 @@ function spRender(){
    }
 
    grid.innerHTML = data.map(p => {
-      const col   = CAT_COLORS[p.category] || 'transparent';
       const price = Number(p.price).toLocaleString('id-ID');
       const hname = highlightText(p.name, SP_QUERY);
 
@@ -560,8 +301,8 @@ function spRender(){
          <input type="hidden" name="image" value="${escHtml(p.image)}">
 
          <div class="sp-card-img">
-            <img src="uploaded_img/${escHtml(p.image)}" alt="${escHtml(p.name)}" loading="lazy" onerror="this.style.opacity='.3'">
-            ${p.category ? `<div class="sp-cat-ribbon" style="background:${col};">${escHtml(p.category)}</div>` : ''}
+            <img src="uploaded_img/${escHtml(p.image)}" alt="${escHtml(p.name)}" loading="lazy" onerror="markImageError(this)">
+            ${p.category ? `<div class="sp-cat-ribbon ${categoryClass(p.category)}">${escHtml(p.category)}</div>` : ''}
             <div class="sp-card-actions">
                <button type="submit" name="add_to_wishlist" class="sp-act-btn" title="Wishlist"><i class="fas fa-heart"></i></button>
                <a href="quick_view.php?pid=${p.id}" class="sp-act-btn" title="Lihat Detail"><i class="fas fa-eye"></i></a>
@@ -622,6 +363,18 @@ function spRender(){
 
 function doSearch(q){
    window.location.href = 'search_page.php?search=' + encodeURIComponent(q);
+}
+
+function categoryClass(cat){
+   const slug = String(cat || 'default')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '') || 'default';
+   return `category-theme category-theme-${slug}`;
+}
+
+function markImageError(img){
+   img.classList.add('img-load-error');
 }
 
 function escHtml(str){
