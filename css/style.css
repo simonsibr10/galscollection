@@ -2222,7 +2222,9 @@ body.php-search-page .sp-grid{grid-template-columns:1fr}
 /* ===== moved from checkout.php | scope: body.php-checkout ===== */
 body.php-checkout *,
 body.php-checkout *::before,
-body.php-checkout *::after{box-sizing: border-box; margin: 0; padding: 0;}
+body.php-checkout *::after{
+   box-sizing: border-box;
+}
 
 body.php-checkout{background: #f8f9fc; font-family: 'Segoe UI', sans-serif;}
 
@@ -2509,8 +2511,9 @@ body.php-checkout .form-grid-2 .full{grid-column: 1;}
 /* ===== moved from quick_view.php | scope: body.php-quick-view ===== */
 body.php-quick-view *,
 body.php-quick-view *::before,
-body.php-quick-view *::after{box-sizing: border-box; margin: 0; padding: 0;}
-
+body.php-quick-view *::after{
+   box-sizing: border-box;
+}
 body.php-quick-view{background: #fafaf8;
          font-family: 'Segoe UI', sans-serif;}
 
@@ -4594,7 +4597,9 @@ body.php-about .about-split-stats{gap: 2.4rem; flex-wrap: wrap;}
 /* ===== moved from admin/admin_accounts.php | scope: body.php-admin-admin-accounts ===== */
 body.php-admin-admin-accounts *,
 body.php-admin-admin-accounts *::before,
-body.php-admin-admin-accounts *::after{box-sizing: border-box; margin: 0; padding: 0;}
+body.php-admin-admin-accounts *::after{
+   box-sizing: border-box;
+}
 
 body.php-admin-admin-accounts{background: #f0f2f8 !important; font-family: 'Segoe UI', sans-serif !important;}
 
@@ -4988,7 +4993,9 @@ body.php-order-detail .detail-banner{flex-direction:column;align-items:flex-star
 /* ===== moved from admin/chat.php | scope: body.php-admin-chat ===== */
 body.php-admin-chat *,
 body.php-admin-chat *::before,
-body.php-admin-chat *::after{box-sizing: border-box; margin: 0; padding: 0;}
+body.php-admin-chat *::after{
+   box-sizing: border-box;
+}
 
 body.php-admin-chat{background: #f0f2f8 !important; font-family: 'Segoe UI', sans-serif !important;}
 
@@ -5234,7 +5241,9 @@ body.php-admin-chat .chat-msgs{padding: 1.2rem;}
 /* ===== moved from admin/chat_list.php | scope: body.php-admin-chat-list ===== */
 body.php-admin-chat-list *,
 body.php-admin-chat-list *::before,
-body.php-admin-chat-list *::after{box-sizing: border-box; margin: 0; padding: 0;}
+body.php-admin-chat-list *::after{
+   box-sizing: border-box;
+}
 
 body.php-admin-chat-list{background: #f0f2f8 !important; font-family: 'Segoe UI', sans-serif !important;}
 
@@ -5393,7 +5402,9 @@ body.php-admin-chat-list .chat-card{padding:1.2rem 1.4rem; gap:1.2rem}
 /* ===== moved from admin/admin_login.php | scope: body.php-admin-admin-login ===== */
 body.php-admin-admin-login *,
 body.php-admin-admin-login *::before,
-body.php-admin-admin-login *::after{box-sizing: border-box; margin: 0; padding: 0;}
+body.php-admin-admin-login *::after{
+   box-sizing: border-box;
+}
 
 body.php-admin-admin-login{min-height: 100vh;
          background: #f0f2f8;
@@ -5967,7 +5978,9 @@ body.php-admin-dashboard .dashboard .box-container{border: none !important; box-
 /* ===== moved from admin/placed_orders.php | scope: body.php-admin-placed-orders ===== */
 body.php-admin-placed-orders *,
 body.php-admin-placed-orders *::before,
-body.php-admin-placed-orders *::after{box-sizing: border-box; margin: 0; padding: 0;}
+body.php-admin-placed-orders *::after{
+   box-sizing: border-box;
+}
 
 body.php-admin-placed-orders{background: #f0f2f8 !important; font-family: 'Segoe UI', sans-serif !important;}
 
@@ -6709,7 +6722,9 @@ body.php-admin-update-product .variation-options-grid{grid-template-columns:1fr 
 /* ===== moved from admin/users_accounts.php | scope: body.php-admin-users-accounts ===== */
 body.php-admin-users-accounts *,
 body.php-admin-users-accounts *::before,
-body.php-admin-users-accounts *::after{box-sizing: border-box; margin: 0; padding: 0;}
+body.php-admin-users-accounts *::after{
+   box-sizing: border-box;
+}
 
 body.php-admin-users-accounts{background: #f0f2f8 !important; font-family: 'Segoe UI', sans-serif !important;}
 
@@ -7094,7 +7109,9 @@ body.php-shop .shop-page-wrap{padding:0 1.6rem 4rem}
 /* ===== moved from admin/order_detail.php | scope: body.php-admin-order-detail ===== */
 body.php-admin-order-detail *,
 body.php-admin-order-detail *::before,
-body.php-admin-order-detail *::after{box-sizing: border-box; margin: 0; padding: 0;}
+body.php-admin-order-detail *::after{
+   box-sizing: border-box;
+}
 
 body.php-admin-order-detail{background: #f0f2f8 !important; font-family: 'Segoe UI', sans-serif !important;}
 
@@ -7503,7 +7520,9 @@ body.php-admin-order-detail .update-form-grid{grid-template-columns: 1fr;}
 /* ===== moved from admin/register_admin.php | scope: body.php-admin-register-admin ===== */
 body.php-admin-register-admin *,
 body.php-admin-register-admin *::before,
-body.php-admin-register-admin *::after{box-sizing: border-box; margin: 0; padding: 0;}
+body.php-admin-register-admin *::after{
+   box-sizing: border-box;
+}
 
 body.php-admin-register-admin{background: #f0f2f8 !important; font-family: 'Segoe UI', sans-serif !important;}
 
@@ -7658,7 +7677,9 @@ body.php-admin-register-admin .back-link:hover{color: #1a2a6c;}
 /* ===== moved from admin/update_profile.php | scope: body.php-admin-update-profile ===== */
 body.php-admin-update-profile *,
 body.php-admin-update-profile *::before,
-body.php-admin-update-profile *::after{box-sizing: border-box; margin: 0; padding: 0;}
+body.php-admin-update-profile *::after{
+   box-sizing: border-box;
+}
 
 body.php-admin-update-profile{background: #f0f2f8 !important; font-family: 'Segoe UI', sans-serif !important;}
 
