@@ -34,7 +34,7 @@ if(isset($_POST['submit'])){
 
       if($row && password_verify($pass, $row['password'])){
          $_SESSION['user_id'] = $row['id'];
-         header('location:home.php');
+         header('location:index.php');
          exit;
       } else {
          $login_error = 'Email atau password salah. Coba lagi.';
