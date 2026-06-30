@@ -2885,7 +2885,9 @@ body.php-quick-view .qv-trust-strip{grid-template-columns: 1fr;}
 /* ===== moved from chat.php | scope: body.php-chat ===== */
 body.php-chat *,
 body.php-chat *::before,
-body.php-chat *::after{box-sizing: border-box; margin: 0; padding: 0;}
+body.php-chat *::after{
+   box-sizing: border-box;
+}
 
 body.php-chat{background: #f0f2f8;
          font-family: 'Segoe UI', sans-serif;
@@ -3127,7 +3129,9 @@ body.php-chat .hdr-badge{display: none;}
 /* ===== moved from user_register.php | scope: body.php-user-register ===== */
 body.php-user-register *,
 body.php-user-register *::before,
-body.php-user-register *::after{box-sizing: border-box; margin: 0; padding: 0;}
+body.php-user-register *::after{
+   box-sizing: border-box;
+}
 
 body.php-user-register{min-height: 100vh;
          background: #fafafa;
@@ -3853,7 +3857,9 @@ body.php-index .footer{box-shadow: inset 0 20px 40px rgba(0,0,0,0.6);}
 /* ===== moved from user_login.php | scope: body.php-user-login ===== */
 body.php-user-login *,
 body.php-user-login *::before,
-body.php-user-login *::after{box-sizing: border-box; margin: 0; padding: 0;}
+body.php-user-login *::after{
+   box-sizing: border-box;
+}
 
 body.php-user-login{min-height: 100vh;
          background: #fafafa;
@@ -8785,7 +8791,9 @@ body{padding-top: 72px !important;}
 /* ===== moved from orders.php | scope: body.php-orders ===== */
 body.php-orders *,
 body.php-orders *::before,
-body.php-orders *::after{box-sizing: border-box; margin: 0; padding: 0;}
+body.php-orders *::after{
+   box-sizing: border-box;
+}
 
 body.php-orders{background: #f8f9fc; font-family: 'Segoe UI', sans-serif;}
 
@@ -9213,3 +9221,19 @@ CATEGORY AND STATUS UTILITIES
 .img-load-error{opacity:.3;}
 .is-fading{transition:opacity .4s ease;opacity:0;}
 body[class*="php-admin"]{padding-top:0 !important;}
+
+/* FIX HEADER & FOOTER GLOBAL */
+.header,
+.header *,
+.footer,
+.footer *{
+   box-sizing: border-box;
+}
+
+body{
+   min-height: 100vh;
+}
+
+.footer{
+   margin-top: auto;
+}
