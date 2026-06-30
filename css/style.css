@@ -1711,7 +1711,9 @@ MOVED PHP INLINE CSS
 /* ===== moved from cart.php | scope: body.php-cart ===== */
 body.php-cart *,
 body.php-cart *::before,
-body.php-cart *::after{box-sizing: border-box; margin: 0; padding: 0;}
+body.php-cart *::after{
+   box-sizing: border-box;
+}
 
 body.php-cart .cart-page-wrapper{background: #f5f5f5;
          min-height: 100vh;
