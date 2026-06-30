@@ -2005,7 +2005,9 @@ body.php-cart .cart-bottom-right{justify-content: space-between;}
 /* ===== moved from search_page.php | scope: body.php-search-page ===== */
 body.php-search-page *,
 body.php-search-page *::before,
-body.php-search-page *::after{box-sizing: border-box; margin: 0; padding: 0;}
+body.php-search-page *::after{
+   box-sizing: border-box;
+}
 
 body.php-search-page{background: #f8f9fc; font-family: 'Segoe UI', sans-serif;}
 
