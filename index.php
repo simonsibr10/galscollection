@@ -105,7 +105,7 @@ include 'components/wishlist_cart.php';
                </div>
             </a>
 
-            <a href="category.php?category=Top Handle" class="cat-grid-card cat-card-wide">
+            <a href="category.php?category=Top Handle" class="cat-grid-card">
                <img src="Kategori_images/TopHandle.jpeg" alt="Top Handle">
                <div class="cat-card-label">
                   <h3>Top Handle</h3>
@@ -113,7 +113,7 @@ include 'components/wishlist_cart.php';
                </div>
             </a>
 
-            <a href="category.php?category=Clutch" class="cat-grid-card cat-card-wide">
+            <a href="category.php?category=Clutch" class="cat-grid-card">
                <img src="Kategori_images/Clutch.jpeg" alt="Clutch">
                <div class="cat-card-label">
                   <h3>Clutch</h3>
@@ -121,8 +121,8 @@ include 'components/wishlist_cart.php';
                </div>
             </a>
 
-            <a href="category.php?category=Ransel" class="cat-grid-card cat-card-wide cat-card-ransel">
-               <img src="Kategori_images/Ransel.png" alt="Ransel">
+            <a href="category.php?category=Ransel" class="cat-grid-card cat-card-full">
+               <img src="Kategori_images/Ransel.jpeg" alt="Ransel">
                <div class="cat-card-label">
                   <h3>Ransel</h3>
                   <span>Lihat Koleksi</span>
