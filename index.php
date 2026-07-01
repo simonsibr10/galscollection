@@ -52,83 +52,126 @@ include 'components/wishlist_cart.php';
    </div>
 
    <!-- ===== KATEGORI ===== -->
-   <div class="category-editorial">
+   <div class="category-editorial" id="kategori">
+      <span class="cat-spark cat-spark-one" aria-hidden="true"></span>
+      <span class="cat-spark cat-spark-two" aria-hidden="true"></span>
+      <span class="cat-spark cat-spark-three" aria-hidden="true"></span>
 
       <div class="cat-header">
-         <h2>Kategori</h2>
-         <a href="shop.php" class="cat-view-all">Lihat Semua &rarr;</a>
+         <div class="cat-title">
+            <h2>Kategori</h2>
+            <p>Temukan koleksi pilihan yang sesuai dengan gaya dan kebutuhanmu setiap hari.</p>
+         </div>
+         <a href="shop.php" class="cat-view-all">Lihat Semua <i class="fas fa-arrow-right"></i></a>
       </div>
 
       <div class="cat-layout">
 
-         <div class="cat-grid">
+         <div class="cat-grid" aria-label="Kategori produk Gals Collection">
 
-            <a href="category.php?category=Tote" class="cat-grid-card cat-card-featured">
+            <a href="category.php?category=Tote" class="cat-grid-card cat-card-tote" aria-label="Lihat kategori Tote">
                <img src="Kategori_images/Tote.jpeg" alt="Tote">
                <div class="cat-card-label">
                   <h3>Tote</h3>
-                  <span>Lihat Koleksi</span>
+                  <span>Lihat Koleksi <i class="fas fa-arrow-right"></i></span>
                </div>
             </a>
 
-            <a href="category.php?category=Slingbag" class="cat-grid-card cat-card-tall">
+            <a href="category.php?category=Slingbag" class="cat-grid-card cat-card-sling" aria-label="Lihat kategori Slingbag">
                <img src="Kategori_images/Slingbag.jpeg" alt="Slingbag">
                <div class="cat-card-label">
                   <h3>Slingbag</h3>
-                  <span>Lihat Koleksi</span>
+                  <span>Lihat Koleksi <i class="fas fa-arrow-right"></i></span>
                </div>
             </a>
 
-            <a href="category.php?category=Dompet" class="cat-grid-card">
-               <span class="cat-badge">New</span>
+            <a href="category.php?category=Dompet" class="cat-grid-card cat-card-dompet" aria-label="Lihat kategori Dompet">
+               <span class="cat-badge cat-badge-new"><i class="fas fa-circle"></i> New</span>
                <img src="Kategori_images/Dompet.jpeg" alt="Dompet">
                <div class="cat-card-label">
                   <h3>Dompet</h3>
-                  <span>Lihat Koleksi</span>
+                  <span>Lihat Koleksi <i class="fas fa-arrow-right"></i></span>
                </div>
             </a>
 
-            <a href="category.php?category=Heels" class="cat-grid-card">
+            <a href="category.php?category=Heels" class="cat-grid-card cat-card-heels" aria-label="Lihat kategori Heels">
                <img src="Kategori_images/Heels.jpeg" alt="Heels">
                <div class="cat-card-label">
                   <h3>Heels</h3>
-                  <span>Lihat Koleksi</span>
+                  <span>Lihat Koleksi <i class="fas fa-arrow-right"></i></span>
                </div>
             </a>
 
-            <a href="category.php?category=Flat Shoes" class="cat-grid-card cat-card-wide">
-               <span class="cat-badge">Best Seller</span>
+            <a href="category.php?category=Flat Shoes" class="cat-grid-card cat-card-flat" aria-label="Lihat kategori Flat Shoes">
+               <span class="cat-badge cat-badge-best"><i class="fas fa-crown"></i> Best Seller</span>
                <img src="Kategori_images/Flat.jpeg" alt="Flat Shoes">
                <div class="cat-card-label">
                   <h3>Flat Shoes</h3>
-                  <span>Lihat Koleksi</span>
+                  <span>Lihat Koleksi <i class="fas fa-arrow-right"></i></span>
                </div>
             </a>
 
-            <a href="category.php?category=Top Handle" class="cat-grid-card">
+            <a href="category.php?category=Top Handle" class="cat-grid-card cat-card-tophandle" aria-label="Lihat kategori Top Handle">
                <img src="Kategori_images/TopHandle.jpeg" alt="Top Handle">
                <div class="cat-card-label">
                   <h3>Top Handle</h3>
-                  <span>Lihat Koleksi</span>
+                  <span>Lihat Koleksi <i class="fas fa-arrow-right"></i></span>
                </div>
             </a>
 
-            <a href="category.php?category=Clutch" class="cat-grid-card">
+            <a href="category.php?category=Clutch" class="cat-grid-card cat-card-clutch" aria-label="Lihat kategori Clutch">
                <img src="Kategori_images/Clutch.jpeg" alt="Clutch">
                <div class="cat-card-label">
                   <h3>Clutch</h3>
-                  <span>Lihat Koleksi</span>
+                  <span>Lihat Koleksi <i class="fas fa-arrow-right"></i></span>
                </div>
             </a>
 
-            <a href="category.php?category=Ransel" class="cat-grid-card cat-card-full">
+            <a href="category.php?category=Ransel" class="cat-grid-card cat-card-ransel" aria-label="Lihat kategori Ransel">
                <img src="Kategori_images/Ransel.jpeg" alt="Ransel">
                <div class="cat-card-label">
                   <h3>Ransel</h3>
-                  <span>Lihat Koleksi</span>
+                  <span>Lihat Koleksi <i class="fas fa-arrow-right"></i></span>
                </div>
             </a>
 
+            <div class="cat-orbit" aria-hidden="true">
+               <span>Jelajahi</span>
+               <i class="fas fa-star"></i>
+               <span>Koleksi</span>
+            </div>
+
+         </div>
+      </div>
+
+      <div class="cat-benefits" aria-label="Keunggulan belanja di Gals Collection">
+         <div class="cat-benefit">
+            <i class="fas fa-award"></i>
+            <div>
+               <strong>Kualitas Terjamin</strong>
+               <span>Produk original &amp; berkualitas</span>
+            </div>
+         </div>
+         <div class="cat-benefit">
+            <i class="fas fa-truck-fast"></i>
+            <div>
+               <strong>Pengiriman Cepat</strong>
+               <span>Pengiriman ke seluruh Indonesia</span>
+            </div>
+         </div>
+         <div class="cat-benefit">
+            <i class="fas fa-shield-halved"></i>
+            <div>
+               <strong>Pembayaran Aman</strong>
+               <span>100% transaksi aman</span>
+            </div>
+         </div>
+         <div class="cat-benefit">
+            <i class="fas fa-headset"></i>
+            <div>
+               <strong>Customer Service</strong>
+               <span>Siap membantu 24/7</span>
+            </div>
          </div>
       </div>
 
