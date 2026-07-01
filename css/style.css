@@ -5811,3 +5811,53 @@ body{
 .footer{
    margin-top: auto;
 }
+
+/* ===== FIX FINAL KATEGORI HOME ===== */
+body.php-index .category-editorial{
+   padding: 7rem 5% !important;
+   background: linear-gradient(180deg, #f8f6f1 0%, #eee8df 100%) !important;
+}
+
+body.php-index .cat-layout{
+   max-width: 1350px !important;
+   margin: 0 auto !important;
+}
+
+body.php-index .cat-grid{
+   display: grid !important;
+   grid-template-columns: repeat(6, 1fr) !important;
+   grid-auto-rows: 14rem !important;
+   gap: 2rem !important;
+   width: 100% !important;
+}
+
+body.php-index .cat-grid-card{
+   position: relative !important;
+   overflow: hidden !important;
+   border-radius: 2rem !important;
+   min-height: 18rem !important;
+   box-shadow: 0 1.5rem 3.5rem rgba(7,19,31,.16) !important;
+}
+
+body.php-index .cat-grid-card img{
+   width: 100% !important;
+   height: 100% !important;
+   object-fit: cover !important;
+}
+
+body.php-index .cat-card-featured{
+   grid-column: span 2 !important;
+   grid-row: span 3 !important;
+}
+
+body.php-index .cat-card-tall,
+body.php-index .cat-card-wide,
+body.php-index .cat-card-full{
+   grid-column: span 2 !important;
+   grid-row: span 2 !important;
+}
+
+body.php-index .cat-grid-card:not(.cat-card-featured):not(.cat-card-tall):not(.cat-card-wide):not(.cat-card-full){
+   grid-column: span 2 !important;
+   grid-row: span 1 !important;
+}
