@@ -763,3 +763,3395 @@ section{
    box-shadow:0 2px 6px rgba(0,0,0,.18) !important;
    z-index:999 !important;
 }
+
+/* =========================
+MOVED ADMIN PAGE STYLES FROM style.css
+========================= */
+
+.u-inline-style-041{font-size:1.8rem;font-weight:700;color:#0f172a;margin-top:.2rem;}
+.u-inline-style-042{color:#e11d48;}
+.u-inline-style-043{align-items:flex-start;padding-top:1rem;}
+.u-inline-style-044{text-align:right;max-width:15rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.u-inline-style-045{font-size:1.3rem;color:#059669;font-weight:700;margin-top:.4rem;}
+.u-inline-style-046{font-size:1.2rem;color:#94a3b8;text-align:right;}
+.u-inline-style-047{margin-top:.6rem; font-size:1.2rem;}
+.u-inline-style-048{color:#34d399;font-size:.8rem;}
+.u-inline-style-049{padding:1.2rem;background:#eff2ff;border-radius:.8rem;font-size:1.3rem;color:#1e40af;display:flex;align-items:center;gap:.7rem;margin-top:.4rem;}
+.order-count-status{font-weight:700;}
+.status-danger{color:#e11d48;}
+.textarea-padded-left{padding-left:1.4rem;}
+.is-fading{transition:opacity .4s ease;opacity:0;}
+body[class*="php-admin"]{padding-top:0 !important;}
+
+/* ===== moved from admin/admin_accounts.php | scope: body.php-admin-admin-accounts ===== */
+body.php-admin-admin-accounts *,
+body.php-admin-admin-accounts *::before,
+body.php-admin-admin-accounts *::after{
+   box-sizing: border-box;
+}
+
+body.php-admin-admin-accounts{background: #f0f2f8 !important; font-family: 'Segoe UI', sans-serif !important;}
+
+body.php-admin-admin-accounts section,
+body.php-admin-admin-accounts .accounts,
+body.php-admin-admin-accounts .dashboard{background: transparent !important;}
+
+body.php-admin-admin-accounts .header{background: #fff !important;}
+
+body.php-admin-admin-accounts .footer{background: #fff !important;}
+
+body.php-admin-admin-accounts .accounts-page{max-width: 1100px;
+         margin: 0 auto;
+         padding: 2.4rem 2.8rem 5rem;}
+
+body.php-admin-admin-accounts .page-header{display: flex;
+         align-items: center;
+         justify-content: space-between;
+         flex-wrap: wrap;
+         gap: 1rem;
+         margin-bottom: 2.4rem;
+         animation: fadeSlideDown .45s ease both;}
+
+body.php-admin-admin-accounts .page-header h1{font-size: 2.6rem;
+         font-weight: 800;
+         color: #0f172a;
+         letter-spacing: -.5px;}
+
+body.php-admin-admin-accounts .page-header h1 span{background: linear-gradient(135deg, #1a2a6c, #4f6ef7);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;}
+
+body.php-admin-admin-accounts .stats-strip{display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         gap: 1.2rem;
+         margin-bottom: 2.4rem;
+         animation: fadeSlideUp .5s ease both;}
+
+body.php-admin-admin-accounts .stat-chip{background: #fff;
+         border-radius: 1.2rem;
+         padding: 1.6rem 2rem;
+         box-shadow: 0 2px 10px rgba(0,0,0,.05);
+         display: flex;
+         align-items: center;
+         gap: 1.4rem;
+         position: relative;
+         overflow: hidden;
+         transition: transform .2s, box-shadow .2s;}
+
+body.php-admin-admin-accounts .stat-chip:hover{transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.09);}
+
+body.php-admin-admin-accounts .stat-chip::before{content: '';
+         position: absolute;
+         top: 0; left: 0; right: 0;
+         height: 3px;
+         border-radius: 1.2rem 1.2rem 0 0;}
+
+body.php-admin-admin-accounts .stat-chip.blue::before{background: linear-gradient(90deg,#1a2a6c,#4f6ef7);}
+
+body.php-admin-admin-accounts .stat-chip.green::before{background: linear-gradient(90deg,#059669,#34d399);}
+
+body.php-admin-admin-accounts .stat-chip.amber::before{background: linear-gradient(90deg,#f59e0b,#fbbf24);}
+
+body.php-admin-admin-accounts .stat-icon{width: 4.8rem; height: 4.8rem;
+         border-radius: 1rem;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 2rem;
+         flex-shrink: 0;}
+
+body.php-admin-admin-accounts .stat-icon.bg-blue{background: #eff2ff; color: #4f6ef7;}
+
+body.php-admin-admin-accounts .stat-icon.bg-green{background: #ecfdf5; color: #059669;}
+
+body.php-admin-admin-accounts .stat-icon.bg-amber{background: #fffbeb; color: #f59e0b;}
+
+body.php-admin-admin-accounts .stat-info-val{font-size: 2.6rem; font-weight: 800; color: #0f172a; line-height: 1;}
+
+body.php-admin-admin-accounts .stat-info-lbl{font-size: 1.25rem; font-weight: 600; color: #64748b; margin-top: .3rem;}
+
+body.php-admin-admin-accounts .add-admin-banner{background: linear-gradient(135deg, #0f2027 0%, #1a2a6c 55%, #2c3e8f 100%);
+         border-radius: 1.4rem;
+         padding: 2.2rem 2.6rem;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         gap: 1.6rem;
+         flex-wrap: wrap;
+         margin-bottom: 2.4rem;
+         position: relative;
+         overflow: hidden;
+         animation: fadeSlideUp .5s .05s ease both;}
+
+body.php-admin-admin-accounts .add-admin-banner::before{content: '';
+         position: absolute;
+         top: -50%; right: -5%;
+         width: 28rem; height: 28rem;
+         background: radial-gradient(circle, rgba(79,110,247,.3) 0%, transparent 70%);
+         pointer-events: none;}
+
+body.php-admin-admin-accounts .banner-text h3{font-size: 1.8rem; font-weight: 700; color: #fff; margin-bottom: .4rem;}
+
+body.php-admin-admin-accounts .banner-text p{font-size: 1.3rem; color: rgba(255,255,255,.6);}
+
+body.php-admin-admin-accounts .btn-register-admin{display: inline-flex;
+         align-items: center;
+         gap: .7rem;
+         padding: 1.1rem 2.2rem;
+         background: #fff;
+         color: #1a2a6c;
+         border-radius: .8rem;
+         font-size: 1.4rem;
+         font-weight: 700;
+         text-decoration: none;
+         transition: transform .15s, box-shadow .15s;
+         white-space: nowrap;
+         position: relative;
+         z-index: 1;}
+
+body.php-admin-admin-accounts .btn-register-admin:hover{transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.2);}
+
+body.php-admin-admin-accounts .section-label{font-size: 1.1rem;
+         font-weight: 700;
+         letter-spacing: .12em;
+         text-transform: uppercase;
+         color: #94a3b8;
+         margin-bottom: 1.2rem;}
+
+body.php-admin-admin-accounts .admin-grid{display: grid;
+         grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+         gap: 1.6rem;}
+
+body.php-admin-admin-accounts .admin-card{background: #fff;
+         border-radius: 1.4rem;
+         overflow: hidden;
+         box-shadow: 0 2px 12px rgba(0,0,0,.05);
+         display: flex;
+         flex-direction: column;
+         transition: transform .22s, box-shadow .22s;
+         animation: fadeSlideUp .5s ease both;
+         position: relative;}
+
+body.php-admin-admin-accounts .admin-card:hover{transform: translateY(-4px); box-shadow: 0 14px 36px rgba(0,0,0,.1);}
+
+body.php-admin-admin-accounts .admin-card-bar{height: 4px;}
+
+body.php-admin-admin-accounts .bar-you{background: linear-gradient(90deg,#1a2a6c,#4f6ef7);}
+
+body.php-admin-admin-accounts .bar-other{background: linear-gradient(90deg,#64748b,#94a3b8);}
+
+body.php-admin-admin-accounts .admin-card-inner{padding: 2rem; display: flex; flex-direction: column; gap: 1.4rem; flex: 1;}
+
+body.php-admin-admin-accounts .admin-avatar-row{display: flex;
+         align-items: center;
+         gap: 1.4rem;}
+
+body.php-admin-admin-accounts .admin-avatar{width: 5.2rem; height: 5.2rem;
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 2rem;
+         font-weight: 800;
+         color: #fff;
+         flex-shrink: 0;}
+
+body.php-admin-admin-accounts .avatar-you{background: linear-gradient(135deg,#1a2a6c,#4f6ef7);}
+
+body.php-admin-admin-accounts .avatar-other{background: linear-gradient(135deg,#475569,#94a3b8);}
+
+body.php-admin-admin-accounts .admin-name-block{flex: 1; min-width: 0;}
+
+body.php-admin-admin-accounts .admin-name{font-size: 1.6rem;
+         font-weight: 700;
+         color: #0f172a;
+         white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;}
+
+body.php-admin-admin-accounts .admin-id-tag{display: inline-flex;
+         align-items: center;
+         gap: .4rem;
+         font-size: 1.2rem;
+         color: #94a3b8;
+         margin-top: .3rem;
+         font-weight: 500;}
+
+body.php-admin-admin-accounts .you-badge{display: inline-flex;
+         align-items: center;
+         gap: .4rem;
+         padding: .4rem 1rem;
+         background: #eff2ff;
+         color: #1a2a6c;
+         border-radius: 2rem;
+         font-size: 1.15rem;
+         font-weight: 700;
+         flex-shrink: 0;}
+
+body.php-admin-admin-accounts .admin-card-divider{height: 1px; background: #f1f5f9;}
+
+body.php-admin-admin-accounts .admin-card-actions{display: flex;
+         gap: .8rem;
+         margin-top: auto;}
+
+body.php-admin-admin-accounts .card-btn{display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         gap: .5rem;
+         padding: .9rem 1.4rem;
+         border-radius: .7rem;
+         font-size: 1.3rem;
+         font-weight: 600;
+         text-decoration: none;
+         border: none;
+         cursor: pointer;
+         transition: transform .15s, box-shadow .15s;
+         font-family: inherit;
+         flex: 1;
+         white-space: nowrap;}
+
+body.php-admin-admin-accounts .card-btn:hover{transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.12);}
+
+body.php-admin-admin-accounts .card-btn:active{transform: scale(.96);}
+
+body.php-admin-admin-accounts .btn-update{background: #eff2ff; color: #1a2a6c;}
+
+body.php-admin-admin-accounts .btn-update:hover{background: #e0e7ff;}
+
+body.php-admin-admin-accounts .btn-delete{background: #fff1f2; color: #be123c;}
+
+body.php-admin-admin-accounts .btn-delete:hover{background: #ffe4e6;}
+
+body.php-admin-admin-accounts .accounts-empty{text-align: center; padding: 5rem 2rem; color: #94a3b8;}
+
+body.php-admin-admin-accounts .accounts-empty i{font-size: 4.8rem; display: block; margin-bottom: 1.4rem; color: #cbd5e1;}
+
+body.php-admin-admin-accounts .accounts-empty p{font-size: 1.6rem;}
+
+@keyframes fadeSlideDown{ from{opacity:0;transform:translateY(-14px)} to{opacity:1;transform:translateY(0)} }
+
+@keyframes fadeSlideUp{ from{opacity:0;transform:translateY(18px)}  to{opacity:1;transform:translateY(0)} }
+
+body.php-admin-admin-accounts .admin-card:nth-child(1){animation-delay:.05s}
+
+body.php-admin-admin-accounts .admin-card:nth-child(2){animation-delay:.10s}
+
+body.php-admin-admin-accounts .admin-card:nth-child(3){animation-delay:.15s}
+
+body.php-admin-admin-accounts .admin-card:nth-child(n+4){animation-delay:.20s}
+
+@media(max-width:700px){body.php-admin-admin-accounts .accounts-page{padding:1.6rem}
+
+body.php-admin-admin-accounts .stats-strip{grid-template-columns:1fr 1fr}
+
+body.php-admin-admin-accounts .admin-grid{grid-template-columns:1fr}
+}
+
+/* ===== moved from admin/chat.php | scope: body.php-admin-chat ===== */
+body.php-admin-chat *,
+body.php-admin-chat *::before,
+body.php-admin-chat *::after{
+   box-sizing: border-box;
+}
+
+body.php-admin-chat{background: #f0f2f8 !important; font-family: 'Segoe UI', sans-serif !important;}
+
+body.php-admin-chat .header{background: #fff !important;}
+
+body.php-admin-chat .chat-page{max-width: 860px;
+         margin: 0 auto;
+         padding: 2rem 1.6rem 3rem;
+         animation: fadeUp .45s ease both;}
+
+@keyframes fadeUp{ from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+
+body.php-admin-chat .chat-window{background: #fff;
+         border-radius: 1.6rem;
+         box-shadow: 0 4px 24px rgba(0,0,0,.08);
+         overflow: hidden;
+         display: flex;
+         flex-direction: column;
+         height: calc(100vh - 14rem);
+         min-height: 52rem;}
+
+body.php-admin-chat .chat-win-header{background: linear-gradient(135deg, #0f2027 0%, #1a2a6c 55%, #2c3e8f 100%);
+         padding: 1.6rem 2rem;
+         display: flex;
+         align-items: center;
+         gap: 1.4rem;
+         position: relative;
+         overflow: hidden;
+         flex-shrink: 0;}
+
+body.php-admin-chat .chat-win-header::before{content: '';
+         position: absolute;
+         top: -50%; right: -5%;
+         width: 20rem; height: 20rem;
+         background: radial-gradient(circle, rgba(79,110,247,.3) 0%, transparent 70%);
+         pointer-events: none;}
+
+body.php-admin-chat .hdr-back{color: rgba(255,255,255,.8);
+         font-size: 1.8rem;
+         text-decoration: none;
+         z-index: 1;
+         flex-shrink: 0;
+         transition: color .15s;}
+
+body.php-admin-chat .hdr-back:hover{color: #fff;}
+
+body.php-admin-chat .hdr-avatar{width: 4.4rem; height: 4.4rem;
+         border-radius: 50%;
+         background: rgba(255,255,255,.2);
+         display: flex; align-items: center; justify-content: center;
+         font-size: 1.8rem; font-weight: 800; color: #fff;
+         flex-shrink: 0; z-index: 1;}
+
+body.php-admin-chat .hdr-info{flex: 1; z-index: 1;}
+
+body.php-admin-chat .hdr-info h3{font-size: 1.6rem; font-weight: 700; color: #fff;}
+
+body.php-admin-chat .hdr-info p{font-size: 1.2rem; color: rgba(255,255,255,.6); margin-top: .2rem;}
+
+body.php-admin-chat .hdr-status{display: flex; align-items: center; gap: .5rem;
+         font-size: 1.2rem; color: rgba(255,255,255,.7); z-index: 1;}
+
+body.php-admin-chat .status-dot{width: .8rem; height: .8rem;
+         border-radius: 50%;
+         background: #34d399;
+         box-shadow: 0 0 6px #34d399;
+         animation: pulse 2s infinite;}
+
+@keyframes pulse{ 0%,100%{opacity:1} 50%{opacity:.4} }
+
+body.php-admin-chat .chat-msgs{flex: 1;
+         overflow-y: auto;
+         padding: 2rem;
+         background: #f8fafc;
+         display: flex;
+         flex-direction: column;
+         gap: .8rem;
+         scroll-behavior: smooth;}
+
+body.php-admin-chat .chat-msgs::-webkit-scrollbar{width: 4px;}
+
+body.php-admin-chat .chat-msgs::-webkit-scrollbar-thumb{background: #cbd5e1; border-radius: 4px;}
+
+body.php-admin-chat .msg-placeholder{display: flex; flex-direction: column;
+         align-items: center; justify-content: center;
+         flex: 1; gap: 1rem;
+         color: #94a3b8; padding: 3rem; text-align: center;}
+
+body.php-admin-chat .msg-placeholder i{font-size: 4rem; color: #cbd5e1;}
+
+body.php-admin-chat .msg-placeholder p{font-size: 1.4rem;}
+
+body.php-admin-chat .msg-row{display: flex;
+         width: 100%;
+         align-items: flex-end;
+         gap: .8rem;}
+
+body.php-admin-chat .msg-row.row-user{justify-content: flex-start;}
+
+body.php-admin-chat .msg-row.row-admin{justify-content: flex-end;}
+
+body.php-admin-chat .row-avatar{width: 3.2rem; height: 3.2rem;
+         border-radius: 50%;
+         background: linear-gradient(135deg,#64748b,#94a3b8);
+         display: flex; align-items: center; justify-content: center;
+         font-size: 1.3rem; font-weight: 700; color: #fff;
+         flex-shrink: 0;
+         margin-bottom: .2rem;}
+
+body.php-admin-chat .row-admin .row-avatar{display: none;}
+
+body.php-admin-chat .msg-bubble{max-width: 65%;
+         padding: 1rem 1.4rem;
+         border-radius: 1.4rem;
+         font-size: 1.4rem;
+         line-height: 1.65;
+         word-break: break-word;
+         box-shadow: 0 2px 8px rgba(0,0,0,.06);
+         animation: bubbleIn .18s ease both;}
+
+@keyframes bubbleIn{
+         from { opacity: 0; transform: scale(.94) translateY(6px); }
+         to   { opacity: 1; transform: scale(1) translateY(0); }
+      }
+
+body.php-admin-chat .row-user .msg-bubble{background: #fff;
+         color: #1e293b;
+         border: 1px solid #f1f5f9;
+         border-bottom-left-radius: .3rem;}
+
+body.php-admin-chat .row-admin .msg-bubble{background: linear-gradient(135deg, #1a2a6c 0%, #4f6ef7 100%);
+         color: #fff;
+         border-bottom-right-radius: .3rem;}
+
+body.php-admin-chat .bubble-sender{font-size: 1.1rem;
+         font-weight: 700;
+         margin-bottom: .35rem;
+         opacity: .75;}
+
+body.php-admin-chat .row-user  .bubble-sender{color: #1a2a6c;}
+
+body.php-admin-chat .row-admin .bubble-sender{color: rgba(255,255,255,.8);}
+
+body.php-admin-chat .bubble-text{font-size: 1.4rem;}
+
+body.php-admin-chat .bubble-time{font-size: 1.05rem;
+         margin-top: .5rem;
+         opacity: .55;
+         display: flex;
+         align-items: center;
+         justify-content: flex-end;
+         gap: .4rem;}
+
+body.php-admin-chat .row-admin .bubble-time i{color: rgba(255,255,255,.6);
+         font-size: 1rem;}
+
+body.php-admin-chat .date-separator{display: flex;
+         align-items: center;
+         gap: 1rem;
+         margin: .8rem 0;
+         font-size: 1.2rem;
+         color: #94a3b8;
+         font-weight: 600;}
+
+body.php-admin-chat .date-separator::before,
+body.php-admin-chat .date-separator::after{content: '';
+         flex: 1;
+         height: 1px;
+         background: #e2e8f0;}
+
+body.php-admin-chat .chat-input-row{padding: 1.4rem 1.8rem;
+         border-top: 1px solid #f1f5f9;
+         background: #fff;
+         display: flex;
+         align-items: center;
+         gap: 1rem;
+         flex-shrink: 0;}
+
+body.php-admin-chat .chat-input-row input{flex: 1;
+         padding: 1.2rem 1.6rem;
+         border: 1.5px solid #e2e8f0;
+         border-radius: 3rem;
+         font-size: 1.4rem;
+         color: #0f172a;
+         background: #f8fafc;
+         outline: none;
+         font-family: inherit;
+         transition: border-color .2s, box-shadow .2s, background .2s;}
+
+body.php-admin-chat .chat-input-row input:focus{border-color: #4f6ef7;
+         background: #fff;
+         box-shadow: 0 0 0 3px rgba(79,110,247,.12);}
+
+body.php-admin-chat .chat-input-row input::placeholder{color: #94a3b8;}
+
+body.php-admin-chat .btn-send{width: 4.8rem; height: 4.8rem;
+         border-radius: 50%;
+         background: linear-gradient(135deg, #1a2a6c, #4f6ef7);
+         color: #fff;
+         border: none;
+         cursor: pointer;
+         display: flex; align-items: center; justify-content: center;
+         font-size: 1.8rem;
+         flex-shrink: 0;
+         box-shadow: 0 4px 12px rgba(79,110,247,.35);
+         transition: transform .15s, box-shadow .15s;}
+
+body.php-admin-chat .btn-send:hover{transform: scale(1.08); box-shadow: 0 6px 18px rgba(79,110,247,.4);}
+
+body.php-admin-chat .btn-send:active{transform: scale(.94);}
+
+body.php-admin-chat .no-user-panel{background: #fff;
+         border-radius: 1.6rem;
+         box-shadow: 0 4px 24px rgba(0,0,0,.07);
+         padding: 6rem 3rem;
+         text-align: center;}
+
+body.php-admin-chat .no-user-panel i{font-size: 6rem; color: #cbd5e1; display: block; margin-bottom: 1.6rem;}
+
+body.php-admin-chat .no-user-panel h3{font-size: 2rem; font-weight: 700; color: #64748b; margin-bottom: .8rem;}
+
+body.php-admin-chat .no-user-panel p{font-size: 1.4rem; color: #94a3b8;}
+
+body.php-admin-chat .btn-go-list{display: inline-flex; align-items: center; gap: .6rem;
+         margin-top: 2rem; padding: 1.1rem 2.2rem;
+         background: linear-gradient(135deg,#1a2a6c,#4f6ef7);
+         color: #fff; border-radius: .8rem;
+         font-size: 1.4rem; font-weight: 700;
+         text-decoration: none;
+         transition: transform .15s, box-shadow .15s;}
+
+body.php-admin-chat .btn-go-list:hover{transform: translateY(-2px); box-shadow: 0 6px 18px rgba(79,110,247,.35);}
+
+@media(max-width:600px){body.php-admin-chat .chat-page{padding: 1rem .8rem 2rem;}
+
+body.php-admin-chat .chat-window{height: calc(100vh - 10rem);}
+
+body.php-admin-chat .msg-bubble{max-width: 82%;}
+
+body.php-admin-chat .chat-msgs{padding: 1.2rem;}
+}
+
+/* ===== moved from admin/chat_list.php | scope: body.php-admin-chat-list ===== */
+body.php-admin-chat-list *,
+body.php-admin-chat-list *::before,
+body.php-admin-chat-list *::after{
+   box-sizing: border-box;
+}
+
+body.php-admin-chat-list{background: #f0f2f8 !important; font-family: 'Segoe UI', sans-serif !important;}
+
+body.php-admin-chat-list section,
+body.php-admin-chat-list .dashboard{background: transparent !important;}
+
+body.php-admin-chat-list .header{background: #fff !important;}
+
+body.php-admin-chat-list .chat-list-page{max-width: 860px;
+         margin: 0 auto;
+         padding: 2.4rem 2rem 5rem;}
+
+body.php-admin-chat-list .page-header{display: flex;
+         align-items: center;
+         justify-content: space-between;
+         flex-wrap: wrap;
+         gap: 1rem;
+         margin-bottom: 2.4rem;
+         animation: fadeSlideDown .45s ease both;}
+
+body.php-admin-chat-list .page-header h1{font-size: 2.6rem; font-weight: 800; color: #0f172a; letter-spacing: -.5px;}
+
+body.php-admin-chat-list .page-header h1 span{background: linear-gradient(135deg,#1a2a6c,#4f6ef7);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;}
+
+body.php-admin-chat-list .total-unread-badge{display: inline-flex;
+         align-items: center;
+         gap: .6rem;
+         background: #fff1f2;
+         color: #be123c;
+         border-radius: 3rem;
+         padding: .7rem 1.4rem;
+         font-size: 1.3rem;
+         font-weight: 700;
+         box-shadow: 0 2px 8px rgba(0,0,0,.06);}
+
+body.php-admin-chat-list .chat-list{display: flex; flex-direction: column; gap: 1rem;}
+
+body.php-admin-chat-list .chat-card{background: #fff;
+         border-radius: 1.4rem;
+         box-shadow: 0 2px 12px rgba(0,0,0,.05);
+         display: flex;
+         align-items: center;
+         gap: 1.6rem;
+         padding: 1.6rem 2rem;
+         text-decoration: none;
+         transition: transform .2s, box-shadow .2s;
+         animation: fadeSlideUp .5s ease both;
+         position: relative;
+         overflow: hidden;}
+
+body.php-admin-chat-list .chat-card::before{content: '';
+         position: absolute;
+         left: 0; top: 0; bottom: 0;
+         width: 4px;
+         background: #e2e8f0;
+         border-radius: 4px 0 0 4px;
+         transition: background .2s;}
+
+body.php-admin-chat-list .chat-card.has-unread::before{background: linear-gradient(180deg,#e11d48,#fb7185);}
+
+body.php-admin-chat-list .chat-card:hover{transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,.1);}
+
+body.php-admin-chat-list .chat-avatar{width: 5.2rem; height: 5.2rem;
+         border-radius: 50%;
+         background: linear-gradient(135deg,#1a2a6c,#4f6ef7);
+         display: flex; align-items: center; justify-content: center;
+         font-size: 2rem;
+         font-weight: 800;
+         color: #fff;
+         flex-shrink: 0;
+         position: relative;}
+
+body.php-admin-chat-list .avatar-online-dot{position: absolute;
+         bottom: .2rem; right: .2rem;
+         width: 1.2rem; height: 1.2rem;
+         background: #059669;
+         border-radius: 50%;
+         border: 2px solid #fff;}
+
+body.php-admin-chat-list .chat-info{flex: 1; min-width: 0;}
+
+body.php-admin-chat-list .chat-info-top{display: flex;
+         align-items: center;
+         justify-content: space-between;
+         gap: .8rem;
+         margin-bottom: .4rem;}
+
+body.php-admin-chat-list .chat-user-name{font-size: 1.5rem;
+         font-weight: 700;
+         color: #0f172a;
+         white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;}
+
+body.php-admin-chat-list .chat-time{font-size: 1.2rem;
+         color: #94a3b8;
+         white-space: nowrap;
+         flex-shrink: 0;}
+
+body.php-admin-chat-list .chat-last-msg{font-size: 1.3rem;
+         color: #64748b;
+         white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;
+         display: flex;
+         align-items: center;
+         gap: .5rem;}
+
+body.php-admin-chat-list .chat-last-msg i{font-size: 1.1rem; color: #94a3b8;}
+
+body.php-admin-chat-list .unread-count{background: #e11d48;
+         color: #fff;
+         border-radius: 1.2rem;
+         padding: .3rem .8rem;
+         font-size: 1.2rem;
+         font-weight: 800;
+         flex-shrink: 0;
+         min-width: 2.4rem;
+         text-align: center;
+         box-shadow: 0 2px 6px rgba(225,29,72,.35);
+         animation: badgePop .3s ease both;}
+
+@keyframes badgePop{ from{transform:scale(0)} to{transform:scale(1)} }
+
+body.php-admin-chat-list .chat-card-arrow{color: #cbd5e1; font-size: 1.6rem; flex-shrink: 0; transition: color .2s, transform .2s;}
+
+body.php-admin-chat-list .chat-card:hover .chat-card-arrow{color: #4f6ef7; transform: translateX(3px);}
+
+body.php-admin-chat-list .chat-empty{text-align: center; padding: 6rem 2rem; color: #94a3b8;}
+
+body.php-admin-chat-list .chat-empty i{font-size: 5rem; display: block; margin-bottom: 1.4rem; color: #cbd5e1;}
+
+body.php-admin-chat-list .chat-empty p{font-size: 1.6rem;}
+
+@keyframes fadeSlideDown{ from{opacity:0;transform:translateY(-14px)} to{opacity:1;transform:translateY(0)} }
+
+@keyframes fadeSlideUp{ from{opacity:0;transform:translateY(18px)}  to{opacity:1;transform:translateY(0)} }
+
+body.php-admin-chat-list .chat-card:nth-child(1){animation-delay:.04s}
+
+body.php-admin-chat-list .chat-card:nth-child(2){animation-delay:.08s}
+
+body.php-admin-chat-list .chat-card:nth-child(3){animation-delay:.12s}
+
+body.php-admin-chat-list .chat-card:nth-child(4){animation-delay:.16s}
+
+body.php-admin-chat-list .chat-card:nth-child(n+5){animation-delay:.20s}
+
+@media(max-width:600px){body.php-admin-chat-list .chat-list-page{padding:1.6rem 1.2rem 4rem}
+
+body.php-admin-chat-list .chat-card{padding:1.2rem 1.4rem; gap:1.2rem}
+}
+
+/* ===== moved from admin/admin_login.php | scope: body.php-admin-admin-login ===== */
+body.php-admin-admin-login *,
+body.php-admin-admin-login *::before,
+body.php-admin-admin-login *::after{
+   box-sizing: border-box;
+}
+
+body.php-admin-admin-login{min-height: 100vh;
+         background: #f0f2f8;
+         font-family: 'Segoe UI', sans-serif;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         position: relative;
+         overflow: hidden;}
+
+body.php-admin-admin-login .bg-blob{position: fixed;
+         border-radius: 50%;
+         filter: blur(80px);
+         opacity: .25;
+         animation: blobFloat 8s ease-in-out infinite;
+         pointer-events: none;
+         z-index: 0;}
+
+body.php-admin-admin-login .blob-1{width: 50rem; height: 50rem; background: #4f6ef7; top: -15rem; left: -12rem; animation-delay: 0s;}
+
+body.php-admin-admin-login .blob-2{width: 40rem; height: 40rem; background: #7c3aed; bottom: -10rem; right: -10rem; animation-delay: 3s;}
+
+body.php-admin-admin-login .blob-3{width: 30rem; height: 30rem; background: #0891b2; bottom: 20%; left: 10%; animation-delay: 1.5s;}
+
+@keyframes blobFloat{
+         0%,100% { transform: translateY(0) scale(1); }
+         50%      { transform: translateY(-30px) scale(1.05); }
+      }
+
+body.php-admin-admin-login .login-card{background: #fff;
+         border-radius: 2rem;
+         box-shadow: 0 24px 64px rgba(0,0,0,.12);
+         padding: 4rem 4rem 3.6rem;
+         width: 100%;
+         max-width: 44rem;
+         position: relative;
+         z-index: 1;
+         animation: cardIn .55s cubic-bezier(.22,1,.36,1) both;}
+
+@keyframes cardIn{
+         from { opacity: 0; transform: translateY(30px) scale(.97); }
+         to   { opacity: 1; transform: translateY(0) scale(1); }
+      }
+
+body.php-admin-admin-login .login-card::before{content: '';
+         position: absolute;
+         top: 0; left: 0; right: 0;
+         height: 4px;
+         border-radius: 2rem 2rem 0 0;
+         background: linear-gradient(90deg, #1a2a6c, #4f6ef7, #0891b2);}
+
+body.php-admin-admin-login .login-brand{display: flex;
+         flex-direction: column;
+         align-items: center;
+         gap: 1.2rem;
+         margin-bottom: 3rem;
+         animation: fadeUp .5s .1s ease both;}
+
+@keyframes fadeUp{ from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
+
+body.php-admin-admin-login .brand-icon{width: 6.4rem; height: 6.4rem;
+         border-radius: 1.4rem;
+         background: linear-gradient(135deg, #1a2a6c, #4f6ef7);
+         display: flex; align-items: center; justify-content: center;
+         font-size: 2.8rem;
+         color: #fff;
+         box-shadow: 0 8px 24px rgba(79,110,247,.35);}
+
+body.php-admin-admin-login .brand-name{text-align: center;}
+
+body.php-admin-admin-login .brand-name h1{font-size: 2.2rem;
+         font-weight: 800;
+         color: #0f172a;
+         letter-spacing: -.3px;}
+
+body.php-admin-admin-login .brand-name p{font-size: 1.3rem;
+         color: #94a3b8;
+         margin-top: .3rem;}
+
+body.php-admin-admin-login .login-error{background: #fff1f2;
+         border-left: 4px solid #e11d48;
+         border-radius: .8rem;
+         padding: 1.1rem 1.4rem;
+         font-size: 1.35rem;
+         color: #be123c;
+         display: flex;
+         align-items: center;
+         gap: .8rem;
+         margin-bottom: 2rem;
+         animation: fadeUp .3s ease both;}
+
+body.php-admin-admin-login .login-form{display: flex;
+         flex-direction: column;
+         gap: 1.4rem;
+         animation: fadeUp .5s .2s ease both;}
+
+body.php-admin-admin-login .form-group{display: flex;
+         flex-direction: column;
+         gap: .6rem;}
+
+body.php-admin-admin-login .form-group label{font-size: 1.3rem;
+         font-weight: 700;
+         color: #475569;}
+
+body.php-admin-admin-login .input-wrap{position: relative;}
+
+body.php-admin-admin-login .input-wrap i{position: absolute;
+         left: 1.4rem;
+         top: 50%;
+         transform: translateY(-50%);
+         color: #94a3b8;
+         font-size: 1.4rem;
+         pointer-events: none;
+         transition: color .2s;}
+
+body.php-admin-admin-login .login-input{width: 100%;
+         padding: 1.2rem 1.4rem 1.2rem 4rem;
+         border: 1.5px solid #e2e8f0;
+         border-radius: .9rem;
+         font-size: 1.45rem;
+         color: #0f172a;
+         background: #f8fafc;
+         outline: none;
+         font-family: inherit;
+         transition: border-color .2s, box-shadow .2s, background .2s;}
+
+body.php-admin-admin-login .login-input:focus{border-color: #4f6ef7;
+         background: #fff;
+         box-shadow: 0 0 0 3px rgba(79,110,247,.13);}
+
+body.php-admin-admin-login .login-input:focus + i,
+body.php-admin-admin-login .input-wrap:focus-within i{color: #4f6ef7;}
+
+body.php-admin-admin-login .toggle-pass{position: absolute;
+         right: 1.4rem;
+         top: 50%;
+         transform: translateY(-50%);
+         color: #94a3b8;
+         cursor: pointer;
+         font-size: 1.4rem;
+         pointer-events: all;
+         z-index: 2;
+         transition: color .2s;}
+
+body.php-admin-admin-login .toggle-pass:hover{color: #4f6ef7;}
+
+body.php-admin-admin-login .btn-login{width: 100%;
+         padding: 1.4rem;
+         background: linear-gradient(135deg, #1a2a6c, #4f6ef7);
+         color: #fff;
+         border: none;
+         border-radius: .9rem;
+         font-size: 1.5rem;
+         font-weight: 700;
+         cursor: pointer;
+         transition: transform .15s, box-shadow .2s;
+         font-family: inherit;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         gap: .7rem;
+         margin-top: .4rem;}
+
+body.php-admin-admin-login .btn-login:hover{transform: translateY(-2px); box-shadow: 0 8px 24px rgba(79,110,247,.35);}
+
+body.php-admin-admin-login .btn-login:active{transform: scale(.97);}
+
+body.php-admin-admin-login .login-hint{margin-top: 2rem;
+         padding: 1.2rem 1.4rem;
+         background: #f8fafc;
+         border-radius: .8rem;
+         font-size: 1.25rem;
+         color: #64748b;
+         text-align: center;
+         border: 1px dashed #e2e8f0;
+         animation: fadeUp .5s .3s ease both;}
+
+body.php-admin-admin-login .login-hint strong{color: #1a2a6c;}
+
+/* ===== moved from admin/dashboard.php | scope: body.php-admin-dashboard ===== */
+body.php-admin-dashboard *,
+body.php-admin-dashboard *::before,
+body.php-admin-dashboard *::after{box-sizing: border-box;}
+
+body.php-admin-dashboard{background: #f0f2f8 !important;
+         font-family: 'Segoe UI', sans-serif !important;
+         margin: 0;}
+
+body.php-admin-dashboard section,
+body.php-admin-dashboard .dashboard{background: transparent !important;}
+
+body.php-admin-dashboard .admin-dashboard{padding: 2.4rem 2.8rem 4rem;
+         max-width: 1400px;
+         margin: 0 auto;}
+
+body.php-admin-dashboard .dash-page-header{display: flex;
+         align-items: center;
+         justify-content: space-between;
+         margin-bottom: 2.8rem;
+         flex-wrap: wrap;
+         gap: 1rem;}
+
+body.php-admin-dashboard .dash-page-header h1{font-size: 2.6rem;
+         font-weight: 800;
+         color: #0f172a;
+         letter-spacing: -.5px;}
+
+body.php-admin-dashboard .dash-page-header h1 span{background: linear-gradient(135deg, #1a2a6c, #4f6ef7);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;}
+
+body.php-admin-dashboard .dash-date-badge{background: #fff;
+         border-radius: 3rem;
+         padding: .7rem 1.6rem;
+         font-size: 1.3rem;
+         color: #64748b;
+         box-shadow: 0 2px 8px rgba(0,0,0,.07);
+         display: flex;
+         align-items: center;
+         gap: .6rem;}
+
+body.php-admin-dashboard .dash-date-badge i{color: #4f6ef7;}
+
+body.php-admin-dashboard .dash-welcome-banner{background: linear-gradient(135deg, #0f2027 0%, #1a2a6c 50%, #2c3e8f 100%);
+         border-radius: 1.6rem;
+         padding: 2.8rem 3.2rem;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         gap: 2rem;
+         margin-bottom: 2.8rem;
+         position: relative;
+         overflow: hidden;
+         animation: fadeSlideDown .5s ease both;}
+
+body.php-admin-dashboard .dash-welcome-banner::before{content: '';
+         position: absolute;
+         top: -40%;
+         right: -5%;
+         width: 36rem;
+         height: 36rem;
+         background: radial-gradient(circle, rgba(79,110,247,.35) 0%, transparent 70%);
+         pointer-events: none;}
+
+body.php-admin-dashboard .dash-welcome-banner::after{content: '';
+         position: absolute;
+         bottom: -50%;
+         left: 20%;
+         width: 28rem;
+         height: 28rem;
+         background: radial-gradient(circle, rgba(255,255,255,.06) 0%, transparent 70%);
+         pointer-events: none;}
+
+body.php-admin-dashboard .welcome-text h2{font-size: 2.4rem;
+         font-weight: 700;
+         color: #fff;
+         margin-bottom: .5rem;}
+
+body.php-admin-dashboard .welcome-text p{font-size: 1.4rem;
+         color: rgba(255,255,255,.65);}
+
+body.php-admin-dashboard .welcome-text strong{color: #7eb3ff;
+         font-weight: 600;}
+
+body.php-admin-dashboard .welcome-actions{display: flex;
+         gap: 1rem;
+         flex-wrap: wrap;
+         position: relative;
+         z-index: 1;}
+
+body.php-admin-dashboard .btn-banner{display: inline-flex;
+         align-items: center;
+         gap: .6rem;
+         padding: 1rem 2rem;
+         border-radius: .8rem;
+         font-size: 1.4rem;
+         font-weight: 600;
+         text-decoration: none;
+         transition: transform .15s, box-shadow .15s;
+         cursor: pointer;
+         border: none;}
+
+body.php-admin-dashboard .btn-banner:hover{transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.2);}
+
+body.php-admin-dashboard .btn-banner-primary{background: #fff;
+         color: #1a2a6c;}
+
+body.php-admin-dashboard .btn-banner-outline{background: rgba(255,255,255,.12);
+         color: #fff;
+         border: 1px solid rgba(255,255,255,.25);}
+
+body.php-admin-dashboard .dash-section-label{font-size: 1.1rem;
+         font-weight: 700;
+         letter-spacing: .12em;
+         text-transform: uppercase;
+         color: #94a3b8;
+         margin-bottom: 1.2rem;
+         margin-top: .4rem;}
+
+body.php-admin-dashboard .dash-stats-grid{display: grid;
+         grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+         gap: 1.6rem;
+         margin-bottom: 2.8rem;}
+
+body.php-admin-dashboard .stat-card{background: #fff;
+         border-radius: 1.4rem;
+         padding: 2rem 2.2rem;
+         display: flex;
+         flex-direction: column;
+         gap: 1.2rem;
+         box-shadow: 0 2px 12px rgba(0,0,0,.05);
+         transition: transform .2s, box-shadow .2s;
+         animation: fadeSlideUp .5s ease both;
+         position: relative;
+         overflow: hidden;}
+
+body.php-admin-dashboard .stat-card:hover{transform: translateY(-4px);
+         box-shadow: 0 12px 32px rgba(0,0,0,.1);}
+
+body.php-admin-dashboard .stat-card::before{content: '';
+         position: absolute;
+         top: 0; left: 0; right: 0;
+         height: 4px;
+         border-radius: 1.4rem 1.4rem 0 0;}
+
+body.php-admin-dashboard .stat-card.accent-blue::before{background: linear-gradient(90deg, #1a2a6c, #4f6ef7);}
+
+body.php-admin-dashboard .stat-card.accent-amber::before{background: linear-gradient(90deg, #f59e0b, #fbbf24);}
+
+body.php-admin-dashboard .stat-card.accent-green::before{background: linear-gradient(90deg, #059669, #34d399);}
+
+body.php-admin-dashboard .stat-card.accent-purple::before{background: linear-gradient(90deg, #7c3aed, #a78bfa);}
+
+body.php-admin-dashboard .stat-card.accent-rose::before{background: linear-gradient(90deg, #e11d48, #fb7185);}
+
+body.php-admin-dashboard .stat-card.accent-cyan::before{background: linear-gradient(90deg, #0891b2, #22d3ee);}
+
+body.php-admin-dashboard .stat-card.accent-orange::before{background: linear-gradient(90deg, #ea580c, #fb923c);}
+
+body.php-admin-dashboard .stat-card.accent-teal::before{background: linear-gradient(90deg, #0d9488, #2dd4bf);}
+
+body.php-admin-dashboard .stat-card-top{display: flex;
+         align-items: center;
+         justify-content: space-between;}
+
+body.php-admin-dashboard .stat-icon{width: 4.8rem;
+         height: 4.8rem;
+         border-radius: 1rem;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 2rem;}
+
+body.php-admin-dashboard .stat-icon.bg-blue{background: #eff2ff; color: #4f6ef7;}
+
+body.php-admin-dashboard .stat-icon.bg-amber{background: #fffbeb; color: #f59e0b;}
+
+body.php-admin-dashboard .stat-icon.bg-green{background: #ecfdf5; color: #059669;}
+
+body.php-admin-dashboard .stat-icon.bg-purple{background: #f5f3ff; color: #7c3aed;}
+
+body.php-admin-dashboard .stat-icon.bg-rose{background: #fff1f2; color: #e11d48;}
+
+body.php-admin-dashboard .stat-icon.bg-cyan{background: #ecfeff; color: #0891b2;}
+
+body.php-admin-dashboard .stat-icon.bg-orange{background: #fff7ed; color: #ea580c;}
+
+body.php-admin-dashboard .stat-icon.bg-teal{background: #f0fdfa; color: #0d9488;}
+
+body.php-admin-dashboard .stat-trend{font-size: 1.2rem;
+         font-weight: 600;
+         padding: .3rem .8rem;
+         border-radius: 2rem;}
+
+body.php-admin-dashboard .stat-trend.up{background: #ecfdf5; color: #059669;}
+
+body.php-admin-dashboard .stat-trend.down{background: #fff1f2; color: #e11d48;}
+
+body.php-admin-dashboard .stat-trend.neu{background: #f1f5f9; color: #64748b;}
+
+body.php-admin-dashboard .stat-card-value{font-size: 2.8rem;
+         font-weight: 800;
+         color: #0f172a;
+         line-height: 1;
+         letter-spacing: -.5px;}
+
+body.php-admin-dashboard .stat-card-value small{font-size: 1.6rem;
+         font-weight: 600;
+         color: #64748b;}
+
+body.php-admin-dashboard .stat-card-label{font-size: 1.3rem;
+         color: #64748b;
+         font-weight: 500;}
+
+body.php-admin-dashboard .stat-card-footer{border-top: 1px solid #f1f5f9;
+         padding-top: 1rem;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;}
+
+body.php-admin-dashboard .stat-card-link{font-size: 1.3rem;
+         font-weight: 600;
+         color: #4f6ef7;
+         text-decoration: none;
+         display: flex;
+         align-items: center;
+         gap: .4rem;
+         transition: gap .15s;}
+
+body.php-admin-dashboard .stat-card-link:hover{gap: .8rem;}
+
+body.php-admin-dashboard .stat-card-link i{font-size: 1.1rem;}
+
+body.php-admin-dashboard .dash-bottom-grid{display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 1.6rem;}
+
+@media (max-width: 800px){body.php-admin-dashboard .dash-bottom-grid{grid-template-columns: 1fr;}
+}
+
+body.php-admin-dashboard .dash-panel{background: #fff;
+         border-radius: 1.4rem;
+         padding: 2rem 2.2rem;
+         box-shadow: 0 2px 12px rgba(0,0,0,.05);
+         animation: fadeSlideUp .6s ease both;}
+
+body.php-admin-dashboard .dash-panel-title{font-size: 1.5rem;
+         font-weight: 700;
+         color: #0f172a;
+         margin-bottom: 1.6rem;
+         display: flex;
+         align-items: center;
+         gap: .8rem;}
+
+body.php-admin-dashboard .dash-panel-title i{color: #4f6ef7;
+         font-size: 1.4rem;}
+
+body.php-admin-dashboard .quick-actions-grid{display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 1rem;}
+
+body.php-admin-dashboard .quick-action-btn{display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         gap: .8rem;
+         padding: 1.6rem 1rem;
+         border-radius: 1rem;
+         text-decoration: none;
+         font-size: 1.3rem;
+         font-weight: 600;
+         color: #334155;
+         background: #f8fafc;
+         border: 1px solid #e2e8f0;
+         transition: all .2s;
+         text-align: center;}
+
+body.php-admin-dashboard .quick-action-btn i{font-size: 2rem;
+         width: 4rem;
+         height: 4rem;
+         border-radius: .8rem;
+         display: flex;
+         align-items: center;
+         justify-content: center;}
+
+body.php-admin-dashboard .quick-action-btn:hover{background: #eff2ff;
+         border-color: #c7d2fe;
+         color: #1a2a6c;
+         transform: translateY(-2px);
+         box-shadow: 0 6px 16px rgba(79,110,247,.12);}
+
+body.php-admin-dashboard .quick-action-btn i.qa-blue{background: #eff2ff; color: #4f6ef7;}
+
+body.php-admin-dashboard .quick-action-btn i.qa-green{background: #ecfdf5; color: #059669;}
+
+body.php-admin-dashboard .quick-action-btn i.qa-amber{background: #fffbeb; color: #f59e0b;}
+
+body.php-admin-dashboard .quick-action-btn i.qa-rose{background: #fff1f2; color: #e11d48;}
+
+body.php-admin-dashboard .quick-action-btn i.qa-purple{background: #f5f3ff; color: #7c3aed;}
+
+body.php-admin-dashboard .quick-action-btn i.qa-cyan{background: #ecfeff; color: #0891b2;}
+
+body.php-admin-dashboard .tips-list{display: flex;
+         flex-direction: column;
+         gap: 1.2rem;}
+
+body.php-admin-dashboard .tip-item{display: flex;
+         align-items: flex-start;
+         gap: 1.2rem;
+         padding: 1.2rem 1.4rem;
+         border-radius: 1rem;
+         background: #f8fafc;
+         border-left: 3px solid #4f6ef7;}
+
+body.php-admin-dashboard .tip-item.amber{border-left-color: #f59e0b;}
+
+body.php-admin-dashboard .tip-item.green{border-left-color: #059669;}
+
+body.php-admin-dashboard .tip-icon{width: 3.6rem;
+         height: 3.6rem;
+         flex-shrink: 0;
+         border-radius: .8rem;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 1.6rem;
+         background: #eff2ff;
+         color: #4f6ef7;}
+
+body.php-admin-dashboard .tip-item.amber .tip-icon{background: #fffbeb; color: #f59e0b;}
+
+body.php-admin-dashboard .tip-item.green .tip-icon{background: #ecfdf5; color: #059669;}
+
+body.php-admin-dashboard .tip-text strong{display: block;
+         font-size: 1.3rem;
+         font-weight: 600;
+         color: #0f172a;
+         margin-bottom: .2rem;}
+
+body.php-admin-dashboard .tip-text span{font-size: 1.2rem;
+         color: #64748b;}
+
+@keyframes fadeSlideDown{
+         from { opacity: 0; transform: translateY(-16px); }
+         to   { opacity: 1; transform: translateY(0); }
+      }
+
+@keyframes fadeSlideUp{
+         from { opacity: 0; transform: translateY(20px); }
+         to   { opacity: 1; transform: translateY(0); }
+      }
+
+body.php-admin-dashboard .stat-card:nth-child(1){animation-delay: .05s;}
+
+body.php-admin-dashboard .stat-card:nth-child(2){animation-delay: .10s;}
+
+body.php-admin-dashboard .stat-card:nth-child(3){animation-delay: .15s;}
+
+body.php-admin-dashboard .stat-card:nth-child(4){animation-delay: .20s;}
+
+body.php-admin-dashboard .stat-card:nth-child(5){animation-delay: .25s;}
+
+body.php-admin-dashboard .stat-card:nth-child(6){animation-delay: .30s;}
+
+body.php-admin-dashboard .stat-card:nth-child(7){animation-delay: .35s;}
+
+body.php-admin-dashboard .stat-card:nth-child(8){animation-delay: .40s;}
+
+body.php-admin-dashboard .stat-card-value{transition: all .3s;}
+
+@media (max-width: 700px){body.php-admin-dashboard .admin-dashboard{padding: 1.6rem;}
+
+body.php-admin-dashboard .dash-welcome-banner{flex-direction: column; align-items: flex-start;}
+
+body.php-admin-dashboard .dash-stats-grid{grid-template-columns: 1fr 1fr;}
+
+body.php-admin-dashboard .quick-actions-grid{grid-template-columns: 1fr 1fr;}
+}
+
+@media (max-width: 480px){body.php-admin-dashboard .dash-stats-grid{grid-template-columns: 1fr;}
+}
+
+body.php-admin-dashboard .header{background: #fff !important;}
+
+body.php-admin-dashboard .footer{background: #fff !important;}
+
+body.php-admin-dashboard .dashboard .box-container .box,
+body.php-admin-dashboard .dashboard .box-container{border: none !important; box-shadow: none !important;}
+
+/* ===== moved from admin/placed_orders.php | scope: body.php-admin-placed-orders ===== */
+body.php-admin-placed-orders *,
+body.php-admin-placed-orders *::before,
+body.php-admin-placed-orders *::after{
+   box-sizing: border-box;
+}
+
+body.php-admin-placed-orders{background: #f0f2f8 !important; font-family: 'Segoe UI', sans-serif !important;}
+
+body.php-admin-placed-orders section,
+body.php-admin-placed-orders .orders,
+body.php-admin-placed-orders .dashboard{background: transparent !important;}
+
+body.php-admin-placed-orders .header{background: #fff !important;}
+
+body.php-admin-placed-orders .footer{background: #fff !important;}
+
+body.php-admin-placed-orders .orders-page{max-width: 1400px;
+         margin: 0 auto;
+         padding: 2.4rem 2.8rem 5rem;}
+
+body.php-admin-placed-orders .orders-page-header{display: flex;
+         align-items: center;
+         justify-content: space-between;
+         flex-wrap: wrap;
+         gap: 1rem;
+         margin-bottom: 2.4rem;
+         animation: fadeSlideDown .45s ease both;}
+
+body.php-admin-placed-orders .orders-page-header h1{font-size: 2.6rem;
+         font-weight: 800;
+         color: #0f172a;
+         letter-spacing: -.5px;}
+
+body.php-admin-placed-orders .orders-page-header h1 span{background: linear-gradient(135deg, #1a2a6c, #4f6ef7);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;}
+
+body.php-admin-placed-orders .orders-date-badge{background: #fff;
+         border-radius: 3rem;
+         padding: .7rem 1.6rem;
+         font-size: 1.3rem;
+         color: #64748b;
+         box-shadow: 0 2px 8px rgba(0,0,0,.07);
+         display: flex;
+         align-items: center;
+         gap: .6rem;}
+
+body.php-admin-placed-orders .orders-date-badge i{color: #4f6ef7;}
+
+body.php-admin-placed-orders .orders-summary-strip{display: grid;
+         grid-template-columns: repeat(5, 1fr);
+         gap: 1rem;
+         margin-bottom: 2.4rem;
+         animation: fadeSlideUp .5s ease both;}
+
+body.php-admin-placed-orders .summary-chip{background: #fff;
+         border-radius: 1rem;
+         padding: 1.4rem 1.6rem;
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         gap: .4rem;
+         box-shadow: 0 2px 10px rgba(0,0,0,.05);
+         position: relative;
+         overflow: hidden;
+         transition: transform .2s, box-shadow .2s;}
+
+body.php-admin-placed-orders .summary-chip:hover{transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.09);}
+
+body.php-admin-placed-orders .summary-chip::before{content: '';
+         position: absolute;
+         top: 0; left: 0; right: 0;
+         height: 3px;
+         border-radius: 1rem 1rem 0 0;}
+
+body.php-admin-placed-orders .summary-chip.chip-all::before{background: linear-gradient(90deg,#1a2a6c,#4f6ef7);}
+
+body.php-admin-placed-orders .summary-chip.chip-proc::before{background: linear-gradient(90deg,#f59e0b,#fbbf24);}
+
+body.php-admin-placed-orders .summary-chip.chip-pack::before{background: linear-gradient(90deg,#0891b2,#22d3ee);}
+
+body.php-admin-placed-orders .summary-chip.chip-ship::before{background: linear-gradient(90deg,#059669,#34d399);}
+
+body.php-admin-placed-orders .summary-chip.chip-done::before{background: linear-gradient(90deg,#64748b,#94a3b8);}
+
+body.php-admin-placed-orders .summary-chip-count{font-size: 2.4rem;
+         font-weight: 800;
+         color: #0f172a;
+         line-height: 1;}
+
+body.php-admin-placed-orders .summary-chip-label{font-size: 1.2rem;
+         font-weight: 600;
+         color: #64748b;
+         text-transform: uppercase;
+         letter-spacing: .06em;}
+
+body.php-admin-placed-orders .filter-tabs{display: flex;
+         flex-wrap: wrap;
+         gap: .8rem;
+         margin-bottom: 2rem;
+         background: #fff;
+         padding: 1.2rem 1.6rem;
+         border-radius: 1.2rem;
+         box-shadow: 0 2px 10px rgba(0,0,0,.05);
+         animation: fadeSlideUp .5s .05s ease both;}
+
+body.php-admin-placed-orders .filter-tab{display: inline-flex;
+         align-items: center;
+         gap: .6rem;
+         padding: .8rem 1.6rem;
+         border-radius: 3rem;
+         font-size: 1.3rem;
+         font-weight: 600;
+         color: #475569;
+         background: #f1f5f9;
+         text-decoration: none;
+         border: 1.5px solid transparent;
+         transition: all .2s;
+         white-space: nowrap;}
+
+body.php-admin-placed-orders .filter-tab:hover{background: #e0e7ff; color: #1a2a6c; border-color: #c7d2fe;}
+
+body.php-admin-placed-orders .filter-tab.active{background: linear-gradient(135deg, #1a2a6c, #4f6ef7);
+         color: #fff;
+         border-color: transparent;
+         box-shadow: 0 4px 12px rgba(79,110,247,.3);}
+
+body.php-admin-placed-orders .filter-tab .tab-count{background: rgba(255,255,255,.25);
+         border-radius: 1rem;
+         padding: .1rem .6rem;
+         font-size: 1.1rem;
+         font-weight: 700;}
+
+body.php-admin-placed-orders .filter-tab:not(.active) .tab-count{background: #e2e8f0;
+         color: #475569;}
+
+body.php-admin-placed-orders .orders-grid{display: grid;
+         grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+         gap: 1.8rem;}
+
+body.php-admin-placed-orders .order-card{background: #fff;
+         border-radius: 1.4rem;
+         overflow: hidden;
+         box-shadow: 0 2px 12px rgba(0,0,0,.05);
+         display: flex;
+         flex-direction: column;
+         transition: transform .22s, box-shadow .22s;
+         animation: fadeSlideUp .5s ease both;
+         position: relative;}
+
+body.php-admin-placed-orders .order-card:hover{transform: translateY(-5px); box-shadow: 0 14px 36px rgba(0,0,0,.1);}
+
+body.php-admin-placed-orders .order-card-bar{height: 4px;
+         width: 100%;}
+
+body.php-admin-placed-orders .bar-diproses{background: linear-gradient(90deg,#f59e0b,#fbbf24);}
+
+body.php-admin-placed-orders .bar-dikemas{background: linear-gradient(90deg,#0891b2,#22d3ee);}
+
+body.php-admin-placed-orders .bar-dikirim{background: linear-gradient(90deg,#059669,#34d399);}
+
+body.php-admin-placed-orders .bar-selesai{background: linear-gradient(90deg,#64748b,#94a3b8);}
+
+body.php-admin-placed-orders .order-card-inner{padding: 1.8rem; display: flex; flex-direction: column; flex: 1; gap: 1.2rem;}
+
+body.php-admin-placed-orders .order-card-head{display: flex;
+         align-items: flex-start;
+         justify-content: space-between;
+         gap: .8rem;}
+
+body.php-admin-placed-orders .order-number{font-size: 1.5rem;
+         font-weight: 800;
+         color: #0f172a;
+         letter-spacing: -.2px;}
+
+body.php-admin-placed-orders .order-date{font-size: 1.25rem;
+         color: #94a3b8;
+         margin-top: .3rem;
+         display: flex;
+         align-items: center;
+         gap: .4rem;}
+
+body.php-admin-placed-orders .status-badge{display: inline-flex;
+         align-items: center;
+         gap: .4rem;
+         padding: .5rem 1.1rem;
+         border-radius: 2rem;
+         font-size: 1.2rem;
+         font-weight: 700;
+         white-space: nowrap;
+         flex-shrink: 0;}
+
+body.php-admin-placed-orders .badge-diproses{background: #fffbeb; color: #b45309;}
+
+body.php-admin-placed-orders .badge-dikemas{background: #ecfeff; color: #0e7490;}
+
+body.php-admin-placed-orders .badge-dikirim{background: #ecfdf5; color: #065f46;}
+
+body.php-admin-placed-orders .badge-selesai{background: #f1f5f9; color: #475569;}
+
+body.php-admin-placed-orders .pay-badge{display: inline-flex;
+         align-items: center;
+         gap: .4rem;
+         padding: .3rem .9rem;
+         border-radius: 2rem;
+         font-size: 1.15rem;
+         font-weight: 700;}
+
+body.php-admin-placed-orders .pay-pending{background: #fff1f2; color: #be123c;}
+
+body.php-admin-placed-orders .pay-completed{background: #ecfdf5; color: #065f46;}
+
+body.php-admin-placed-orders .order-card-info{display: flex;
+         flex-direction: column;
+         gap: .8rem;
+         padding: 1.2rem;
+         background: #f8fafc;
+         border-radius: .8rem;}
+
+body.php-admin-placed-orders .info-row{display: flex;
+         align-items: flex-start;
+         gap: .8rem;
+         font-size: 1.3rem;}
+
+body.php-admin-placed-orders .info-row i{color: #94a3b8; font-size: 1.2rem; margin-top: .2rem; flex-shrink: 0; width: 1.4rem;}
+
+body.php-admin-placed-orders .info-row .info-label{color: #94a3b8; font-weight: 600; white-space: nowrap;}
+
+body.php-admin-placed-orders .info-row .info-val{color: #334155; font-weight: 500;}
+
+body.php-admin-placed-orders .product-summary-text{font-size: 1.3rem;
+         color: #334155;
+         line-height: 1.5;
+         display: -webkit-box;
+         -webkit-line-clamp: 2;
+         -webkit-box-orient: vertical;
+         overflow: hidden;}
+
+body.php-admin-placed-orders .order-card-footer{display: flex;
+         align-items: center;
+         justify-content: space-between;
+         gap: 1rem;
+         margin-top: auto;
+         padding-top: 1.2rem;
+         border-top: 1px solid #f1f5f9;}
+
+body.php-admin-placed-orders .order-total{font-size: 2rem;
+         font-weight: 800;
+         color: #e11d48;}
+
+body.php-admin-placed-orders .btn-detail{display: inline-flex;
+         align-items: center;
+         gap: .5rem;
+         padding: .9rem 1.8rem;
+         border-radius: .8rem;
+         background: linear-gradient(135deg, #1a2a6c, #4f6ef7);
+         color: #fff;
+         font-size: 1.35rem;
+         font-weight: 700;
+         text-decoration: none;
+         transition: transform .15s, box-shadow .15s;
+         white-space: nowrap;}
+
+body.php-admin-placed-orders .btn-detail:hover{transform: translateY(-2px); box-shadow: 0 6px 16px rgba(79,110,247,.3);}
+
+body.php-admin-placed-orders .orders-empty{grid-column: 1/-1;
+         text-align: center;
+         padding: 6rem 2rem;
+         color: #94a3b8;}
+
+body.php-admin-placed-orders .orders-empty i{font-size: 5rem; display: block; margin-bottom: 1.4rem; color: #cbd5e1;}
+
+body.php-admin-placed-orders .orders-empty p{font-size: 1.6rem;}
+
+@keyframes fadeSlideDown{
+         from { opacity: 0; transform: translateY(-14px); }
+         to   { opacity: 1; transform: translateY(0); }
+      }
+
+@keyframes fadeSlideUp{
+         from { opacity: 0; transform: translateY(18px); }
+         to   { opacity: 1; transform: translateY(0); }
+      }
+
+body.php-admin-placed-orders .order-card:nth-child(1){animation-delay:.05s;}
+
+body.php-admin-placed-orders .order-card:nth-child(2){animation-delay:.10s;}
+
+body.php-admin-placed-orders .order-card:nth-child(3){animation-delay:.15s;}
+
+body.php-admin-placed-orders .order-card:nth-child(4){animation-delay:.20s;}
+
+body.php-admin-placed-orders .order-card:nth-child(5){animation-delay:.25s;}
+
+body.php-admin-placed-orders .order-card:nth-child(6){animation-delay:.30s;}
+
+body.php-admin-placed-orders .order-card:nth-child(n+7){animation-delay:.35s;}
+
+@media (max-width:900px){body.php-admin-placed-orders .orders-page{padding: 1.6rem;}
+
+body.php-admin-placed-orders .orders-summary-strip{grid-template-columns: repeat(3,1fr);}
+}
+
+@media (max-width:600px){body.php-admin-placed-orders .orders-grid{grid-template-columns: 1fr;}
+
+body.php-admin-placed-orders .orders-summary-strip{grid-template-columns: repeat(2,1fr);}
+}
+
+/* ===== moved from admin/products.php | scope: body.php-admin-products ===== */
+body.php-admin-products *,
+body.php-admin-products *::before,
+body.php-admin-products *::after{
+   box-sizing: border-box;
+}
+
+body.php-admin-products{background:#f0f2f8!important;font-family:'Segoe UI',sans-serif!important}
+
+body.php-admin-products section,
+body.php-admin-products .add-products,
+body.php-admin-products .show-products,
+body.php-admin-products .dashboard{background:transparent!important}
+
+body.php-admin-products .header{background:#fff!important}
+
+body.php-admin-products .footer{background:#fff!important}
+
+body.php-admin-products .products-page{max-width:1400px;margin:0 auto;padding:2.4rem 2.8rem 5rem}
+
+body.php-admin-products .products-page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:2.4rem;flex-wrap:wrap;gap:1rem;animation:fadeSlideDown .45s ease both}
+
+body.php-admin-products .products-page-header h1{font-size:2.6rem;font-weight:800;color:#0f172a;letter-spacing:-.5px}
+
+body.php-admin-products .products-page-header h1 span{background:linear-gradient(135deg,#1a2a6c,#4f6ef7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+body.php-admin-products .notif-bar{background:#ecfdf5;border-left:4px solid #059669;border-radius:.8rem;padding:1.2rem 1.6rem;font-size:1.4rem;color:#065f46;margin-bottom:1.6rem;display:flex;align-items:center;gap:.8rem;animation:fadeSlideDown .3s ease both}
+
+body.php-admin-products .notif-bar.error{background:#fff1f2;border-left-color:#e11d48;color:#9f1239}
+
+body.php-admin-products .form-panel{background:#fff;border-radius:1.6rem;padding:2.8rem 3rem;box-shadow:0 2px 16px rgba(0,0,0,.06);margin-bottom:3.2rem;animation:fadeSlideUp .5s ease both}
+
+body.php-admin-products .form-panel-title{font-size:1.8rem;font-weight:700;color:#0f172a;margin-bottom:2.4rem;display:flex;align-items:center;gap:.8rem;padding-bottom:1.4rem;border-bottom:1px solid #f1f5f9}
+
+body.php-admin-products .form-panel-title i{color:#4f6ef7}
+
+body.php-admin-products .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem 2.4rem}
+
+body.php-admin-products .form-grid .full-width{grid-column:1/-1}
+
+body.php-admin-products .form-field{display:flex;flex-direction:column;gap:.6rem}
+
+body.php-admin-products .form-field label{font-size:1.3rem;font-weight:600;color:#475569}
+
+body.php-admin-products .form-field label .req{color:#e11d48;margin-left:.2rem}
+
+body.php-admin-products .form-input{width:100%;padding:1.1rem 1.4rem;border:1.5px solid #e2e8f0;border-radius:.8rem;font-size:1.4rem;color:#0f172a;background:#f8fafc;outline:none;font-family:inherit;transition:border-color .2s,box-shadow .2s,background .2s}
+
+body.php-admin-products .form-input:focus{border-color:#4f6ef7;background:#fff;box-shadow:0 0 0 3px rgba(79,110,247,.12)}
+
+body.php-admin-products .form-input::placeholder{color:#94a3b8}
+
+body.php-admin-products textarea.form-input{resize:vertical;min-height:12rem;line-height:1.6}
+
+body.php-admin-products .cat-select-wrap{position:relative}
+
+body.php-admin-products .cat-select-wrap::after{content:'\f078';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;right:1.4rem;top:50%;transform:translateY(-50%);color:#94a3b8;font-size:1.2rem;pointer-events:none}
+
+body.php-admin-products .form-select{width:100%;padding:1.1rem 4rem 1.1rem 1.4rem;border:1.5px solid #e2e8f0;border-radius:.8rem;font-size:1.4rem;color:#0f172a;background:#f8fafc;outline:none;font-family:inherit;appearance:none;cursor:pointer;transition:border-color .2s,box-shadow .2s,background .2s}
+
+body.php-admin-products .form-select:focus{border-color:#4f6ef7;background:#fff;box-shadow:0 0 0 3px rgba(79,110,247,.12)}
+
+body.php-admin-products .cat-pill-preview{display:inline-flex;align-items:center;gap:.5rem;margin-top:.6rem;padding:.5rem 1.2rem;border-radius:2rem;font-size:1.25rem;font-weight:700;width:fit-content;transition:background .25s,color .25s}
+
+body.php-admin-products .file-upload-area{border:2px dashed #c7d2fe;border-radius:.8rem;padding:1.8rem;text-align:center;cursor:pointer;background:#f8fafc;position:relative;transition:border-color .2s,background .2s}
+
+body.php-admin-products .file-upload-area:hover{border-color:#4f6ef7;background:#eff2ff}
+
+body.php-admin-products .file-upload-area input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+
+body.php-admin-products .file-upload-area i{font-size:2.4rem;color:#94a3b8;display:block;margin-bottom:.6rem;pointer-events:none}
+
+body.php-admin-products .file-upload-area span{font-size:1.3rem;color:#64748b;pointer-events:none}
+
+body.php-admin-products .file-upload-area .file-name{font-size:1.2rem;color:#4f6ef7;margin-top:.4rem;font-weight:600}
+
+body.php-admin-products .variation-toggle-row{display:flex;align-items:center;gap:1rem;padding:1.4rem 1.6rem;background:#eff2ff;border-radius:.8rem;border:1.5px solid #c7d2fe;cursor:pointer;transition:background .2s}
+
+body.php-admin-products .variation-toggle-row:hover{background:#e0e7ff}
+
+body.php-admin-products .variation-toggle-row input[type="checkbox"]{width:1.8rem;height:1.8rem;accent-color:#4f6ef7;cursor:pointer}
+
+body.php-admin-products .variation-toggle-row label{font-size:1.4rem;font-weight:600;color:#1a2a6c;cursor:pointer}
+
+body.php-admin-products .variation-panel{display:none;margin-top:1.6rem;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:1.2rem;padding:2rem}
+
+body.php-admin-products .variation-group-card{background:#fff;border:1.5px solid #e2e8f0;border-radius:1rem;padding:1.8rem;margin-bottom:1.4rem}
+
+body.php-admin-products .variation-group-card h3{font-size:1.5rem;font-weight:700;color:#1a2a6c;margin-bottom:1.4rem;display:flex;align-items:center;gap:.6rem}
+
+body.php-admin-products .variation-group-card h3 i{color:#4f6ef7}
+
+body.php-admin-products .variation-option-row{background:#f8fafc;border:1px dashed #cbd5e1;border-radius:.8rem;padding:1.2rem;margin-bottom:1rem}
+
+body.php-admin-products .variation-option-row-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+
+body.php-admin-products .variation-note-box{margin-top:1.2rem;padding:1rem 1.4rem;background:#fffbeb;border-left:3px solid #f59e0b;border-radius:.6rem;font-size:1.3rem;color:#78350f;line-height:1.6}
+
+body.php-admin-products .btn-submit{display:inline-flex;align-items:center;justify-content:center;gap:.8rem;width:100%;padding:1.4rem;background:linear-gradient(135deg,#1a2a6c,#4f6ef7);color:#fff;border:none;border-radius:.8rem;font-size:1.5rem;font-weight:700;cursor:pointer;margin-top:.8rem;font-family:inherit;transition:transform .15s,box-shadow .2s}
+
+body.php-admin-products .btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(79,110,247,.3)}
+
+body.php-admin-products .btn-submit:active{transform:scale(.98)}
+
+body.php-admin-products .cat-stats-strip{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2rem}
+
+body.php-admin-products .cat-stat-chip{background:#fff;border-radius:1rem;padding:1.2rem 1.6rem;box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;align-items:center;gap:1rem;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s;min-width:12rem}
+
+body.php-admin-products .cat-stat-chip:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.09)}
+
+body.php-admin-products .cat-stat-chip::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:1rem 1rem 0 0}
+
+body.php-admin-products .cat-stat-num{font-size:2.2rem;font-weight:800;color:#0f172a;line-height:1}
+
+body.php-admin-products .cat-stat-lbl{font-size:1.2rem;font-weight:600;color:#64748b;margin-top:.2rem}
+
+body.php-admin-products .cat-filter-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.6rem}
+
+body.php-admin-products .cat-tab{display:inline-flex;align-items:center;gap:.4rem;padding:.6rem 1.3rem;border-radius:3rem;font-size:1.25rem;font-weight:600;background:#f1f5f9;color:#475569;border:1.5px solid transparent;cursor:pointer;transition:all .18s}
+
+body.php-admin-products .cat-tab:hover{background:#eff2ff;color:#1a2a6c}
+
+body.php-admin-products .cat-tab.active{background:linear-gradient(135deg,#1a2a6c,#4f6ef7);color:#fff}
+
+body.php-admin-products .products-section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem;flex-wrap:wrap;gap:1rem}
+
+body.php-admin-products .section-label{font-size:1.1rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#94a3b8}
+
+body.php-admin-products .search-bar-wrap{position:relative}
+
+body.php-admin-products .search-bar-wrap i{position:absolute;left:1.2rem;top:50%;transform:translateY(-50%);color:#94a3b8;font-size:1.3rem;pointer-events:none}
+
+body.php-admin-products #product-search{padding:.8rem 1.4rem .8rem 3.4rem;border:1.5px solid #e2e8f0;border-radius:3rem;font-size:1.3rem;color:#0f172a;background:#fff;outline:none;width:24rem;transition:border-color .2s,box-shadow .2s;font-family:inherit}
+
+body.php-admin-products #product-search:focus{border-color:#4f6ef7;box-shadow:0 0 0 3px rgba(79,110,247,.12)}
+
+body.php-admin-products .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(28rem,1fr));gap:2rem}
+
+body.php-admin-products .product-card{background:#fff;border-radius:1.4rem;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.05);display:flex;flex-direction:column;position:relative;transition:transform .25s,box-shadow .25s;animation:fadeSlideUp .5s ease both}
+
+body.php-admin-products .product-card:hover{transform:translateY(-5px);box-shadow:0 14px 36px rgba(0,0,0,.1)}
+
+body.php-admin-products .product-variation-badge{position:absolute;top:1rem;left:1rem;background:linear-gradient(135deg,#1a2a6c,#4f6ef7);color:#fff;font-size:1.1rem;font-weight:700;padding:.3rem .8rem;border-radius:2rem;z-index:2}
+
+body.php-admin-products .product-category-badge{position:absolute;top:1rem;right:1rem;color:#fff;font-size:1.1rem;font-weight:700;padding:.3rem .9rem;border-radius:2rem;z-index:2}
+
+body.php-admin-products .product-card-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#f1f5f9}
+
+body.php-admin-products .product-card-body{padding:1.6rem;display:flex;flex-direction:column;flex:1;gap:.8rem}
+
+body.php-admin-products .product-card-name{font-size:1.5rem;font-weight:700;color:#0f172a;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+body.php-admin-products .product-card-price{font-size:1.8rem;font-weight:800;color:#e11d48}
+
+body.php-admin-products .product-card-desc{font-size:1.3rem;color:#64748b;line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+body.php-admin-products .product-card-variations{display:flex;flex-direction:column;gap:.6rem;padding:1rem;background:#f8fafc;border-radius:.8rem;border:1px solid #f1f5f9}
+
+body.php-admin-products .variation-label-tag{font-size:1.15rem;font-weight:700;color:#475569;margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.05em}
+
+body.php-admin-products .variation-chips{display:flex;flex-wrap:wrap;gap:.5rem}
+
+body.php-admin-products .variation-chip{display:inline-flex;align-items:center;gap:.4rem;background:#fff;border:1px solid #e2e8f0;border-radius:2rem;padding:.3rem .9rem;font-size:1.2rem;color:#334155;font-weight:500}
+
+body.php-admin-products .variation-chip img{width:1.8rem;height:1.8rem;object-fit:cover;border-radius:50%}
+
+body.php-admin-products .product-card-actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.8rem;margin-top:auto;padding-top:1.2rem;border-top:1px solid #f1f5f9}
+
+body.php-admin-products .card-action-btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;padding:.9rem .6rem;border-radius:.7rem;font-size:1.25rem;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s;white-space:nowrap;font-family:inherit}
+
+body.php-admin-products .card-action-btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.12)}
+
+body.php-admin-products .card-action-btn:active{transform:scale(.96)}
+
+body.php-admin-products .btn-view-product{background:#eff2ff;color:#1a2a6c}
+
+body.php-admin-products .btn-view-product:hover{background:#e0e7ff}
+
+body.php-admin-products .btn-update-product{background:#fffbeb;color:#b45309}
+
+body.php-admin-products .btn-update-product:hover{background:#fef3c7}
+
+body.php-admin-products .btn-delete-product{background:#fff1f2;color:#be123c}
+
+body.php-admin-products .btn-delete-product:hover{background:#ffe4e6}
+
+body.php-admin-products .products-empty{grid-column:1/-1;text-align:center;padding:6rem 2rem;color:#94a3b8}
+
+body.php-admin-products .products-empty i{font-size:5rem;display:block;margin-bottom:1.4rem;color:#cbd5e1}
+
+body.php-admin-products .products-empty p{font-size:1.6rem}
+
+@keyframes fadeSlideDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+
+@keyframes fadeSlideUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+body.php-admin-products .product-card:nth-child(1){animation-delay:.05s}
+
+body.php-admin-products .product-card:nth-child(2){animation-delay:.10s}
+
+body.php-admin-products .product-card:nth-child(3){animation-delay:.15s}
+
+body.php-admin-products .product-card:nth-child(4){animation-delay:.20s}
+
+body.php-admin-products .product-card:nth-child(n+5){animation-delay:.25s}
+
+@media(max-width:900px){body.php-admin-products .products-page{padding:1.6rem}
+
+body.php-admin-products .form-grid{grid-template-columns:1fr}
+
+body.php-admin-products .products-grid{grid-template-columns:1fr 1fr}
+}
+
+@media(max-width:580px){body.php-admin-products .products-grid{grid-template-columns:1fr}
+
+body.php-admin-products #product-search{width:100%}
+
+body.php-admin-products .variation-option-row-grid{grid-template-columns:1fr}
+}
+
+/* ===== moved from admin/update_product.php | scope: body.php-admin-update-product ===== */
+body.php-admin-update-product *,
+body.php-admin-update-product *::before,
+body.php-admin-update-product *::after{box-sizing:border-box;margin:0;padding:0}
+
+body.php-admin-update-product{background:#f0f2f8!important;font-family:'Segoe UI',sans-serif!important}
+
+body.php-admin-update-product section,
+body.php-admin-update-product .update-product,
+body.php-admin-update-product .dashboard{background:transparent!important}
+
+body.php-admin-update-product .header{background:#fff!important}
+
+body.php-admin-update-product .footer{background:#fff!important}
+
+body.php-admin-update-product .update-page{max-width:1200px;margin:0 auto;padding:2.4rem 2.8rem 5rem}
+
+body.php-admin-update-product .page-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2.4rem;animation:fadeSlideDown .45s ease both}
+
+body.php-admin-update-product .page-header h1{font-size:2.6rem;font-weight:800;color:#0f172a;letter-spacing:-.5px}
+
+body.php-admin-update-product .page-header h1 span{background:linear-gradient(135deg,#1a2a6c,#4f6ef7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+body.php-admin-update-product .btn-back{display:inline-flex;align-items:center;gap:.7rem;padding:.9rem 1.8rem;background:#fff;border:1.5px solid #e2e8f0;border-radius:.8rem;font-size:1.35rem;font-weight:600;color:#475569;text-decoration:none;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+
+body.php-admin-update-product .btn-back:hover{background:#f8fafc;color:#1a2a6c;border-color:#c7d2fe;transform:translateY(-1px)}
+
+body.php-admin-update-product .alert-bar{padding:1.2rem 1.6rem;border-radius:.9rem;font-size:1.35rem;display:flex;align-items:center;gap:.8rem;margin-bottom:2rem;animation:fadeSlideDown .35s ease both}
+
+body.php-admin-update-product .alert-bar.success{background:#ecfdf5;border-left:4px solid #059669;color:#065f46}
+
+body.php-admin-update-product .alert-bar.warning{background:#fffbeb;border-left:4px solid #f59e0b;color:#78350f}
+
+body.php-admin-update-product .alert-bar.error{background:#fff1f2;border-left:4px solid #e11d48;color:#be123c}
+
+body.php-admin-update-product .update-grid{display:grid;grid-template-columns:34rem 1fr;gap:2rem;align-items:start}
+
+body.php-admin-update-product .image-panel{background:#fff;border-radius:1.4rem;padding:2rem;box-shadow:0 2px 12px rgba(0,0,0,.05);animation:fadeSlideUp .5s ease both;position:sticky;top:8rem}
+
+body.php-admin-update-product .panel-title{font-size:1.4rem;font-weight:700;color:#0f172a;margin-bottom:1.6rem;display:flex;align-items:center;gap:.7rem;padding-bottom:1.2rem;border-bottom:1px solid #f1f5f9}
+
+body.php-admin-update-product .panel-title i{color:#4f6ef7}
+
+body.php-admin-update-product .img-preview-main{width:100%;aspect-ratio:1/1;border-radius:1rem;overflow:hidden;background:#f8fafc;border:2px solid #f1f5f9;margin-bottom:1.2rem;position:relative;cursor:pointer;transition:border-color .2s}
+
+body.php-admin-update-product .img-preview-main:hover{border-color:#c7d2fe}
+
+body.php-admin-update-product .img-preview-main img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+
+body.php-admin-update-product .img-preview-main:hover img{transform:scale(1.04)}
+
+body.php-admin-update-product .img-preview-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.5),transparent);color:#fff;font-size:1.2rem;font-weight:600;padding:1.2rem 1rem .8rem;text-align:center}
+
+body.php-admin-update-product .img-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+
+body.php-admin-update-product .img-thumb{aspect-ratio:1/1;border-radius:.8rem;overflow:hidden;background:#f8fafc;border:2px solid #f1f5f9;cursor:pointer;transition:border-color .2s,transform .2s;position:relative}
+
+body.php-admin-update-product .img-thumb.active{border-color:#4f6ef7}
+
+body.php-admin-update-product .img-thumb:hover{border-color:#c7d2fe;transform:translateY(-2px)}
+
+body.php-admin-update-product .img-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+
+body.php-admin-update-product .img-thumb-badge{position:absolute;bottom:.3rem;right:.3rem;background:rgba(0,0,0,.55);color:#fff;font-size:1rem;font-weight:700;padding:.15rem .5rem;border-radius:.4rem}
+
+body.php-admin-update-product .product-quick-info{margin-top:1.6rem;padding-top:1.6rem;border-top:1px solid #f1f5f9}
+
+body.php-admin-update-product .qi-row{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0;border-bottom:1px solid #f8fafc;font-size:1.3rem}
+
+body.php-admin-update-product .qi-row:last-child{border-bottom:none}
+
+body.php-admin-update-product .qi-key{color:#64748b;font-weight:500}
+
+body.php-admin-update-product .qi-val{color:#0f172a;font-weight:700}
+
+body.php-admin-update-product .qi-price{color:#e11d48;font-size:1.5rem}
+
+body.php-admin-update-product .form-panel{background:#fff;border-radius:1.4rem;padding:2.4rem;box-shadow:0 2px 12px rgba(0,0,0,.05);animation:fadeSlideUp .5s .06s ease both}
+
+body.php-admin-update-product .form-section{margin-bottom:2.8rem}
+
+body.php-admin-update-product .form-section-title{font-size:1.35rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:1.6rem;display:flex;align-items:center;gap:.7rem}
+
+body.php-admin-update-product .form-section-title::after{content:'';flex:1;height:1px;background:#f1f5f9}
+
+body.php-admin-update-product .form-field{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.6rem}
+
+body.php-admin-update-product .form-field:last-child{margin-bottom:0}
+
+body.php-admin-update-product .form-field label{font-size:1.3rem;font-weight:700;color:#475569;display:flex;align-items:center;gap:.5rem}
+
+body.php-admin-update-product .form-field label i{color:#94a3b8;font-size:1.2rem}
+
+body.php-admin-update-product .input-wrap{position:relative}
+
+body.php-admin-update-product .input-wrap i.fi{position:absolute;left:1.4rem;top:50%;transform:translateY(-50%);color:#94a3b8;font-size:1.4rem;pointer-events:none;transition:color .2s}
+
+body.php-admin-update-product .input-wrap:focus-within i.fi{color:#4f6ef7}
+
+body.php-admin-update-product .form-input{width:100%;padding:1.2rem 1.4rem 1.2rem 4rem;border:1.5px solid #e2e8f0;border-radius:.9rem;font-size:1.4rem;color:#0f172a;background:#f8fafc;outline:none;font-family:inherit;transition:border-color .2s,box-shadow .2s,background .2s}
+
+body.php-admin-update-product .form-input:focus{border-color:#4f6ef7;background:#fff;box-shadow:0 0 0 3px rgba(79,110,247,.12)}
+
+body.php-admin-update-product .form-input::placeholder{color:#94a3b8}
+
+body.php-admin-update-product textarea.form-input{resize:vertical;min-height:14rem;padding-top:1.2rem;line-height:1.6}
+
+body.php-admin-update-product .cat-select-wrap{position:relative}
+
+body.php-admin-update-product .cat-select-wrap::after{content:'\f078';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;right:1.4rem;top:50%;transform:translateY(-50%);color:#94a3b8;font-size:1.2rem;pointer-events:none}
+
+body.php-admin-update-product .form-select{width:100%;padding:1.2rem 4rem 1.2rem 1.4rem;border:1.5px solid #e2e8f0;border-radius:.9rem;font-size:1.4rem;color:#0f172a;background:#f8fafc;outline:none;font-family:inherit;appearance:none;cursor:pointer;transition:border-color .2s,box-shadow .2s,background .2s}
+
+body.php-admin-update-product .form-select:focus{border-color:#4f6ef7;background:#fff;box-shadow:0 0 0 3px rgba(79,110,247,.12)}
+
+body.php-admin-update-product .cat-pill-preview{display:inline-flex;align-items:center;gap:.5rem;margin-top:.6rem;padding:.5rem 1.2rem;border-radius:2rem;font-size:1.25rem;font-weight:700;width:fit-content;transition:background .25s,color .25s}
+
+body.php-admin-update-product .img-upload-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+
+body.php-admin-update-product .img-upload-field{display:flex;flex-direction:column;gap:.6rem}
+
+body.php-admin-update-product .img-upload-field label{font-size:1.25rem;font-weight:700;color:#475569;display:flex;align-items:center;gap:.4rem}
+
+body.php-admin-update-product .img-drop-area{border:2px dashed #c7d2fe;border-radius:.9rem;padding:1.6rem 1rem;text-align:center;cursor:pointer;background:#f8fafc;position:relative;transition:border-color .2s,background .2s;aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;overflow:hidden}
+
+body.php-admin-update-product .img-drop-area input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+
+body.php-admin-update-product .img-drop-area:hover{border-color:#4f6ef7;background:#eff2ff}
+
+body.php-admin-update-product .img-drop-area i{font-size:2.2rem;color:#94a3b8;pointer-events:none}
+
+body.php-admin-update-product .img-drop-area span{font-size:1.2rem;color:#64748b;pointer-events:none;line-height:1.4}
+
+body.php-admin-update-product .img-drop-area .fn{font-size:1.1rem;color:#4f6ef7;font-weight:600;margin-top:.2rem}
+
+body.php-admin-update-product .drop-current-img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;border-radius:.7rem;pointer-events:none;z-index:0}
+
+body.php-admin-update-product .drop-area-content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:.4rem}
+
+body.php-admin-update-product .preview-overlay{position:absolute;inset:0;background:#000;opacity:0;transition:opacity .2s;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:#fff;font-weight:700;pointer-events:none}
+
+body.php-admin-update-product .img-drop-area:hover .preview-overlay{opacity:.35}
+
+body.php-admin-update-product .variation-section{margin-bottom:2.8rem}
+
+body.php-admin-update-product .variation-card{background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:1.2rem;padding:1.8rem;margin-bottom:1.4rem}
+
+body.php-admin-update-product .variation-card-title{font-size:1.5rem;font-weight:700;color:#1a2a6c;margin-bottom:1.4rem;display:flex;align-items:center;gap:.7rem}
+
+body.php-admin-update-product .variation-card-title i{color:#4f6ef7}
+
+body.php-admin-update-product .variation-options-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(16rem,1fr));gap:1.2rem}
+
+body.php-admin-update-product .variation-opt-item{background:#fff;border:1.5px solid #e2e8f0;border-radius:1rem;padding:1.2rem;display:flex;flex-direction:column;gap:.8rem;transition:border-color .2s,box-shadow .2s}
+
+body.php-admin-update-product .variation-opt-item:hover{border-color:#c7d2fe;box-shadow:0 4px 12px rgba(0,0,0,.06)}
+
+body.php-admin-update-product .opt-name{font-size:1.3rem;font-weight:700;color:#0f172a;text-align:center;padding:.4rem .8rem;background:#eff2ff;border-radius:.6rem;color:#1a2a6c}
+
+body.php-admin-update-product .opt-current-img{width:100%;aspect-ratio:1/1;border-radius:.8rem;overflow:hidden;background:#f1f5f9;margin-bottom:.4rem;position:relative}
+
+body.php-admin-update-product .opt-current-img img{width:100%;height:100%;object-fit:cover;display:block}
+
+body.php-admin-update-product .opt-no-img{width:100%;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;background:#f1f5f9;border-radius:.8rem;color:#cbd5e1;font-size:2rem;margin-bottom:.4rem}
+
+body.php-admin-update-product .mini-drop-area{border:2px dashed #c7d2fe;border-radius:.8rem;padding:1.1rem .8rem;text-align:center;cursor:pointer;background:#f8fafc;position:relative;transition:border-color .2s,background .2s;display:flex;flex-direction:column;align-items:center;gap:.4rem;overflow:hidden}
+
+body.php-admin-update-product .mini-drop-area input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+
+body.php-admin-update-product .mini-drop-area:hover{border-color:#4f6ef7;background:#eff2ff}
+
+body.php-admin-update-product .mini-drop-area i{font-size:1.6rem;color:#94a3b8;pointer-events:none}
+
+body.php-admin-update-product .mini-drop-area span{font-size:1.1rem;color:#64748b;pointer-events:none}
+
+body.php-admin-update-product .mini-drop-area .mfn{font-size:1.1rem;color:#4f6ef7;font-weight:600}
+
+body.php-admin-update-product .mini-preview-img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;pointer-events:none;z-index:0}
+
+body.php-admin-update-product .mini-drop-content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:.3rem}
+
+body.php-admin-update-product .no-var-note{padding:1.4rem 1.6rem;background:#fffbeb;border-left:3px solid #f59e0b;border-radius:.8rem;font-size:1.35rem;color:#78350f;display:flex;align-items:center;gap:.7rem}
+
+body.php-admin-update-product .tips-box{background:#fffbeb;border:1px solid #fde68a;border-radius:.9rem;padding:1.2rem 1.4rem;font-size:1.3rem;color:#78350f;display:flex;align-items:flex-start;gap:.7rem;margin-top:1.2rem;line-height:1.6}
+
+body.php-admin-update-product .form-submit-row{display:flex;gap:1.2rem;margin-top:2.8rem;padding-top:2rem;border-top:1px solid #f1f5f9;flex-wrap:wrap}
+
+body.php-admin-update-product .btn-submit{flex:1;padding:1.4rem;background:linear-gradient(135deg,#1a2a6c,#4f6ef7);color:#fff;border:none;border-radius:.9rem;font-size:1.5rem;font-weight:700;cursor:pointer;transition:transform .15s,box-shadow .2s;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:.7rem}
+
+body.php-admin-update-product .btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(79,110,247,.35)}
+
+body.php-admin-update-product .btn-submit:active{transform:scale(.97)}
+
+body.php-admin-update-product .btn-cancel{padding:1.4rem 2.4rem;background:#f8fafc;color:#475569;border:1.5px solid #e2e8f0;border-radius:.9rem;font-size:1.45rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.6rem;font-family:inherit;transition:background .15s,border-color .15s}
+
+body.php-admin-update-product .btn-cancel:hover{background:#fff1f2;border-color:#fca5a5;color:#be123c}
+
+@keyframes fadeSlideDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+
+@keyframes fadeSlideUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:1000px){body.php-admin-update-product .update-page{padding:1.6rem}
+
+body.php-admin-update-product .update-grid{grid-template-columns:1fr}
+
+body.php-admin-update-product .image-panel{position:static}
+
+body.php-admin-update-product .img-upload-grid{grid-template-columns:1fr 1fr 1fr}
+}
+
+@media(max-width:600px){body.php-admin-update-product .img-upload-grid{grid-template-columns:1fr}
+
+body.php-admin-update-product .form-submit-row{flex-direction:column}
+
+body.php-admin-update-product .variation-options-grid{grid-template-columns:1fr 1fr}
+}
+
+/* ===== moved from admin/users_accounts.php | scope: body.php-admin-users-accounts ===== */
+body.php-admin-users-accounts *,
+body.php-admin-users-accounts *::before,
+body.php-admin-users-accounts *::after{
+   box-sizing: border-box;
+}
+
+body.php-admin-users-accounts{background: #f0f2f8 !important; font-family: 'Segoe UI', sans-serif !important;}
+
+body.php-admin-users-accounts section,
+body.php-admin-users-accounts .accounts,
+body.php-admin-users-accounts .dashboard{background: transparent !important;}
+
+body.php-admin-users-accounts .header{background: #fff !important;}
+
+body.php-admin-users-accounts .footer{background: #fff !important;}
+
+body.php-admin-users-accounts .users-page{max-width: 1200px;
+         margin: 0 auto;
+         padding: 2.4rem 2.8rem 5rem;}
+
+body.php-admin-users-accounts .page-header{display: flex;
+         align-items: center;
+         justify-content: space-between;
+         flex-wrap: wrap;
+         gap: 1rem;
+         margin-bottom: 2.4rem;
+         animation: fadeSlideDown .45s ease both;}
+
+body.php-admin-users-accounts .page-header h1{font-size: 2.6rem; font-weight: 800; color: #0f172a; letter-spacing: -.5px;}
+
+body.php-admin-users-accounts .page-header h1 span{background: linear-gradient(135deg,#1a2a6c,#4f6ef7);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;}
+
+body.php-admin-users-accounts .stats-strip{display: grid;
+         grid-template-columns: repeat(4, 1fr);
+         gap: 1.2rem;
+         margin-bottom: 2.4rem;
+         animation: fadeSlideUp .5s ease both;}
+
+body.php-admin-users-accounts .stat-chip{background: #fff;
+         border-radius: 1.2rem;
+         padding: 1.6rem 1.8rem;
+         box-shadow: 0 2px 10px rgba(0,0,0,.05);
+         display: flex;
+         align-items: center;
+         gap: 1.2rem;
+         position: relative;
+         overflow: hidden;
+         transition: transform .2s, box-shadow .2s;}
+
+body.php-admin-users-accounts .stat-chip:hover{transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.09);}
+
+body.php-admin-users-accounts .stat-chip::before{content: '';
+         position: absolute;
+         top: 0; left: 0; right: 0;
+         height: 3px;
+         border-radius: 1.2rem 1.2rem 0 0;}
+
+body.php-admin-users-accounts .stat-chip.blue::before{background: linear-gradient(90deg,#1a2a6c,#4f6ef7);}
+
+body.php-admin-users-accounts .stat-chip.cyan::before{background: linear-gradient(90deg,#0891b2,#22d3ee);}
+
+body.php-admin-users-accounts .stat-chip.green::before{background: linear-gradient(90deg,#059669,#34d399);}
+
+body.php-admin-users-accounts .stat-chip.rose::before{background: linear-gradient(90deg,#e11d48,#fb7185);}
+
+body.php-admin-users-accounts .stat-icon{width: 4.4rem; height: 4.4rem;
+         border-radius: .9rem;
+         display: flex; align-items: center; justify-content: center;
+         font-size: 1.8rem;
+         flex-shrink: 0;}
+
+body.php-admin-users-accounts .bg-blue{background: #eff2ff; color: #4f6ef7;}
+
+body.php-admin-users-accounts .bg-cyan{background: #ecfeff; color: #0891b2;}
+
+body.php-admin-users-accounts .bg-green{background: #ecfdf5; color: #059669;}
+
+body.php-admin-users-accounts .bg-rose{background: #fff1f2; color: #e11d48;}
+
+body.php-admin-users-accounts .stat-info-val{font-size: 2.4rem; font-weight: 800; color: #0f172a; line-height: 1;}
+
+body.php-admin-users-accounts .stat-info-lbl{font-size: 1.2rem; font-weight: 600; color: #64748b; margin-top: .3rem;}
+
+body.php-admin-users-accounts .users-toolbar{display: flex;
+         align-items: center;
+         justify-content: space-between;
+         flex-wrap: wrap;
+         gap: 1rem;
+         background: #fff;
+         border-radius: 1.2rem;
+         padding: 1.2rem 1.6rem;
+         box-shadow: 0 2px 10px rgba(0,0,0,.05);
+         margin-bottom: 2rem;
+         animation: fadeSlideUp .5s .05s ease both;}
+
+body.php-admin-users-accounts .toolbar-left{font-size: 1.5rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: .8rem;}
+
+body.php-admin-users-accounts .toolbar-left i{color: #4f6ef7;}
+
+body.php-admin-users-accounts .search-wrap{position: relative;}
+
+body.php-admin-users-accounts .search-wrap i{position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: #94a3b8; font-size: 1.3rem; pointer-events: none;}
+
+body.php-admin-users-accounts #user-search{padding: .8rem 1.4rem .8rem 3.4rem;
+         border: 1.5px solid #e2e8f0;
+         border-radius: 3rem;
+         font-size: 1.3rem;
+         color: #0f172a;
+         background: #f8fafc;
+         outline: none;
+         width: 24rem;
+         transition: border-color .2s, box-shadow .2s;
+         font-family: inherit;}
+
+body.php-admin-users-accounts #user-search:focus{border-color: #4f6ef7; box-shadow: 0 0 0 3px rgba(79,110,247,.12); background: #fff;}
+
+body.php-admin-users-accounts .users-table-wrap{background: #fff;
+         border-radius: 1.4rem;
+         box-shadow: 0 2px 12px rgba(0,0,0,.05);
+         overflow: hidden;
+         animation: fadeSlideUp .55s ease both;}
+
+body.php-admin-users-accounts .users-table{width: 100%;
+         border-collapse: collapse;}
+
+body.php-admin-users-accounts .users-table thead tr{background: #f8fafc;
+         border-bottom: 2px solid #f1f5f9;}
+
+body.php-admin-users-accounts .users-table th{padding: 1.4rem 1.8rem;
+         text-align: left;
+         font-size: 1.2rem;
+         font-weight: 700;
+         color: #64748b;
+         text-transform: uppercase;
+         letter-spacing: .07em;
+         white-space: nowrap;}
+
+body.php-admin-users-accounts .users-table tbody tr{border-bottom: 1px solid #f8fafc;
+         transition: background .15s;
+         animation: fadeSlideUp .4s ease both;}
+
+body.php-admin-users-accounts .users-table tbody tr:last-child{border-bottom: none;}
+
+body.php-admin-users-accounts .users-table tbody tr:hover{background: #f8fafc;}
+
+body.php-admin-users-accounts .users-table td{padding: 1.4rem 1.8rem; font-size: 1.35rem; color: #334155; vertical-align: middle;}
+
+body.php-admin-users-accounts .user-avatar-cell{display: flex; align-items: center; gap: 1.2rem;}
+
+body.php-admin-users-accounts .user-avatar-circle{width: 4rem; height: 4rem;
+         border-radius: 50%;
+         background: linear-gradient(135deg,#1a2a6c,#4f6ef7);
+         display: flex; align-items: center; justify-content: center;
+         font-size: 1.5rem;
+         font-weight: 800;
+         color: #fff;
+         flex-shrink: 0;}
+
+body.php-admin-users-accounts .user-name-text{font-weight: 600; color: #0f172a;}
+
+body.php-admin-users-accounts .user-id-text{font-size: 1.2rem; color: #94a3b8; margin-top: .2rem;}
+
+body.php-admin-users-accounts .user-email-text{color: #475569;}
+
+body.php-admin-users-accounts .id-badge{display: inline-flex;
+         background: #f1f5f9;
+         color: #475569;
+         border-radius: 2rem;
+         padding: .3rem .9rem;
+         font-size: 1.2rem;
+         font-weight: 600;}
+
+body.php-admin-users-accounts .btn-del-user{display: inline-flex;
+         align-items: center;
+         gap: .5rem;
+         padding: .7rem 1.4rem;
+         border-radius: .6rem;
+         background: #fff1f2;
+         color: #be123c;
+         font-size: 1.3rem;
+         font-weight: 600;
+         text-decoration: none;
+         border: none;
+         cursor: pointer;
+         transition: background .15s, transform .15s;
+         font-family: inherit;
+         white-space: nowrap;}
+
+body.php-admin-users-accounts .btn-del-user:hover{background: #ffe4e6; transform: translateY(-1px);}
+
+body.php-admin-users-accounts .users-empty{text-align: center; padding: 5rem 2rem; color: #94a3b8;}
+
+body.php-admin-users-accounts .users-empty i{font-size: 4.8rem; display: block; margin-bottom: 1.4rem; color: #cbd5e1;}
+
+body.php-admin-users-accounts .users-empty p{font-size: 1.6rem;}
+
+body.php-admin-users-accounts .user-row-hidden{display: none !important;}
+
+@keyframes fadeSlideDown{ from{opacity:0;transform:translateY(-14px)} to{opacity:1;transform:translateY(0)} }
+
+@keyframes fadeSlideUp{ from{opacity:0;transform:translateY(18px)}  to{opacity:1;transform:translateY(0)} }
+
+body.php-admin-users-accounts .users-table tbody tr:nth-child(1){animation-delay:.04s}
+
+body.php-admin-users-accounts .users-table tbody tr:nth-child(2){animation-delay:.08s}
+
+body.php-admin-users-accounts .users-table tbody tr:nth-child(3){animation-delay:.12s}
+
+body.php-admin-users-accounts .users-table tbody tr:nth-child(4){animation-delay:.16s}
+
+body.php-admin-users-accounts .users-table tbody tr:nth-child(n+5){animation-delay:.20s}
+
+@media(max-width:900px){body.php-admin-users-accounts .users-page{padding:1.6rem}
+
+body.php-admin-users-accounts .stats-strip{grid-template-columns:1fr 1fr}
+
+body.php-admin-users-accounts .users-table th:nth-child(1),
+body.php-admin-users-accounts .users-table td:nth-child(1){display:none}
+
+body.php-admin-users-accounts #user-search{width:100%}
+}
+
+@media(max-width:600px){body.php-admin-users-accounts .stats-strip{grid-template-columns:1fr 1fr}
+
+body.php-admin-users-accounts .users-table{display:block;overflow-x:auto}
+}
+
+/* ===== moved from admin/order_detail.php | scope: body.php-admin-order-detail ===== */
+body.php-admin-order-detail *,
+body.php-admin-order-detail *::before,
+body.php-admin-order-detail *::after{
+   box-sizing: border-box;
+}
+
+body.php-admin-order-detail{background: #f0f2f8 !important; font-family: 'Segoe UI', sans-serif !important;}
+
+body.php-admin-order-detail section,
+body.php-admin-order-detail .orders,
+body.php-admin-order-detail .dashboard{background: transparent !important;}
+
+body.php-admin-order-detail .header{background: #fff !important;}
+
+body.php-admin-order-detail .footer{background: #fff !important;}
+
+body.php-admin-order-detail .detail-page{max-width: 1100px;
+         margin: 0 auto;
+         padding: 2.4rem 2.8rem 5rem;}
+
+body.php-admin-order-detail .back-link{display: inline-flex;
+         align-items: center;
+         gap: .7rem;
+         font-size: 1.4rem;
+         font-weight: 600;
+         color: #475569;
+         text-decoration: none;
+         background: #fff;
+         border-radius: 3rem;
+         padding: .7rem 1.6rem;
+         box-shadow: 0 2px 8px rgba(0,0,0,.06);
+         margin-bottom: 2rem;
+         transition: color .15s, box-shadow .15s;
+         animation: fadeSlideDown .4s ease both;}
+
+body.php-admin-order-detail .back-link:hover{color: #1a2a6c; box-shadow: 0 4px 16px rgba(0,0,0,.1);}
+
+body.php-admin-order-detail .detail-banner{background: linear-gradient(135deg, #0f2027 0%, #1a2a6c 50%, #2c3e8f 100%);
+         border-radius: 1.6rem;
+         padding: 2.4rem 2.8rem;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         flex-wrap: wrap;
+         gap: 1.6rem;
+         margin-bottom: 2.4rem;
+         position: relative;
+         overflow: hidden;
+         animation: fadeSlideDown .5s ease both;}
+
+body.php-admin-order-detail .detail-banner::before{content: '';
+         position: absolute;
+         top: -40%; right: -5%;
+         width: 32rem; height: 32rem;
+         background: radial-gradient(circle, rgba(79,110,247,.3) 0%, transparent 70%);
+         pointer-events: none;}
+
+body.php-admin-order-detail .banner-left h2{font-size: 2.2rem;
+         font-weight: 800;
+         color: #fff;
+         margin-bottom: .4rem;
+         letter-spacing: -.3px;}
+
+body.php-admin-order-detail .banner-left p{font-size: 1.3rem; color: rgba(255,255,255,.6);}
+
+body.php-admin-order-detail .banner-right{display: flex; gap: 1rem; flex-wrap: wrap; position: relative; z-index: 1;}
+
+body.php-admin-order-detail .banner-badge{display: inline-flex;
+         align-items: center;
+         gap: .5rem;
+         background: rgba(255,255,255,.12);
+         border: 1px solid rgba(255,255,255,.2);
+         border-radius: 2rem;
+         padding: .7rem 1.4rem;
+         font-size: 1.3rem;
+         font-weight: 600;
+         color: #fff;}
+
+body.php-admin-order-detail .progress-panel{background: #fff;
+         border-radius: 1.4rem;
+         padding: 2.2rem 2.4rem;
+         box-shadow: 0 2px 12px rgba(0,0,0,.05);
+         margin-bottom: 2rem;
+         animation: fadeSlideUp .5s ease both;}
+
+body.php-admin-order-detail .progress-title{font-size: 1.4rem;
+         font-weight: 700;
+         color: #64748b;
+         text-transform: uppercase;
+         letter-spacing: .08em;
+         margin-bottom: 1.8rem;}
+
+body.php-admin-order-detail .progress-track{display: flex;
+         align-items: center;
+         gap: 0;
+         position: relative;}
+
+body.php-admin-order-detail .progress-step{display: flex;
+         flex-direction: column;
+         align-items: center;
+         flex: 1;
+         position: relative;
+         z-index: 1;}
+
+body.php-admin-order-detail .progress-step-dot{width: 4rem;
+         height: 4rem;
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 1.5rem;
+         border: 3px solid #e2e8f0;
+         background: #fff;
+         color: #cbd5e1;
+         transition: all .3s;
+         position: relative;
+         z-index: 2;}
+
+body.php-admin-order-detail .progress-step.done .progress-step-dot{background: linear-gradient(135deg, #059669, #34d399);
+         border-color: #059669;
+         color: #fff;}
+
+body.php-admin-order-detail .progress-step.current .progress-step-dot{background: linear-gradient(135deg, #1a2a6c, #4f6ef7);
+         border-color: #4f6ef7;
+         color: #fff;
+         box-shadow: 0 0 0 5px rgba(79,110,247,.18);
+         animation: pulse 2s infinite;}
+
+@keyframes pulse{
+         0%,100% { box-shadow: 0 0 0 5px rgba(79,110,247,.18); }
+         50%      { box-shadow: 0 0 0 10px rgba(79,110,247,.08); }
+      }
+
+body.php-admin-order-detail .progress-step-label{font-size: 1.2rem;
+         font-weight: 600;
+         color: #94a3b8;
+         margin-top: .6rem;
+         text-align: center;}
+
+body.php-admin-order-detail .progress-step.done .progress-step-label{color: #059669;}
+
+body.php-admin-order-detail .progress-step.current .progress-step-label{color: #1a2a6c;}
+
+body.php-admin-order-detail .progress-line{flex: 1;
+         height: 3px;
+         background: #e2e8f0;
+         margin-top: -2rem;
+         position: relative;
+         z-index: 1;}
+
+body.php-admin-order-detail .progress-line.filled{background: linear-gradient(90deg,#059669,#34d399);}
+
+body.php-admin-order-detail .detail-main-grid{display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 1.6rem;
+         margin-bottom: 1.6rem;
+         animation: fadeSlideUp .55s ease both;}
+
+body.php-admin-order-detail .info-panel{background: #fff;
+         border-radius: 1.4rem;
+         padding: 2rem 2.2rem;
+         box-shadow: 0 2px 12px rgba(0,0,0,.05);}
+
+body.php-admin-order-detail .panel-title{font-size: 1.5rem;
+         font-weight: 700;
+         color: #0f172a;
+         margin-bottom: 1.6rem;
+         display: flex;
+         align-items: center;
+         gap: .8rem;
+         padding-bottom: 1.2rem;
+         border-bottom: 1px solid #f1f5f9;}
+
+body.php-admin-order-detail .panel-title i{color: #4f6ef7;}
+
+body.php-admin-order-detail .info-rows{display: flex; flex-direction: column; gap: 1rem;}
+
+body.php-admin-order-detail .info-row-item{display: flex;
+         align-items: flex-start;
+         justify-content: space-between;
+         gap: 1rem;
+         padding: .8rem 1rem;
+         border-radius: .6rem;
+         background: #f8fafc;}
+
+body.php-admin-order-detail .info-row-item:last-child{margin-bottom: 0;}
+
+body.php-admin-order-detail .ir-label{font-size: 1.3rem;
+         color: #64748b;
+         font-weight: 600;
+         white-space: nowrap;
+         display: flex;
+         align-items: center;
+         gap: .5rem;}
+
+body.php-admin-order-detail .ir-label i{color: #94a3b8; font-size: 1.2rem;}
+
+body.php-admin-order-detail .ir-val{font-size: 1.3rem;
+         font-weight: 600;
+         color: #0f172a;
+         text-align: right;
+         word-break: break-word;}
+
+body.php-admin-order-detail .status-badge{display: inline-flex;
+         align-items: center;
+         gap: .4rem;
+         padding: .4rem 1rem;
+         border-radius: 2rem;
+         font-size: 1.2rem;
+         font-weight: 700;}
+
+body.php-admin-order-detail .badge-diproses{background: #fffbeb; color: #b45309;}
+
+body.php-admin-order-detail .badge-dikemas{background: #ecfeff; color: #0e7490;}
+
+body.php-admin-order-detail .badge-dikirim{background: #ecfdf5; color: #065f46;}
+
+body.php-admin-order-detail .badge-selesai{background: #f1f5f9; color: #475569;}
+
+body.php-admin-order-detail .pay-badge{display: inline-flex;
+         align-items: center;
+         gap: .4rem;
+         padding: .3rem .9rem;
+         border-radius: 2rem;
+         font-size: 1.2rem;
+         font-weight: 700;}
+
+body.php-admin-order-detail .pay-pending{background: #fff1f2; color: #be123c;}
+
+body.php-admin-order-detail .pay-completed{background: #ecfdf5; color: #065f46;}
+
+body.php-admin-order-detail .total-price-big{font-size: 2.4rem;
+         font-weight: 800;
+         color: #e11d48;}
+
+body.php-admin-order-detail .privacy-note{margin-top: 1.2rem;
+         padding: 1rem 1.2rem;
+         background: #fffbeb;
+         border-left: 3px solid #f59e0b;
+         border-radius: .6rem;
+         font-size: 1.25rem;
+         color: #78350f;
+         display: flex;
+         align-items: flex-start;
+         gap: .6rem;
+         line-height: 1.5;}
+
+body.php-admin-order-detail .products-panel{background: #fff;
+         border-radius: 1.4rem;
+         padding: 2rem 2.2rem;
+         box-shadow: 0 2px 12px rgba(0,0,0,.05);
+         margin-bottom: 1.6rem;
+         animation: fadeSlideUp .6s ease both;}
+
+body.php-admin-order-detail .product-line-item{display: flex;
+         align-items: flex-start;
+         gap: 1rem;
+         padding: 1.1rem 1.2rem;
+         border-radius: .8rem;
+         background: #f8fafc;
+         margin-bottom: .8rem;
+         font-size: 1.35rem;
+         color: #334155;
+         font-weight: 500;
+         line-height: 1.5;
+         border-left: 3px solid #c7d2fe;}
+
+body.php-admin-order-detail .product-line-item i{color: #4f6ef7; flex-shrink: 0; margin-top: .2rem;}
+
+body.php-admin-order-detail .update-panel{background: #fff;
+         border-radius: 1.4rem;
+         padding: 2rem 2.2rem;
+         box-shadow: 0 2px 12px rgba(0,0,0,.05);
+         margin-bottom: 1.6rem;
+         animation: fadeSlideUp .65s ease both;}
+
+body.php-admin-order-detail .update-form-grid{display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         gap: 1.4rem;
+         margin-bottom: 1.4rem;}
+
+body.php-admin-order-detail .form-field{display: flex; flex-direction: column; gap: .6rem;}
+
+body.php-admin-order-detail .form-field label{font-size: 1.3rem;
+         font-weight: 700;
+         color: #475569;
+         display: flex;
+         align-items: center;
+         gap: .5rem;}
+
+body.php-admin-order-detail .form-field label i{color: #94a3b8; font-size: 1.2rem;}
+
+body.php-admin-order-detail .form-select,
+body.php-admin-order-detail .form-input-text{width: 100%;
+         padding: 1.1rem 1.4rem;
+         border: 1.5px solid #e2e8f0;
+         border-radius: .8rem;
+         font-size: 1.4rem;
+         color: #0f172a;
+         background: #f8fafc;
+         outline: none;
+         font-family: inherit;
+         transition: border-color .2s, box-shadow .2s, background .2s;}
+
+body.php-admin-order-detail .form-select:focus,
+body.php-admin-order-detail .form-input-text:focus{border-color: #4f6ef7;
+         background: #fff;
+         box-shadow: 0 0 0 3px rgba(79,110,247,.12);}
+
+body.php-admin-order-detail .form-select.disabled,
+body.php-admin-order-detail .form-input-text.disabled{background: #f1f5f9;
+         color: #94a3b8;
+         cursor: not-allowed;
+         border-color: #e2e8f0;}
+
+body.php-admin-order-detail .update-notes{display: flex; flex-direction: column; gap: .8rem; margin-bottom: 1.4rem;}
+
+body.php-admin-order-detail .note-item{padding: 1rem 1.2rem;
+         border-radius: .7rem;
+         font-size: 1.3rem;
+         display: flex;
+         align-items: flex-start;
+         gap: .7rem;
+         line-height: 1.5;}
+
+body.php-admin-order-detail .note-item.blue{background: #eff2ff; color: #1e40af; border-left: 3px solid #4f6ef7;}
+
+body.php-admin-order-detail .note-item.amber{background: #fffbeb; color: #78350f; border-left: 3px solid #f59e0b;}
+
+body.php-admin-order-detail .note-item.green{background: #ecfdf5; color: #065f46; border-left: 3px solid #059669;}
+
+body.php-admin-order-detail .note-item.gray{background: #f1f5f9; color: #475569; border-left: 3px solid #94a3b8;}
+
+body.php-admin-order-detail .note-item.red{background: #fff1f2; color: #9f1239; border-left: 3px solid #e11d48;}
+
+body.php-admin-order-detail .btn-update-submit{display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         gap: .7rem;
+         padding: 1.2rem 2.8rem;
+         background: linear-gradient(135deg, #1a2a6c, #4f6ef7);
+         color: #fff;
+         border: none;
+         border-radius: .8rem;
+         font-size: 1.5rem;
+         font-weight: 700;
+         cursor: pointer;
+         transition: transform .15s, box-shadow .2s;
+         font-family: inherit;}
+
+body.php-admin-order-detail .btn-update-submit:hover{transform: translateY(-2px); box-shadow: 0 8px 24px rgba(79,110,247,.3);}
+
+body.php-admin-order-detail .btn-update-submit:active{transform: scale(.97);}
+
+body.php-admin-order-detail .proof-panel{background: #fff;
+         border-radius: 1.4rem;
+         padding: 2rem 2.2rem;
+         box-shadow: 0 2px 12px rgba(0,0,0,.05);
+         animation: fadeSlideUp .7s ease both;}
+
+body.php-admin-order-detail .proof-status-row{display: flex;
+         align-items: center;
+         gap: .8rem;
+         font-size: 1.4rem;
+         color: #475569;
+         margin-bottom: 1.4rem;
+         font-weight: 500;}
+
+body.php-admin-order-detail .proof-available{color: #059669; font-weight: 700;}
+
+body.php-admin-order-detail .proof-none{color: #94a3b8; font-weight: 600;}
+
+body.php-admin-order-detail .proof-img{width: 100%;
+         max-width: 36rem;
+         border-radius: 1rem;
+         display: block;
+         margin-bottom: 1rem;
+         box-shadow: 0 4px 16px rgba(0,0,0,.1);}
+
+body.php-admin-order-detail .proof-link{display: inline-flex;
+         align-items: center;
+         gap: .6rem;
+         padding: .9rem 1.8rem;
+         border-radius: .7rem;
+         background: #eff2ff;
+         color: #1a2a6c;
+         font-size: 1.4rem;
+         font-weight: 600;
+         text-decoration: none;
+         transition: background .2s;}
+
+body.php-admin-order-detail .proof-link:hover{background: #e0e7ff;}
+
+@keyframes fadeSlideDown{
+         from { opacity: 0; transform: translateY(-14px); }
+         to   { opacity: 1; transform: translateY(0); }
+      }
+
+@keyframes fadeSlideUp{
+         from { opacity: 0; transform: translateY(18px); }
+         to   { opacity: 1; transform: translateY(0); }
+      }
+
+@media (max-width:900px){body.php-admin-order-detail .detail-page{padding: 1.6rem;}
+
+body.php-admin-order-detail .detail-main-grid{grid-template-columns: 1fr;}
+
+body.php-admin-order-detail .update-form-grid{grid-template-columns: 1fr;}
+}
+
+/* ===== moved from admin/register_admin.php | scope: body.php-admin-register-admin ===== */
+body.php-admin-register-admin *,
+body.php-admin-register-admin *::before,
+body.php-admin-register-admin *::after{
+   box-sizing: border-box;
+}
+
+body.php-admin-register-admin{background: #f0f2f8 !important; font-family: 'Segoe UI', sans-serif !important;}
+
+body.php-admin-register-admin .header{background: #fff !important;}
+
+body.php-admin-register-admin .register-page{min-height: calc(100vh - 6.4rem);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         padding: 3rem 1.6rem;}
+
+body.php-admin-register-admin .register-card{background: #fff;
+         border-radius: 2rem;
+         box-shadow: 0 16px 48px rgba(0,0,0,.09);
+         width: 100%;
+         max-width: 48rem;
+         overflow: hidden;
+         animation: cardIn .55s cubic-bezier(.22,1,.36,1) both;}
+
+@keyframes cardIn{
+         from { opacity:0; transform:translateY(28px) scale(.97); }
+         to   { opacity:1; transform:translateY(0) scale(1); }
+      }
+
+body.php-admin-register-admin .register-banner{background: linear-gradient(135deg, #0f2027 0%, #1a2a6c 55%, #2c3e8f 100%);
+         padding: 2.8rem 3.2rem;
+         position: relative;
+         overflow: hidden;}
+
+body.php-admin-register-admin .register-banner::before{content: '';
+         position: absolute;
+         top: -40%; right: -8%;
+         width: 28rem; height: 28rem;
+         background: radial-gradient(circle, rgba(79,110,247,.35) 0%, transparent 70%);
+         pointer-events: none;}
+
+body.php-admin-register-admin .banner-icon{width: 5.6rem; height: 5.6rem;
+         border-radius: 1.2rem;
+         background: rgba(255,255,255,.15);
+         display: flex; align-items: center; justify-content: center;
+         font-size: 2.4rem;
+         color: #fff;
+         margin-bottom: 1.2rem;
+         position: relative; z-index: 1;}
+
+body.php-admin-register-admin .register-banner h2{font-size: 2.2rem;
+         font-weight: 800;
+         color: #fff;
+         margin-bottom: .4rem;
+         position: relative; z-index: 1;}
+
+body.php-admin-register-admin .register-banner p{font-size: 1.3rem; color: rgba(255,255,255,.65); position: relative; z-index: 1;}
+
+body.php-admin-register-admin .register-body{padding: 3rem 3.2rem 3.2rem;}
+
+body.php-admin-register-admin .alert{padding: 1.2rem 1.4rem;
+         border-radius: .8rem;
+         font-size: 1.35rem;
+         display: flex;
+         align-items: center;
+         gap: .8rem;
+         margin-bottom: 2rem;
+         animation: fadeUp .3s ease both;}
+
+@keyframes fadeUp{ from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+
+body.php-admin-register-admin .alert-error{background: #fff1f2; border-left: 4px solid #e11d48; color: #be123c;}
+
+body.php-admin-register-admin .alert-success{background: #ecfdf5; border-left: 4px solid #059669; color: #065f46;}
+
+body.php-admin-register-admin .register-form{display: flex; flex-direction: column; gap: 1.6rem;}
+
+body.php-admin-register-admin .form-group{display: flex; flex-direction: column; gap: .6rem;}
+
+body.php-admin-register-admin .form-group label{font-size: 1.3rem; font-weight: 700; color: #475569;}
+
+body.php-admin-register-admin .input-wrap{position: relative;}
+
+body.php-admin-register-admin .input-wrap i.field-icon{position: absolute;
+         left: 1.4rem; top: 50%;
+         transform: translateY(-50%);
+         color: #94a3b8;
+         font-size: 1.4rem;
+         pointer-events: none;
+         transition: color .2s;}
+
+body.php-admin-register-admin .input-wrap:focus-within i.field-icon{color: #4f6ef7;}
+
+body.php-admin-register-admin .reg-input{width: 100%;
+         padding: 1.2rem 1.4rem 1.2rem 4rem;
+         border: 1.5px solid #e2e8f0;
+         border-radius: .9rem;
+         font-size: 1.4rem;
+         color: #0f172a;
+         background: #f8fafc;
+         outline: none;
+         font-family: inherit;
+         transition: border-color .2s, box-shadow .2s, background .2s;}
+
+body.php-admin-register-admin .reg-input:focus{border-color: #4f6ef7;
+         background: #fff;
+         box-shadow: 0 0 0 3px rgba(79,110,247,.12);}
+
+body.php-admin-register-admin .toggle-pass{position: absolute;
+         right: 1.4rem; top: 50%;
+         transform: translateY(-50%);
+         color: #94a3b8;
+         cursor: pointer;
+         font-size: 1.4rem;
+         transition: color .2s;}
+
+body.php-admin-register-admin .toggle-pass:hover{color: #4f6ef7;}
+
+body.php-admin-register-admin .strength-bar-wrap{margin-top: .6rem; height: .4rem; background: #e2e8f0; border-radius: 2rem; overflow: hidden;}
+
+body.php-admin-register-admin .strength-bar{height: 100%; width: 0; border-radius: 2rem; transition: width .3s, background .3s;}
+
+body.php-admin-register-admin .strength-text{font-size: 1.2rem; color: #94a3b8; margin-top: .4rem;}
+
+body.php-admin-register-admin .btn-register{width: 100%;
+         padding: 1.4rem;
+         background: linear-gradient(135deg, #1a2a6c, #4f6ef7);
+         color: #fff;
+         border: none;
+         border-radius: .9rem;
+         font-size: 1.5rem;
+         font-weight: 700;
+         cursor: pointer;
+         transition: transform .15s, box-shadow .2s;
+         font-family: inherit;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         gap: .7rem;
+         margin-top: .4rem;}
+
+body.php-admin-register-admin .btn-register:hover{transform: translateY(-2px); box-shadow: 0 8px 24px rgba(79,110,247,.35);}
+
+body.php-admin-register-admin .btn-register:active{transform: scale(.97);}
+
+body.php-admin-register-admin .back-link{display: inline-flex;
+         align-items: center;
+         gap: .6rem;
+         font-size: 1.35rem;
+         color: #64748b;
+         text-decoration: none;
+         margin-top: 1.8rem;
+         transition: color .15s;}
+
+body.php-admin-register-admin .back-link:hover{color: #1a2a6c;}
+
+/* ===== moved from admin/update_profile.php | scope: body.php-admin-update-profile ===== */
+body.php-admin-update-profile *,
+body.php-admin-update-profile *::before,
+body.php-admin-update-profile *::after{
+   box-sizing: border-box;
+}
+
+body.php-admin-update-profile{background: #f0f2f8 !important; font-family: 'Segoe UI', sans-serif !important;}
+
+body.php-admin-update-profile section,
+body.php-admin-update-profile .dashboard{background: transparent !important;}
+
+body.php-admin-update-profile .header{background: #fff !important;}
+
+body.php-admin-update-profile .footer{background: #fff !important;}
+
+body.php-admin-update-profile .profile-page{max-width: 900px;
+         margin: 0 auto;
+         padding: 2.4rem 2rem 5rem;}
+
+body.php-admin-update-profile .page-header{display: flex;
+         align-items: center;
+         justify-content: space-between;
+         flex-wrap: wrap;
+         gap: 1rem;
+         margin-bottom: 2.4rem;
+         animation: fadeSlideDown .45s ease both;}
+
+body.php-admin-update-profile .page-header h1{font-size: 2.6rem; font-weight: 800; color: #0f172a; letter-spacing: -.5px;}
+
+body.php-admin-update-profile .page-header h1 span{background: linear-gradient(135deg, #1a2a6c, #4f6ef7);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;}
+
+body.php-admin-update-profile .profile-banner{background: linear-gradient(135deg, #0f2027 0%, #1a2a6c 55%, #2c3e8f 100%);
+         border-radius: 1.6rem;
+         padding: 2.8rem 3.2rem;
+         display: flex;
+         align-items: center;
+         gap: 2.4rem;
+         flex-wrap: wrap;
+         margin-bottom: 2.4rem;
+         position: relative;
+         overflow: hidden;
+         animation: fadeSlideDown .5s ease both;}
+
+body.php-admin-update-profile .profile-banner::before{content: '';
+         position: absolute;
+         top: -40%; right: -5%;
+         width: 32rem; height: 32rem;
+         background: radial-gradient(circle, rgba(79,110,247,.3) 0%, transparent 70%);
+         pointer-events: none;}
+
+body.php-admin-update-profile .profile-banner::after{content: '';
+         position: absolute;
+         bottom: -50%; left: 15%;
+         width: 24rem; height: 24rem;
+         background: radial-gradient(circle, rgba(255,255,255,.05) 0%, transparent 70%);
+         pointer-events: none;}
+
+body.php-admin-update-profile .banner-avatar{width: 8rem; height: 8rem;
+         border-radius: 50%;
+         background: rgba(255,255,255,.18);
+         border: 3px solid rgba(255,255,255,.3);
+         display: flex; align-items: center; justify-content: center;
+         font-size: 3.2rem; font-weight: 800; color: #fff;
+         flex-shrink: 0;
+         position: relative; z-index: 1;
+         box-shadow: 0 8px 24px rgba(0,0,0,.2);}
+
+body.php-admin-update-profile .banner-avatar-ring{position: absolute;
+         inset: -6px;
+         border-radius: 50%;
+         border: 2px dashed rgba(255,255,255,.25);
+         animation: ringRotate 12s linear infinite;}
+
+@keyframes ringRotate{ from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+
+body.php-admin-update-profile .banner-info{flex: 1; position: relative; z-index: 1;}
+
+body.php-admin-update-profile .banner-info h2{font-size: 2.4rem; font-weight: 800; color: #fff; margin-bottom: .5rem;}
+
+body.php-admin-update-profile .banner-info p{font-size: 1.35rem; color: rgba(255,255,255,.65);}
+
+body.php-admin-update-profile .banner-badges{display: flex;
+         flex-direction: column;
+         gap: .8rem;
+         position: relative;
+         z-index: 1;}
+
+body.php-admin-update-profile .banner-badge-item{display: flex;
+         align-items: center;
+         gap: .7rem;
+         background: rgba(255,255,255,.1);
+         border: 1px solid rgba(255,255,255,.15);
+         border-radius: .8rem;
+         padding: .7rem 1.2rem;
+         font-size: 1.3rem;
+         color: rgba(255,255,255,.85);}
+
+body.php-admin-update-profile .banner-badge-item i{color: rgba(255,255,255,.6); font-size: 1.2rem;}
+
+body.php-admin-update-profile .profile-main-grid{display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 1.6rem;}
+
+body.php-admin-update-profile .form-panel{background: #fff;
+         border-radius: 1.4rem;
+         padding: 2.2rem 2.4rem;
+         box-shadow: 0 2px 12px rgba(0,0,0,.05);
+         animation: fadeSlideUp .5s ease both;}
+
+body.php-admin-update-profile .form-panel:nth-child(2){animation-delay: .08s;}
+
+body.php-admin-update-profile .panel-title{font-size: 1.5rem;
+         font-weight: 700;
+         color: #0f172a;
+         margin-bottom: 2rem;
+         display: flex;
+         align-items: center;
+         gap: .8rem;
+         padding-bottom: 1.2rem;
+         border-bottom: 1px solid #f1f5f9;}
+
+body.php-admin-update-profile .panel-title i{color: #4f6ef7;}
+
+body.php-admin-update-profile .form-field{display: flex; flex-direction: column; gap: .6rem; margin-bottom: 1.6rem;}
+
+body.php-admin-update-profile .form-field:last-of-type{margin-bottom: 0;}
+
+body.php-admin-update-profile .form-field label{font-size: 1.3rem;
+         font-weight: 700;
+         color: #475569;
+         display: flex;
+         align-items: center;
+         gap: .5rem;}
+
+body.php-admin-update-profile .form-field label i{color: #94a3b8; font-size: 1.2rem;}
+
+body.php-admin-update-profile .input-wrap{position: relative;}
+
+body.php-admin-update-profile .input-wrap i.fi{position: absolute;
+         left: 1.4rem; top: 50%;
+         transform: translateY(-50%);
+         color: #94a3b8; font-size: 1.4rem;
+         pointer-events: none;
+         transition: color .2s;}
+
+body.php-admin-update-profile .input-wrap:focus-within i.fi{color: #4f6ef7;}
+
+body.php-admin-update-profile .form-input{width: 100%;
+         padding: 1.2rem 1.4rem 1.2rem 4rem;
+         border: 1.5px solid #e2e8f0;
+         border-radius: .9rem;
+         font-size: 1.4rem;
+         color: #0f172a;
+         background: #f8fafc;
+         outline: none;
+         font-family: inherit;
+         transition: border-color .2s, box-shadow .2s, background .2s;}
+
+body.php-admin-update-profile .form-input:focus{border-color: #4f6ef7;
+         background: #fff;
+         box-shadow: 0 0 0 3px rgba(79,110,247,.12);}
+
+body.php-admin-update-profile .form-input::placeholder{color: #94a3b8;}
+
+body.php-admin-update-profile .toggle-eye{position: absolute;
+         right: 1.4rem; top: 50%;
+         transform: translateY(-50%);
+         color: #94a3b8; font-size: 1.4rem;
+         cursor: pointer;
+         transition: color .2s;
+         z-index: 2;}
+
+body.php-admin-update-profile .toggle-eye:hover{color: #4f6ef7;}
+
+body.php-admin-update-profile .strength-wrap{margin-top: .6rem;}
+
+body.php-admin-update-profile .strength-track{height: .4rem; background: #e2e8f0; border-radius: 2rem; overflow: hidden;}
+
+body.php-admin-update-profile .strength-fill{height: 100%; width: 0; border-radius: 2rem; transition: width .35s, background .35s;}
+
+body.php-admin-update-profile .strength-label{font-size: 1.2rem; margin-top: .4rem; font-weight: 600;}
+
+body.php-admin-update-profile .btn-submit{width: 100%;
+         padding: 1.4rem;
+         background: linear-gradient(135deg, #1a2a6c, #4f6ef7);
+         color: #fff;
+         border: none;
+         border-radius: .9rem;
+         font-size: 1.5rem;
+         font-weight: 700;
+         cursor: pointer;
+         transition: transform .15s, box-shadow .2s;
+         font-family: inherit;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         gap: .7rem;
+         margin-top: 2rem;}
+
+body.php-admin-update-profile .btn-submit:hover{transform: translateY(-2px); box-shadow: 0 8px 24px rgba(79,110,247,.35);}
+
+body.php-admin-update-profile .btn-submit:active{transform: scale(.97);}
+
+body.php-admin-update-profile .alert-bar{border-radius: .9rem;
+         padding: 1.2rem 1.6rem;
+         font-size: 1.35rem;
+         display: flex;
+         align-items: center;
+         gap: .8rem;
+         margin-bottom: 2rem;
+         animation: fadeSlideDown .35s ease both;}
+
+body.php-admin-update-profile .alert-bar.success{background: #ecfdf5; border-left: 4px solid #059669; color: #065f46;}
+
+body.php-admin-update-profile .alert-bar.error{background: #fff1f2; border-left: 4px solid #e11d48; color: #be123c;}
+
+body.php-admin-update-profile .alert-bar.info{background: #eff2ff; border-left: 4px solid #4f6ef7; color: #1e40af;}
+
+body.php-admin-update-profile .tips-panel{background: #fff;
+         border-radius: 1.4rem;
+         padding: 2.2rem 2.4rem;
+         box-shadow: 0 2px 12px rgba(0,0,0,.05);
+         margin-top: 1.6rem;
+         animation: fadeSlideUp .55s ease both;}
+
+body.php-admin-update-profile .tips-list{display: flex; flex-direction: column; gap: 1rem; margin-top: .4rem;}
+
+body.php-admin-update-profile .tip-row{display: flex;
+         align-items: flex-start;
+         gap: 1.2rem;
+         padding: 1.2rem;
+         border-radius: .8rem;
+         background: #f8fafc;}
+
+body.php-admin-update-profile .tip-icon{width: 3.6rem; height: 3.6rem;
+         border-radius: .8rem;
+         display: flex; align-items: center; justify-content: center;
+         font-size: 1.5rem;
+         flex-shrink: 0;}
+
+body.php-admin-update-profile .tip-icon.blue{background: #eff2ff; color: #4f6ef7;}
+
+body.php-admin-update-profile .tip-icon.amber{background: #fffbeb; color: #f59e0b;}
+
+body.php-admin-update-profile .tip-icon.green{background: #ecfdf5; color: #059669;}
+
+body.php-admin-update-profile .tip-text strong{display: block; font-size: 1.3rem; font-weight: 700; color: #0f172a; margin-bottom: .2rem;}
+
+body.php-admin-update-profile .tip-text span{font-size: 1.25rem; color: #64748b; line-height: 1.5;}
+
+body.php-admin-update-profile .activity-panel{background: #fff;
+         border-radius: 1.4rem;
+         padding: 2.2rem 2.4rem;
+         box-shadow: 0 2px 12px rgba(0,0,0,.05);
+         margin-top: 1.6rem;
+         animation: fadeSlideUp .6s ease both;}
+
+body.php-admin-update-profile .activity-list{display: flex; flex-direction: column; gap: .6rem; margin-top: .4rem;}
+
+body.php-admin-update-profile .activity-row{display: flex;
+         align-items: center;
+         gap: 1.2rem;
+         padding: 1rem 1.2rem;
+         border-radius: .8rem;
+         background: #f8fafc;
+         font-size: 1.3rem;
+         color: #475569;}
+
+body.php-admin-update-profile .activity-dot{width: .8rem; height: .8rem;
+         border-radius: 50%;
+         flex-shrink: 0;}
+
+body.php-admin-update-profile .dot-green{background: #059669;}
+
+body.php-admin-update-profile .dot-blue{background: #4f6ef7;}
+
+body.php-admin-update-profile .dot-amber{background: #f59e0b;}
+
+body.php-admin-update-profile .activity-row strong{color: #0f172a; font-weight: 600;}
+
+body.php-admin-update-profile .activity-time{margin-left: auto; font-size: 1.2rem; color: #94a3b8; white-space: nowrap;}
+
+@keyframes fadeSlideDown{ from{opacity:0;transform:translateY(-14px)} to{opacity:1;transform:translateY(0)} }
+
+@keyframes fadeSlideUp{ from{opacity:0;transform:translateY(18px)}  to{opacity:1;transform:translateY(0)} }
+
+@media(max-width:800px){body.php-admin-update-profile .profile-page{padding: 1.6rem;}
+
+body.php-admin-update-profile .profile-main-grid{grid-template-columns: 1fr;}
+
+body.php-admin-update-profile .banner-badges{flex-direction: row; flex-wrap: wrap;}
+
+body.php-admin-update-profile .profile-banner{flex-direction: column; align-items: flex-start; gap: 1.6rem;}
+}
+
+/* ===== moved from components/admin_header.php ===== */
+*,
+*::before,
+*::after{box-sizing: border-box;}
+
+.admin-header{position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #fff;
+      border-bottom: 1px solid #f1f5f9;
+      box-shadow: 0 2px 16px rgba(0,0,0,.06);}
+
+.admin-header-inner{max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2.4rem;
+      height: 6.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;}
+
+.admin-logo{display: flex;
+      align-items: center;
+      gap: .6rem;
+      text-decoration: none;
+      flex-shrink: 0;}
+
+.admin-logo-icon{width: 3.6rem; height: 3.6rem;
+      border-radius: .8rem;
+      background: linear-gradient(135deg, #1a2a6c, #4f6ef7);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      font-size: 1.6rem;}
+
+.admin-logo-text{font-size: 1.7rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -.3px;
+      line-height: 1;}
+
+.admin-logo-text span{background: linear-gradient(135deg, #1a2a6c, #4f6ef7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: .1rem;
+      letter-spacing: .02em;}
+
+.admin-nav{display: flex;
+      align-items: center;
+      gap: .4rem;
+      flex: 1;
+      justify-content: center;}
+
+.admin-nav a{display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .7rem 1.3rem;
+      border-radius: .7rem;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: #64748b;
+      text-decoration: none;
+      transition: color .15s, background .15s;
+      white-space: nowrap;}
+
+.admin-nav a i{font-size: 1.2rem;}
+
+.admin-nav a:hover{color: #1a2a6c; background: #eff2ff;}
+
+.admin-nav a.nav-active{color: #1a2a6c;
+      background: #eff2ff;}
+
+.admin-header-right{display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-shrink: 0;}
+
+.chat-icon-wrap{position: relative;
+      width: 3.8rem; height: 3.8rem;
+      border-radius: .8rem;
+      background: #f8fafc;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      text-decoration: none;
+      color: #475569;
+      font-size: 1.8rem;
+      transition: background .15s, color .15s;
+      border: 1.5px solid #e2e8f0;}
+
+.chat-icon-wrap:hover{background: #eff2ff; color: #1a2a6c; border-color: #c7d2fe;}
+
+.chat-badge{position: absolute;
+      top: -6px; right: -6px;
+      min-width: 1.8rem; height: 1.8rem;
+      padding: 0 .4rem;
+      border-radius: 1rem;
+      background: #e11d48;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 6px rgba(225,29,72,.4);
+      animation: badgePop .3s ease both;}
+
+@keyframes badgePop{ from{transform:scale(0)} to{transform:scale(1)} }
+
+.profile-dropdown-wrap{position: relative;}
+
+.profile-trigger{display: flex;
+      align-items: center;
+      gap: .8rem;
+      padding: .5rem .8rem;
+      border-radius: .8rem;
+      cursor: pointer;
+      border: 1.5px solid #e2e8f0;
+      background: #f8fafc;
+      transition: background .15s, border-color .15s;}
+
+.profile-trigger:hover{background: #eff2ff; border-color: #c7d2fe;}
+
+.profile-avatar{width: 3.2rem; height: 3.2rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1a2a6c, #4f6ef7);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #fff;
+      flex-shrink: 0;}
+
+.profile-name{font-size: 1.35rem;
+      font-weight: 700;
+      color: #0f172a;
+      max-width: 12rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;}
+
+.profile-caret{color: #94a3b8; font-size: 1.1rem; transition: transform .2s;}
+
+.profile-trigger.open .profile-caret{transform: rotate(180deg);}
+
+.profile-dropdown{position: absolute;
+      top: calc(100% + .8rem);
+      right: 0;
+      min-width: 22rem;
+      background: #fff;
+      border-radius: 1.2rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,.12);
+      border: 1.5px solid #f1f5f9;
+      overflow: hidden;
+      display: none;
+      z-index: 200;
+      animation: dropdownIn .2s ease both;}
+
+@keyframes dropdownIn{ from{opacity:0;transform:translateY(-8px)} to{opacity:1;transform:translateY(0)} }
+
+.profile-dropdown.open{display: block;}
+
+.dropdown-header{padding: 1.4rem 1.6rem;
+      background: linear-gradient(135deg, #1a2a6c, #4f6ef7);
+      display: flex;
+      align-items: center;
+      gap: 1rem;}
+
+.dropdown-avatar{width: 4rem; height: 4rem;
+      border-radius: 50%;
+      background: rgba(255,255,255,.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #fff;}
+
+.dropdown-name{font-size: 1.4rem; font-weight: 700; color: #fff;}
+
+.dropdown-role{font-size: 1.2rem; color: rgba(255,255,255,.65); margin-top: .2rem;}
+
+.dropdown-divider{height: 1px; background: #f1f5f9;}
+
+.dropdown-item{display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.1rem 1.6rem;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: #334155;
+      text-decoration: none;
+      transition: background .15s, color .15s;
+      cursor: pointer;}
+
+.dropdown-item i{width: 2rem;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 1.3rem;
+      transition: color .15s;}
+
+.dropdown-item:hover{background: #f8fafc; color: #1a2a6c;}
+
+.dropdown-item:hover i{color: #4f6ef7;}
+
+.dropdown-item.danger{color: #be123c;}
+
+.dropdown-item.danger i{color: #fca5a5;}
+
+.dropdown-item.danger:hover{background: #fff1f2; color: #9f1239;}
+
+.dropdown-item.danger:hover i{color: #e11d48;}
+
+.hamburger-btn{display: none;
+      flex-direction: column;
+      gap: .5rem;
+      cursor: pointer;
+      padding: .6rem;
+      border-radius: .6rem;
+      transition: background .15s;}
+
+.hamburger-btn:hover{background: #f1f5f9;}
+
+.hamburger-btn span{display: block; width: 2.2rem; height: 2px; background: #475569; border-radius: 2px; transition: all .3s;}
+
+.admin-mobile-nav{display: none;
+      position: fixed;
+      top: 6.4rem; left: 0; right: 0;
+      background: #fff;
+      border-bottom: 1px solid #f1f5f9;
+      box-shadow: 0 8px 24px rgba(0,0,0,.08);
+      z-index: 999;
+      padding: 1.2rem;
+      flex-direction: column;
+      gap: .4rem;
+      animation: slideDown .2s ease both;}
+
+@keyframes slideDown{ from{opacity:0;transform:translateY(-10px)} to{opacity:1;transform:translateY(0)} }
+
+.admin-mobile-nav.open{display: flex;}
+
+.admin-mobile-nav a{display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.1rem 1.4rem;
+      border-radius: .8rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #475569;
+      text-decoration: none;
+      transition: background .15s, color .15s;}
+
+.admin-mobile-nav a i{color: #94a3b8; width: 1.6rem; text-align: center;}
+
+.admin-mobile-nav a:hover{background: #eff2ff; color: #1a2a6c;}
+
+.admin-mobile-nav a:hover i{color: #4f6ef7;}
+
+.message{background: #ecfdf5 !important;
+      border-left: 4px solid #059669 !important;
+      border-radius: .8rem !important;
+      padding: 1.2rem 1.6rem !important;
+      font-size: 1.4rem !important;
+      color: #065f46 !important;
+      margin: 1rem 2.4rem !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 1rem !important;
+      animation: fadeSlideDown .3s ease both !important;
+      max-width: 1400px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;}
+
+@keyframes fadeSlideDown{ from{opacity:0;transform:translateY(-10px)} to{opacity:1;transform:translateY(0)} }
+
+@media (max-width: 960px){.admin-nav{display: none;}
+
+.hamburger-btn{display: flex;}
+
+.profile-name{display: none;}
+}
+
+@media (max-width: 480px){.admin-header-inner{padding: 0 1.4rem;}
+}
