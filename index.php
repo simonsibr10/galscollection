@@ -61,58 +61,75 @@ include 'components/wishlist_cart.php';
 
       <div class="cat-layout">
 
-         <a href="category.php?category=Tote" class="cat-hero-card">
-            <img src="Kategori_images/Tote.jpeg" alt="Tote">
-            <div class="cat-card-label">
-               <h3>Tote</h3>
-               <span>Lihat Koleksi</span>
-            </div>
-         </a>
-
          <div class="cat-grid">
 
-            <a href="category.php?category=Slingbag" class="cat-grid-card">
+            <a href="category.php?category=Tote" class="cat-grid-card cat-card-featured">
+               <img src="Kategori_images/Tote.jpeg" alt="Tote">
+               <div class="cat-card-label">
+                  <h3>Tote</h3>
+                  <span>Lihat Koleksi</span>
+               </div>
+            </a>
+
+            <a href="category.php?category=Slingbag" class="cat-grid-card cat-card-tall">
                <img src="Kategori_images/Slingbag.jpeg" alt="Slingbag">
-               <div class="cat-card-label"><h3>Slingbag</h3></div>
+               <div class="cat-card-label">
+                  <h3>Slingbag</h3>
+                  <span>Lihat Koleksi</span>
+               </div>
             </a>
 
             <a href="category.php?category=Dompet" class="cat-grid-card">
                <span class="cat-badge">New</span>
                <img src="Kategori_images/Dompet.jpeg" alt="Dompet">
-               <div class="cat-card-label"><h3>Dompet</h3></div>
+               <div class="cat-card-label">
+                  <h3>Dompet</h3>
+                  <span>Lihat Koleksi</span>
+               </div>
             </a>
 
             <a href="category.php?category=Heels" class="cat-grid-card">
                <img src="Kategori_images/Heels.jpeg" alt="Heels">
-               <div class="cat-card-label"><h3>Heels</h3></div>
+               <div class="cat-card-label">
+                  <h3>Heels</h3>
+                  <span>Lihat Koleksi</span>
+               </div>
             </a>
 
-            <a href="category.php?category=Flat Shoes" class="cat-grid-card">
+            <a href="category.php?category=Flat Shoes" class="cat-grid-card cat-card-wide">
                <span class="cat-badge">Best Seller</span>
                <img src="Kategori_images/Flat.jpeg" alt="Flat Shoes">
-               <div class="cat-card-label"><h3>Flat Shoes</h3></div>
+               <div class="cat-card-label">
+                  <h3>Flat Shoes</h3>
+                  <span>Lihat Koleksi</span>
+               </div>
             </a>
 
-            <a href="category.php?category=Top Handle" class="cat-grid-card">
+            <a href="category.php?category=Top Handle" class="cat-grid-card cat-card-wide">
                <img src="Kategori_images/TopHandle.jpeg" alt="Top Handle">
-               <div class="cat-card-label"><h3>Top Handle</h3></div>
+               <div class="cat-card-label">
+                  <h3>Top Handle</h3>
+                  <span>Lihat Koleksi</span>
+               </div>
             </a>
 
-            <a href="category.php?category=Clutch" class="cat-grid-card">
+            <a href="category.php?category=Clutch" class="cat-grid-card cat-card-wide">
                <img src="Kategori_images/Clutch.jpeg" alt="Clutch">
-               <div class="cat-card-label"><h3>Clutch</h3></div>
+               <div class="cat-card-label">
+                  <h3>Clutch</h3>
+                  <span>Lihat Koleksi</span>
+               </div>
+            </a>
+
+            <a href="category.php?category=Ransel" class="cat-grid-card cat-card-wide cat-card-ransel">
+               <img src="Kategori_images/Ransel.png" alt="Ransel">
+               <div class="cat-card-label">
+                  <h3>Ransel</h3>
+                  <span>Lihat Koleksi</span>
+               </div>
             </a>
 
          </div>
-      </div>
-
-      <div class="u-inline-style-010">
-         <a href="category.php?category=Ransel" class="cat-grid-card index-ransel-card">
-            <img src="Kategori_images/Ransel.png" alt="Ransel" class="index-ransel-img">
-            <div class="cat-card-label index-ransel-label">
-               <h3 class="u-inline-style-019">Ransel</h3>
-            </div>
-         </a>
       </div>
 
    </div>
